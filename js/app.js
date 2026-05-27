@@ -60,4 +60,59 @@ navbar.style.background = "rgba(255,255,255,0.04)";
 
 setInterval(()=>{
 
-document
+document.querySelectorAll(".network-dot").forEach(dot=>{
+
+dot.style.boxShadow =
+`0 0 ${Math.random()*40}px #60a5fa`;
+
+});
+
+},1000);
+
+/* FLOATING TAGS */
+
+const tags = document.querySelectorAll(".tag");
+
+tags.forEach((tag,index)=>{
+
+tag.style.animationDelay = `${index}s`;
+
+});
+
+/* HERO ROCKET MOTION */
+
+const rocket = document.querySelector(".hero-rocket");
+
+window.addEventListener("mousemove",(e)=>{
+
+const x = (window.innerWidth / 2 - e.pageX) / 40;
+const y = (window.innerHeight / 2 - e.pageY) / 40;
+
+rocket.style.transform =
+`translate(${x}px, ${y}px)`;
+
+});
+
+/* BUTTON RIPPLE */
+
+const buttons = document.querySelectorAll("button");
+
+buttons.forEach(btn=>{
+
+btn.addEventListener("mouseenter",()=>{
+
+btn.style.boxShadow =
+"0 0 50px rgba(96,165,250,0.7)";
+
+});
+
+btn.addEventListener("mouseleave",()=>{
+
+btn.style.boxShadow =
+"0 0 20px rgba(96,165,250,0.3)";
+
+});
+
+});
+
+console.log("OMKLJ Global Premium System Loaded");

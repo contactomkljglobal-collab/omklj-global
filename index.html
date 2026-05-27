@@ -1,14 +1,265 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>OMKLJ Global</title>
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:Arial,sans-serif;
+    }
+
+    body{
+      background:linear-gradient(135deg,#050505,#0b1220,#111827);
+      color:white;
+      overflow-x:hidden;
+    }
+
+    header{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:20px 40px;
+      border-bottom:1px solid rgba(255,255,255,0.1);
+      backdrop-filter:blur(10px);
+      background:rgba(0,0,0,0.3);
+      position:sticky;
+      top:0;
+      z-index:1000;
+    }
+
+    .logo{
+      font-size:30px;
+      font-weight:bold;
+      letter-spacing:1px;
+    }
+
+    .logo span{
+      color:#ff2e2e;
+    }
+
+    .hero{
+      text-align:center;
+      padding:120px 20px;
+      animation:fadeUp 1.2s ease forwards;
+    }
+
+    .hero h1{
+      font-size:60px;
+      margin-bottom:20px;
+      line-height:1.2;
+      background:linear-gradient(to right,#ffffff,#60a5fa);
+      -webkit-background-clip:text;
+      -webkit-text-fill-color:transparent;
+    }
+
+    .hero p{
+      max-width:800px;
+      margin:auto;
+      color:#cbd5e1;
+      font-size:20px;
+      line-height:1.8;
+    }
+
+    .buttons{
+      margin-top:40px;
+    }
+
+    .buttons button{
+      padding:15px 30px;
+      margin:10px;
+      border:none;
+      border-radius:14px;
+      cursor:pointer;
+      font-size:16px;
+      transition:0.3s;
+      font-weight:bold;
+    }
+
+    .btn1{
+      background:linear-gradient(135deg,#2563eb,#06b6d4);
+      color:white;
+      box-shadow:0 0 20px rgba(59,130,246,0.5);
+    }
+
+    .btn1:hover{
+      transform:translateY(-4px);
+    }
+
+    .btn2{
+      background:rgba(255,255,255,0.08);
+      border:1px solid rgba(255,255,255,0.1);
+      color:white;
+      backdrop-filter:blur(10px);
+    }
+
+    .btn2:hover{
+      border-color:#3b82f6;
+      transform:translateY(-4px);
+    }
+
+    .section{
+      padding:90px 20px;
+      text-align:center;
+    }
+
+    .section h2{
+      font-size:42px;
+      margin-bottom:15px;
+    }
+
+    .section p{
+      max-width:700px;
+      margin:auto;
+      color:#cbd5e1;
+      line-height:1.8;
+      font-size:18px;
+    }
+
+    .cards{
+      margin-top:60px;
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+      gap:30px;
+    }
+
+    .card{
+      background:rgba(255,255,255,0.05);
+      border:1px solid rgba(255,255,255,0.1);
+      backdrop-filter:blur(14px);
+      border-radius:24px;
+      padding:35px;
+      transition:0.4s;
+      animation:fadeUp 1s ease forwards;
+    }
+
+    .card:hover{
+      transform:translateY(-10px) scale(1.02);
+      border-color:#3b82f6;
+      box-shadow:0 0 30px rgba(37,99,235,0.3);
+    }
+
+    .card h3{
+      margin-bottom:18px;
+      font-size:26px;
+      color:#60a5fa;
+    }
+
+    .card p{
+      color:#d1d5db;
+      line-height:1.7;
+    }
+
+    footer{
+      margin-top:80px;
+      border-top:1px solid rgba(255,255,255,0.1);
+      padding:30px;
+      text-align:center;
+      color:#94a3b8;
+      background:rgba(0,0,0,0.3);
+    }
+
+    @keyframes fadeUp{
+      from{
+        opacity:0;
+        transform:translateY(40px);
+      }
+
+      to{
+        opacity:1;
+        transform:translateY(0);
+      }
+    }
+
+  </style>
+
 </head>
-<body style="background:black;color:white;font-family:Arial;text-align:center;padding:50px;">
-  <h1>OMKLJ Global</h1>
-  <h2>Connecting People to Daily Opportunity</h2>
-  <p>
-    Helping unemployed and hardworking people connect with jobs,
-    skills, and daily opportunities.
-  </p>
+
+<body>
+
+  <header>
+    <div class="logo">
+      OMKLJ <span>Global</span>
+    </div>
+  </header>
+
+  <section class="hero">
+
+    <h1>
+      Connecting People To Daily Opportunity
+    </h1>
+
+    <p>
+      OMKLJ Global helps unemployed, hardworking, and skilled people
+      connect with jobs, learning, nearby opportunities, and daily support
+      through a modern digital platform.
+    </p>
+
+    <div class="buttons">
+      <button class="btn1">Find Work</button>
+      <button class="btn2">Post Job</button>
+    </div>
+
+  </section>
+
+  <section class="section">
+
+    <h2>What OMKLJ Global Offers</h2>
+
+    <p>
+      A premium opportunity platform designed to help people earn, learn,
+      connect, and grow every single day.
+    </p>
+
+    <div class="cards">
+
+      <div class="card">
+        <h3>Daily Jobs</h3>
+
+        <p>
+          Discover nearby work opportunities and start earning quickly.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Learn & Earn</h3>
+
+        <p>
+          Learn practical skills that help users generate income faster.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Voice Support</h3>
+
+        <p>
+          Simple voice-based access designed for all users.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Nearby Opportunities</h3>
+
+        <p>
+          Connect with jobs, services, and support around your location.
+        </p>
+      </div>
+
+    </div>
+
+  </section>
+
+  <footer>
+    © 2026 OMKLJ Global — Connecting People To Daily Opportunity
+  </footer>
+
 </body>
+
 </html>

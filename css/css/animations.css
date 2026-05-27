@@ -1,0 +1,98 @@
+.hero-content{
+  animation:fadeUp 1.2s ease;
+}
+
+.floating-card{
+  animation:float 4s ease-in-out infinite;
+}
+
+.card2{
+  animation-delay:1s;
+}
+
+.card3{
+  animation-delay:2s;
+}
+
+.service-card{
+  animation:glide 1.5s ease;
+}
+
+.workflow-card{
+  animation:bounceCard 3s infinite;
+}
+
+.machine{
+  animation:rotateMachine 8s linear infinite;
+}
+
+.primary-btn{
+  animation:pulse 2s infinite;
+}
+
+@keyframes fadeUp{
+  from{
+    opacity:0;
+    transform:translateY(80px);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+@keyframes float{
+  0%{
+    transform:translateY(0);
+  }
+  50%{
+    transform:translateY(-20px);
+  }
+  100%{
+    transform:translateY(0);
+  }
+}
+
+@keyframes glide{
+  from{
+    opacity:0;
+    transform:translateX(-80px);
+  }
+  to{
+    opacity:1;
+    transform:translateX(0);
+  }
+}
+
+@keyframes rotateMachine{
+  from{
+    transform:rotate(0deg);
+  }
+  to{
+    transform:rotate(360deg);
+  }
+}
+
+@keyframes pulse{
+  0%{
+    box-shadow:0 0 0 rgba(96,165,250,0.5);
+  }
+  50%{
+    box-shadow:0 0 40px rgba(96,165,250,0.8);
+  }
+  100%{
+    box-shadow:0 0 0 rgba(96,165,250,0.5);
+  }
+}
+
+@keyframes bounceCard{
+  0%{
+    transform:translateY(0);
+  }
+  50%{
+    transform:translateY(-10px);
+  }
+  100%{
+    transform:translateY(0);
+  }
+}

@@ -1,0 +1,40 @@
+@media(max-width:992px){
+
+  nav{
+    display:none;
+  }
+
+  .hero h1{
+    font-size:48px;
+  }
+
+  .stats{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .service-grid,
+  .workflow-grid{
+    grid-template-columns:1fr;
+  }
+
+}
+
+@media(max-width:600px){
+
+  .hero h1{
+    font-size:38px;
+  }
+
+  .hero p{
+    font-size:15px;
+  }
+
+  .stats{
+    grid-template-columns:1fr;
+  }
+
+  .section-title h2{
+    font-size:36px;
+  }
+
+}

@@ -2,630 +2,202 @@
 <html lang="en">
 
 <head>
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>OMKLJ Global</title>
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-<style>
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Poppins',sans-serif;
-scroll-behavior:smooth;
-}
-
-body{
-background:#050816;
-color:white;
-overflow-x:hidden;
-}
-
-/* ANIMATED BACKGROUND */
-
-.bg-animation{
-position:fixed;
-width:100%;
-height:100%;
-top:0;
-left:0;
-z-index:-1;
-overflow:hidden;
-}
-
-.bg-animation span{
-position:absolute;
-display:block;
-width:20px;
-height:20px;
-background:rgba(59,130,246,0.15);
-animation:animate 25s linear infinite;
-bottom:-150px;
-border-radius:50%;
-}
-
-.bg-animation span:nth-child(1){
-left:10%;
-width:80px;
-height:80px;
-animation-delay:0s;
-}
-
-.bg-animation span:nth-child(2){
-left:20%;
-width:20px;
-height:20px;
-animation-delay:2s;
-animation-duration:12s;
-}
-
-.bg-animation span:nth-child(3){
-left:70%;
-width:30px;
-height:30px;
-animation-delay:4s;
-}
-
-.bg-animation span:nth-child(4){
-left:40%;
-width:60px;
-height:60px;
-animation-delay:0s;
-animation-duration:18s;
-}
-
-.bg-animation span:nth-child(5){
-left:65%;
-width:20px;
-height:20px;
-animation-delay:0s;
-}
-
-.bg-animation span:nth-child(6){
-left:75%;
-width:110px;
-height:110px;
-animation-delay:3s;
-}
-
-.bg-animation span:nth-child(7){
-left:35%;
-width:150px;
-height:150px;
-animation-delay:7s;
-}
-
-.bg-animation span:nth-child(8){
-left:50%;
-width:25px;
-height:25px;
-animation-delay:15s;
-animation-duration:45s;
-}
-
-.bg-animation span:nth-child(9){
-left:20%;
-width:15px;
-height:15px;
-animation-delay:2s;
-animation-duration:35s;
-}
-
-.bg-animation span:nth-child(10){
-left:85%;
-width:150px;
-height:150px;
-animation-delay:0s;
-animation-duration:11s;
-}
-
-@keyframes animate{
-0%{
-transform:translateY(0) rotate(0deg);
-opacity:1;
-border-radius:0;
-}
-100%{
-transform:translateY(-1000px) rotate(720deg);
-opacity:0;
-border-radius:50%;
-}
-}
-
-/* HEADER */
-
-header{
-position:fixed;
-top:0;
-left:0;
-width:100%;
-padding:20px 60px;
-display:flex;
-justify-content:space-between;
-align-items:center;
-background:rgba(0,0,0,0.4);
-backdrop-filter:blur(12px);
-z-index:1000;
-border-bottom:1px solid rgba(255,255,255,0.08);
-}
-
-.logo{
-display:flex;
-align-items:center;
-gap:15px;
-}
-
-.logo img{
-height:65px;
-border-radius:15px;
-box-shadow:0 0 25px rgba(37,99,235,0.6);
-}
-
-.logo h1{
-font-size:28px;
-font-weight:700;
-}
-
-.logo span{
-color:#60a5fa;
-}
-
-nav{
-display:flex;
-gap:35px;
-}
-
-nav a{
-color:white;
-text-decoration:none;
-font-size:15px;
-transition:0.3s;
-}
-
-nav a:hover{
-color:#60a5fa;
-}
-
-/* HERO */
-
-.hero{
-min-height:100vh;
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-text-align:center;
-padding:120px 20px 60px;
-background:
-linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.8)),
-url('https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?q=80&w=1974&auto=format&fit=crop');
-background-size:cover;
-background-position:center;
-}
-
-.hero h2{
-font-size:75px;
-max-width:1000px;
-line-height:1.1;
-margin-bottom:25px;
-background:linear-gradient(to right,#ffffff,#60a5fa);
--webkit-background-clip:text;
--webkit-text-fill-color:transparent;
-animation:fadeUp 1s ease;
-}
-
-.hero p{
-max-width:900px;
-font-size:22px;
-line-height:1.8;
-color:#dbeafe;
-margin-bottom:40px;
-animation:fadeUp 1.3s ease;
-}
-
-.buttons{
-display:flex;
-gap:20px;
-flex-wrap:wrap;
-justify-content:center;
-}
-
-.btn{
-padding:16px 35px;
-border:none;
-border-radius:14px;
-font-size:16px;
-font-weight:600;
-cursor:pointer;
-transition:0.4s;
-}
-
-.btn-primary{
-background:linear-gradient(90deg,#2563eb,#38bdf8);
-color:white;
-box-shadow:0 0 25px rgba(59,130,246,0.6);
-}
-
-.btn-primary:hover{
-transform:translateY(-6px) scale(1.05);
-}
-
-.btn-secondary{
-background:rgba(255,255,255,0.08);
-border:1px solid rgba(255,255,255,0.1);
-color:white;
-backdrop-filter:blur(10px);
-}
-
-.btn-secondary:hover{
-transform:translateY(-6px);
-border-color:#60a5fa;
-}
-
-/* STATS */
-
-.stats{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:25px;
-padding:80px 50px;
-}
-
-.stat-box{
-background:rgba(255,255,255,0.05);
-padding:40px;
-border-radius:24px;
-backdrop-filter:blur(15px);
-border:1px solid rgba(255,255,255,0.08);
-text-align:center;
-transition:0.4s;
-}
-
-.stat-box:hover{
-transform:translateY(-10px);
-box-shadow:0 0 25px rgba(96,165,250,0.3);
-}
-
-.stat-box h3{
-font-size:42px;
-color:#60a5fa;
-margin-bottom:10px;
-}
-
-.stat-box p{
-color:#d1d5db;
-}
-
-/* SERVICES */
-
-.section{
-padding:100px 40px;
-text-align:center;
-}
-
-.section h2{
-font-size:55px;
-margin-bottom:20px;
-}
-
-.section p{
-max-width:850px;
-margin:auto;
-font-size:20px;
-line-height:1.8;
-color:#d1d5db;
-}
-
-.cards{
-margin-top:60px;
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-gap:30px;
-}
-
-.card{
-background:rgba(255,255,255,0.05);
-padding:35px;
-border-radius:24px;
-border:1px solid rgba(255,255,255,0.08);
-backdrop-filter:blur(15px);
-transition:0.4s;
-}
-
-.card:hover{
-transform:translateY(-12px);
-box-shadow:0 0 25px rgba(96,165,250,0.3);
-}
-
-.card h3{
-font-size:28px;
-margin-bottom:15px;
-color:#60a5fa;
-}
-
-.card p{
-line-height:1.7;
-}
-
-/* HOW IT WORKS */
-
-.steps{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:30px;
-margin-top:60px;
-}
-
-.step{
-padding:35px;
-border-radius:24px;
-background:rgba(255,255,255,0.05);
-border:1px solid rgba(255,255,255,0.08);
-}
-
-.step h3{
-font-size:24px;
-margin-bottom:15px;
-color:#60a5fa;
-}
-
-/* TESTIMONIAL */
-
-.testimonial{
-margin-top:70px;
-padding:40px;
-border-radius:24px;
-background:rgba(255,255,255,0.05);
-border:1px solid rgba(255,255,255,0.08);
-max-width:900px;
-margin-left:auto;
-margin-right:auto;
-}
-
-.testimonial p{
-font-size:22px;
-line-height:1.8;
-}
-
-.testimonial h4{
-margin-top:25px;
-color:#60a5fa;
-}
-
-/* FOOTER */
-
-footer{
-padding:50px 20px;
-text-align:center;
-border-top:1px solid rgba(255,255,255,0.08);
-background:#020617;
-margin-top:80px;
-}
-
-footer p{
-color:#94a3b8;
-}
-
-/* ANIMATIONS */
-
-@keyframes fadeUp{
-from{
-opacity:0;
-transform:translateY(40px);
-}
-to{
-opacity:1;
-transform:translateY(0);
-}
-}
-
-/* MOBILE */
-
-@media(max-width:768px){
-
-header{
-padding:20px;
-flex-direction:column;
-gap:20px;
-}
-
-.hero h2{
-font-size:45px;
-}
-
-.hero p{
-font-size:18px;
-}
-
-.section h2{
-font-size:38px;
-}
-
-nav{
-gap:15px;
-flex-wrap:wrap;
-justify-content:center;
-}
-
-}
-
-</style>
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OMKLJ Global</title>
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/responsive.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
-<div class="bg-animation">
-<span></span>
-<span></span>
-<span></span>
-<span></span>
-<span></span>
-<span></span>
-<span></span>
-<span></span>
-<span></span>
-<span></span>
-</div>
+  <div class="particles"></div>
 
-<header>
+  <header class="navbar">
+    <div class="logo">
+      <img src="https://i.ibb.co/Pvj1pQMX/Picsart-26-05-25-12-12-43-044.jpg">
+      <h2>OMKLJ <span>Global</span></h2>
+    </div>
 
-<div class="logo">
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">About</a>
+      <a href="#">Services</a>
+      <a href="#">Features</a>
+      <a href="#">Contact</a>
+    </nav>
+  </header>
 
-<img src="https://i.ibb.co/Pvj1pQMX/Picsart-26-05-25-12-12-43-044.jpg">
+  <section class="hero">
 
-<h1>
-OMKLJ <span>Global</span>
-</h1>
+    <div class="overlay"></div>
 
-</div>
+    <div class="hero-content">
 
-<nav>
-<a href="#">Home</a>
-<a href="#">About</a>
-<a href="#">Jobs</a>
-<a href="#">Features</a>
-<a href="#">Contact</a>
-</nav>
+      <div class="badge">
+        PREMIUM DIGITAL PLATFORM
+      </div>
 
-</header>
+      <h1>
+        Connecting People To <br>
+        Daily Opportunity
+      </h1>
 
-<section class="hero">
+      <p>
+        OMKLJ Global helps unemployed, hardworking and skilled people connect with jobs,
+        learning, nearby opportunities and daily support through a modern premium digital platform.
+      </p>
 
-<h2>
-Connecting People To Daily Opportunity
-</h2>
+      <div class="hero-buttons">
+        <button class="primary-btn">Find Work</button>
+        <button class="secondary-btn">Post Job</button>
+      </div>
 
-<p>
-OMKLJ Global helps unemployed, hardworking, and skilled people connect with jobs, learning, nearby opportunities, and daily support through a premium digital platform.
-</p>
+    </div>
 
-<div class="buttons">
+    <div class="floating-card card1">
+      🚀 Fast Hiring
+    </div>
 
-<button class="btn btn-primary">
-Find Work
-</button>
+    <div class="floating-card card2">
+      💼 Premium Jobs
+    </div>
 
-<button class="btn btn-secondary">
-Post Job
-</button>
+    <div class="floating-card card3">
+      📈 Growth Support
+    </div>
 
-</div>
+  </section>
 
-</section>
+  <section class="stats">
 
-<section class="stats">
+    <div class="stat-box">
+      <h2>10K+</h2>
+      <p>Daily Opportunities</p>
+    </div>
 
-<div class="stat-box">
-<h3>10K+</h3>
-<p>Daily Opportunities</p>
-</div>
+    <div class="stat-box">
+      <h2>5K+</h2>
+      <p>Workers Connected</p>
+    </div>
 
-<div class="stat-box">
-<h3>5K+</h3>
-<p>Workers Connected</p>
-</div>
+    <div class="stat-box">
+      <h2>24/7</h2>
+      <p>Support System</p>
+    </div>
 
-<div class="stat-box">
-<h3>24/7</h3>
-<p>Support System</p>
-</div>
+    <div class="stat-box">
+      <h2>100+</h2>
+      <p>Skill Categories</p>
+    </div>
 
-<div class="stat-box">
-<h3>100+</h3>
-<p>Skill Categories</p>
-</div>
+  </section>
 
-</section>
+  <section class="services">
 
-<section class="section">
+    <div class="section-title">
+      <h2>What OMKLJ Global Offers</h2>
+      <p>
+        A premium platform designed to help people earn, learn, connect and grow every single day.
+      </p>
+    </div>
 
-<h2>
-What OMKLJ Global Offers
-</h2>
+    <div class="service-grid">
 
-<p>
-A modern platform designed to help people earn, learn, connect, and grow every single day.
-</p>
+      <div class="service-card">
+        <div class="icon">💼</div>
+        <h3>Daily Jobs</h3>
+        <p>Discover nearby work opportunities instantly.</p>
+      </div>
 
-<div class="cards">
+      <div class="service-card">
+        <div class="icon">🎯</div>
+        <h3>Learn & Earn</h3>
+        <p>Learn practical skills that help users earn faster.</p>
+      </div>
 
-<div class="card">
-<h3>Daily Jobs</h3>
-<p>Discover nearby work opportunities instantly.</p>
-</div>
+      <div class="service-card">
+        <div class="icon">🎤</div>
+        <h3>Voice Support</h3>
+        <p>Simple voice-based access designed for everyone.</p>
+      </div>
 
-<div class="card">
-<h3>Learn & Earn</h3>
-<p>Learn practical skills that help users earn faster.</p>
-</div>
+      <div class="service-card">
+        <div class="icon">📍</div>
+        <h3>Nearby Opportunities</h3>
+        <p>Connect with jobs and services around your location.</p>
+      </div>
 
-<div class="card">
-<h3>Voice Support</h3>
-<p>Simple voice-based access designed for everyone.</p>
-</div>
+      <div class="service-card">
+        <div class="icon">⚡</div>
+        <h3>Instant Access</h3>
+        <p>Quick access to opportunities without delays.</p>
+      </div>
 
-<div class="card">
-<h3>Nearby Opportunities</h3>
-<p>Connect with jobs and services around your location.</p>
-</div>
+      <div class="service-card">
+        <div class="icon">🛡️</div>
+        <h3>Reliable Platform</h3>
+        <p>Secure and trusted digital environment.</p>
+      </div>
 
-</div>
+    </div>
 
-</section>
+  </section>
 
-<section class="section">
+  <section class="workflow">
 
-<h2>
-How It Works
-</h2>
+    <div class="section-title">
+      <h2>How It Works</h2>
+    </div>
 
-<div class="steps">
+    <div class="workflow-grid">
 
-<div class="step">
-<h3>1. Create Profile</h3>
-<p>Users create simple profiles using voice or text.</p>
-</div>
+      <div class="workflow-card">
+        <div class="workflow-icon">1</div>
+        <h3>Create Profile</h3>
+        <p>Users create simple profiles using voice or text.</p>
+      </div>
 
-<div class="step">
-<h3>2. Discover Work</h3>
-<p>Nearby jobs and opportunities appear instantly.</p>
-</div>
+      <div class="workflow-card">
+        <div class="workflow-icon">2</div>
+        <h3>Discover Work</h3>
+        <p>Nearby jobs and opportunities appear instantly.</p>
+      </div>
 
-<div class="step">
-<h3>3. Start Earning</h3>
-<p>Connect directly and begin earning daily.</p>
-</div>
+      <div class="workflow-card">
+        <div class="workflow-icon">3</div>
+        <h3>Start Earning</h3>
+        <p>Connect directly and begin earning daily.</p>
+      </div>
 
-</div>
+    </div>
 
-<div class="testimonial">
+  </section>
 
-<p>
-“OMKLJ Global aims to become a platform that helps people survive, grow, and earn every single day.”
-</p>
+  <section class="premium-banner">
 
-<h4>
-— ACE, Founder & CEO
-</h4>
+    <div class="machine"></div>
 
-</div>
+    <h2>
+      "OMKLJ Global aims to become a platform that helps people survive,
+      grow and earn every single day."
+    </h2>
 
-</section>
+    <p>— Built Revolution For Opportunity</p>
 
-<footer>
+  </section>
 
-<p>
-© 2026 OMKLJ Global — Connecting People To Daily Opportunity
-</p>
+  <footer>
+    <p>© 2026 OMKLJ Global — Connecting People To Daily Opportunity</p>
+  </footer>
 
-</footer>
+  <script src="js/particles.js"></script>
+  <script src="js/app.js"></script>
 
 </body>
 

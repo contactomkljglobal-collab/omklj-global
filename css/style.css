@@ -571,3 +571,56 @@ z-index:-2;
 animation:
 gridFlow 12s linear infinite;
 }
+
+/* DASHBOARD */
+
+.dashboard-card,
+.service-card,
+.stat-card,
+.timeline-item,
+.testimonial-card{
+
+position:relative;
+overflow:hidden;
+
+}
+
+/* HOVER LIGHT */
+
+.dashboard-card::before,
+.service-card::before,
+.stat-card::before,
+.timeline-item::before,
+.testimonial-card::before{
+
+content:'';
+
+position:absolute;
+
+top:0;
+left:-120%;
+
+width:80%;
+height:100%;
+
+background:
+linear-gradient(
+90deg,
+transparent,
+rgba(255,255,255,0.14),
+transparent
+);
+
+transform:skewX(-25deg);
+
+}
+
+.dashboard-card:hover::before,
+.service-card:hover::before,
+.stat-card:hover::before,
+.timeline-item:hover::before,
+.testimonial-card:hover::before{
+
+animation:
+shineSweep 1s forwards;
+}

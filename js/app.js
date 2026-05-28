@@ -1,6 +1,6 @@
 const navbar = document.querySelector(".navbar");
 
-/* NAVBAR BLUR */
+/* NAVBAR */
 
 window.addEventListener("scroll",()=>{
 
@@ -15,13 +15,34 @@ navbar.style.backdropFilter =
 }else{
 
 navbar.style.background =
-"rgba(2,6,23,0.35)";
+"rgba(2,6,23,0.4)";
 
 }
 
 });
 
-/* CURSOR PARALLAX */
+/* CURSOR GLOW */
+
+const cursorGlow =
+document.querySelector(".cursor-glow");
+
+const spotlight =
+document.querySelector(".spotlight");
+
+document.addEventListener("mousemove",(e)=>{
+
+const x = e.clientX;
+const y = e.clientY;
+
+cursorGlow.style.left = x + "px";
+cursorGlow.style.top = y + "px";
+
+spotlight.style.left = x + "px";
+spotlight.style.top = y + "px";
+
+});
+
+/* AURORA PARALLAX */
 
 document.addEventListener("mousemove",(e)=>{
 
@@ -34,8 +55,11 @@ document.querySelector(".aurora2");
 const aurora3 =
 document.querySelector(".aurora3");
 
-let x = e.clientX / window.innerWidth;
-let y = e.clientY / window.innerHeight;
+let x =
+e.clientX / window.innerWidth;
+
+let y =
+e.clientY / window.innerHeight;
 
 aurora1.style.transform =
 `translate(${x*40}px,${y*40}px)`;
@@ -71,52 +95,14 @@ btn.style.transform =
 
 });
 
-/* CARD HOVER */
+/* 3D CARD EFFECT */
 
 const cards =
 document.querySelectorAll(
-".service-card,.stat-card"
+".service-card,.stat-card,.dashboard-card"
 );
 
 cards.forEach((card)=>{
 
 card.addEventListener(
 "mousemove",(e)=>{
-
-const rect =
-card.getBoundingClientRect();
-
-const x =
-e.clientX - rect.left;
-
-const y =
-e.clientY - rect.top;
-
-card.style.transform =
-`
-perspective(1000px)
-rotateX(${-(y-rect.height/2)/20}deg)
-rotateY(${(x-rect.width/2)/20}deg)
-translateY(-10px)
-`;
-
-});
-
-card.addEventListener(
-"mouseleave",()=>{
-
-card.style.transform =
-`
-perspective(1000px)
-rotateX(0deg)
-rotateY(0deg)
-translateY(0px)
-`;
-
-});
-
-});
-
-console.log(
-"OMKLJ MASTER CINEMATIC SYSTEM LOADED"
-);

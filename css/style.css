@@ -566,3 +566,76 @@ text-align:center;
 border-top:1px solid rgba(255,255,255,0.08);
 color:#94a3b8;
 }
+
+/* ROCKET WINGS */
+
+.rocket-wing{
+position:absolute;
+bottom:20px;
+width:26px;
+height:50px;
+background:#ef4444;
+z-index:-1;
+}
+
+.left-wing{
+left:-18px;
+clip-path:polygon(100% 0,0 100%,100% 100%);
+}
+
+.right-wing{
+right:-18px;
+clip-path:polygon(0 0,0 100%,100% 100%);
+}
+
+/* FIRE */
+
+.fire{
+position:absolute;
+bottom:-58px;
+left:50%;
+transform:translateX(-50%);
+width:24px;
+height:60px;
+background:
+linear-gradient(
+to bottom,
+#fde047,
+#fb923c,
+#dc2626
+);
+
+border-radius:50%;
+filter:blur(1px);
+}
+
+/* SMOKE */
+
+.smoke{
+position:absolute;
+bottom:-30px;
+left:50%;
+transform:translateX(-50%);
+background:rgba(255,255,255,0.4);
+border-radius:50%;
+filter:blur(8px);
+animation:smokeMove 4s infinite;
+}
+
+.smoke1{
+width:40px;
+height:40px;
+animation-delay:0s;
+}
+
+.smoke2{
+width:60px;
+height:60px;
+animation-delay:1s;
+}
+
+.smoke3{
+width:80px;
+height:80px;
+animation-delay:2s;
+}

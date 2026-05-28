@@ -14,13 +14,13 @@ connectDB();
 app.use(cors());
 app.use(express.json());
 
-/* ROUTES */
-app.use("/api/auth", authRoutes);
-
 /* TEST ROUTE */
 app.get("/", (req, res) => {
   res.send("OMKLJ Backend Running 🚀");
 });
+
+/* AUTH ROUTES */
+app.use("/api/auth", authRoutes);
 
 /* PORT */
 const PORT = process.env.PORT || 5000;

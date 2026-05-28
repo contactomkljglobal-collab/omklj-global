@@ -1,3 +1,51 @@
+@keyframes loaderFade{
+
+0%{
+opacity:1;
+visibility:visible;
+}
+
+90%{
+opacity:1;
+}
+
+100%{
+opacity:0;
+visibility:hidden;
+}
+
+}
+
+@keyframes loaderRocket{
+
+0%{
+transform:translateY(0px);
+}
+
+50%{
+transform:translateY(-20px);
+}
+
+100%{
+transform:translateY(0px);
+}
+
+}
+
+@keyframes loaderProgress{
+
+0%{
+width:0%;
+}
+
+100%{
+width:100%;
+}
+
+}
+
+/* GRID */
+
 @keyframes gridMove{
 
 0%{
@@ -42,7 +90,7 @@ background-position:0 1000px;
 
 }
 
-/* METEORS */
+/* METEOR */
 
 @keyframes meteorMove{
 
@@ -70,7 +118,7 @@ opacity:0;
 
 }
 
-/* ORBIT */
+/* RINGS */
 
 @keyframes rotateRing{
 
@@ -231,7 +279,53 @@ transform:translateX(-100%);
 
 }
 
-/* APPLY ANIMATIONS */
+/* GLOBE */
+
+@keyframes globeRotate{
+
+0%{
+transform:rotate(0deg);
+}
+
+100%{
+transform:rotate(360deg);
+}
+
+}
+
+/* LIGHT BEAM */
+
+@keyframes beamMove{
+
+0%{
+opacity:0.1;
+transform:translateY(-100px);
+}
+
+50%{
+opacity:0.4;
+}
+
+100%{
+opacity:0.1;
+transform:translateY(100px);
+}
+
+}
+
+/* APPLY */
+
+.premium-loader{
+animation:loaderFade 5s forwards;
+}
+
+.loader-rocket{
+animation:loaderRocket 2s infinite ease-in-out;
+}
+
+.loader-progress{
+animation:loaderProgress 4s forwards;
+}
 
 .animated-grid{
 animation:gridMove 18s linear infinite;
@@ -284,22 +378,6 @@ animation:float 4s infinite ease-in-out;
 animation:float 4s infinite ease-in-out;
 }
 
-.tag:nth-child(2){
-animation-delay:1s;
-}
-
-.tag:nth-child(3){
-animation-delay:2s;
-}
-
-.tag:nth-child(4){
-animation-delay:3s;
-}
-
-.hero-content{
-animation:fadeUp 1.2s ease;
-}
-
 .primary-btn{
 animation:pulseGlow 3s infinite;
 }
@@ -320,22 +398,10 @@ animation:smokeMove 4s infinite;
 animation:tickerMove 22s linear infinite;
 }
 
-.service-card{
-transition:0.4s;
+.globe-ring{
+animation:globeRotate 18s linear infinite;
 }
 
-.service-card:hover{
-transform:
-translateY(-10px)
-scale(1.02);
-}
-
-.stat-card{
-transition:0.4s;
-}
-
-.stat-card:hover{
-transform:
-translateY(-10px)
-scale(1.02);
+.light-beam{
+animation:beamMove 8s infinite ease-in-out;
 }

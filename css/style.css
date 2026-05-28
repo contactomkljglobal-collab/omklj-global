@@ -730,3 +730,26 @@ height:46px;
 }
 
 }
+
+html,body{
+overflow-x:hidden !important;
+max-width:100% !important;
+}
+
+*{
+box-sizing:border-box;
+}
+
+.hero-content{
+padding-left:10px;
+padding-right:10px;
+}
+
+.hero h1{
+max-width:100%;
+overflow-wrap:break-word;
+}
+
+canvas{
+max-width:100%;
+}

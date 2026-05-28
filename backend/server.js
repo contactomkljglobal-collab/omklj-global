@@ -1,20 +1,22 @@
 const express = require("express");
 const cors = require("cors");
-require("dotenv").config();
+const dotenv = require("dotenv");
+
+dotenv.config();
 
 const connectDB = require("./config/db");
 const authRoutes = require("./routes/authRoutes");
 
 const app = express();
 
-/* DATABASE CONNECTION */
+/* CONNECT DATABASE */
 connectDB();
 
 /* MIDDLEWARE */
 app.use(cors());
 app.use(express.json());
 
-/* TEST ROUTE */
+/* HOME ROUTE */
 app.get("/", (req, res) => {
   res.send("OMKLJ Backend Running 🚀");
 });
@@ -22,7 +24,7 @@ app.get("/", (req, res) => {
 /* AUTH ROUTES */
 app.use("/api/auth", authRoutes);
 
-/* PORT */
+/* START SERVER */
 const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, () => {

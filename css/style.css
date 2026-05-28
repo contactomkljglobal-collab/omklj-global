@@ -753,3 +753,61 @@ overflow-wrap:break-word;
 canvas{
 max-width:100%;
 }
+
+/* =========================
+   FINAL RESPONSIVE POLISH
+========================= */
+
+.hero-content{
+position:relative;
+z-index:5;
+}
+
+.hero{
+position:relative;
+overflow:hidden;
+}
+
+canvas,
+.particles,
+.particle-container{
+pointer-events:none;
+}
+
+.menu-toggle{
+z-index:9999;
+}
+
+.primary-btn,
+.secondary-btn{
+border-radius:18px;
+min-height:56px;
+}
+
+.hero-subtitle{
+opacity:0.92;
+}
+
+@media (max-width:768px){
+
+.hero{
+padding-top:140px;
+}
+
+.hero-content{
+padding-left:18px;
+padding-right:18px;
+}
+
+.hero-title,
+.hero h1{
+font-size:2.5rem;
+line-height:1;
+}
+
+.menu-toggle{
+right:16px;
+bottom:16px;
+}
+
+}

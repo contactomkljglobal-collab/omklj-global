@@ -624,3 +624,109 @@ transform:skewX(-25deg);
 animation:
 shineSweep 1s forwards;
 }
+
+/* =========================
+   FINAL MOBILE FIX
+========================= */
+
+@media (max-width:768px){
+
+body{
+overflow-x:hidden;
+}
+
+.hero{
+min-height:100vh;
+padding:120px 20px 80px;
+display:flex;
+align-items:center;
+justify-content:center;
+overflow:hidden;
+}
+
+.hero-content{
+width:100%;
+max-width:100%;
+text-align:left;
+z-index:2;
+}
+
+.hero h1{
+font-size:2.8rem;
+line-height:0.95;
+letter-spacing:-2px;
+word-break:break-word;
+}
+
+.hero p{
+margin-top:20px;
+font-size:1rem;
+line-height:1.7;
+width:100%;
+max-width:100%;
+}
+
+.hero-buttons{
+flex-direction:column;
+gap:16px;
+width:100%;
+margin-top:30px;
+}
+
+.primary-btn,
+.secondary-btn{
+width:100%;
+justify-content:center;
+}
+
+.floating-tags{
+margin-top:30px;
+display:flex;
+flex-wrap:wrap;
+gap:10px;
+}
+
+.tag{
+font-size:0.8rem;
+padding:10px 14px;
+}
+
+.particles{
+display:none;
+}
+
+.rocket-scene{
+transform:scale(0.7);
+right:-60px;
+}
+
+.hologram-globe{
+transform:scale(0.75);
+}
+
+.smoke{
+display:none;
+}
+
+.rocket-glow{
+filter:blur(20px);
+}
+
+nav{
+display:none;
+}
+
+.navbar{
+padding:18px 20px;
+}
+
+.logo-area h2{
+font-size:20px;
+}
+
+.logo{
+width:46px;
+height:46px;
+}
+
+}

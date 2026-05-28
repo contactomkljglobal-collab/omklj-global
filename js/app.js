@@ -1,108 +1,256 @@
-const navbar = document.querySelector(".navbar");
+const particlesContainer =
+document.querySelector(".particles");
 
-/* NAVBAR */
+/* MAIN PARTICLES */
 
-window.addEventListener("scroll",()=>{
+for(let i=0;i<160;i++){
 
-if(window.scrollY > 50){
+const particle =
+document.createElement("span");
 
-navbar.style.background =
-"rgba(2,6,23,0.85)";
+const size =
+Math.random()*4 + 1;
 
-navbar.style.backdropFilter =
-"blur(20px)";
+particle.style.width =
+size + "px";
 
-}else{
+particle.style.height =
+size + "px";
 
-navbar.style.background =
-"rgba(2,6,23,0.4)";
+particle.style.position =
+"absolute";
+
+particle.style.borderRadius =
+"50%";
+
+particle.style.background =
+`rgba(
+${80 + Math.random()*120},
+${120 + Math.random()*120},
+255,
+${Math.random()}
+)`;
+
+particle.style.left =
+Math.random() *
+window.innerWidth + "px";
+
+particle.style.top =
+Math.random() *
+window.innerHeight + "px";
+
+particle.style.boxShadow =
+"0 0 20px rgba(96,165,250,0.6)";
+
+particle.style.animation =
+`
+particleFloat
+${Math.random()*20+10}s
+linear infinite
+`;
+
+particlesContainer
+.appendChild(particle);
 
 }
 
-});
+/* STARS */
 
-/* CURSOR GLOW */
+for(let i=0;i<100;i++){
 
-const cursorGlow =
-document.querySelector(".cursor-glow");
+const star =
+document.createElement("div");
 
-const spotlight =
-document.querySelector(".spotlight");
+const size =
+Math.random()*2 + 1;
 
-document.addEventListener("mousemove",(e)=>{
+star.style.position =
+"absolute";
 
-const x = e.clientX;
-const y = e.clientY;
+star.style.width =
+size + "px";
 
-cursorGlow.style.left = x + "px";
-cursorGlow.style.top = y + "px";
+star.style.height =
+size + "px";
 
-spotlight.style.left = x + "px";
-spotlight.style.top = y + "px";
+star.style.borderRadius =
+"50%";
 
-});
+star.style.background =
+"white";
 
-/* AURORA PARALLAX */
+star.style.left =
+Math.random() *
+window.innerWidth + "px";
 
-document.addEventListener("mousemove",(e)=>{
+star.style.top =
+Math.random() *
+window.innerHeight + "px";
 
-const aurora1 =
-document.querySelector(".aurora1");
+star.style.opacity =
+Math.random();
 
-const aurora2 =
-document.querySelector(".aurora2");
+star.style.animation =
+`
+twinkle
+${Math.random()*5+3}s
+infinite
+`;
 
-const aurora3 =
-document.querySelector(".aurora3");
+particlesContainer
+.appendChild(star);
 
-let x =
-e.clientX / window.innerWidth;
+}
 
-let y =
-e.clientY / window.innerHeight;
+/* METEORS */
 
-aurora1.style.transform =
-`translate(${x*40}px,${y*40}px)`;
+for(let i=0;i<6;i++){
 
-aurora2.style.transform =
-`translate(-${x*30}px,-${y*30}px)`;
+const meteor =
+document.createElement("div");
 
-aurora3.style.transform =
-`translate(${x*20}px,-${y*20}px)`;
+meteor.style.position =
+"absolute";
 
-});
+meteor.style.width =
+"220px";
 
-/* BUTTON EFFECTS */
+meteor.style.height =
+"2px";
 
-const buttons =
-document.querySelectorAll("button");
+meteor.style.background =
+"linear-gradient(to right,white,transparent)";
 
-buttons.forEach((btn)=>{
+meteor.style.transform =
+"rotate(-35deg)";
 
-btn.addEventListener("mouseenter",()=>{
+meteor.style.opacity =
+"0";
 
-btn.style.transform =
-"translateY(-6px) scale(1.03)";
+meteor.style.top =
+Math.random()*400 + "px";
 
-});
+meteor.style.left =
+Math.random()*1200 + "px";
 
-btn.addEventListener("mouseleave",()=>{
+meteor.style.animation =
+`
+meteorFall
+${Math.random()*8+6}s
+linear infinite
+`;
 
-btn.style.transform =
-"translateY(0px) scale(1)";
+meteor.style.animationDelay =
+Math.random()*10 + "s";
 
-});
+particlesContainer
+.appendChild(meteor);
 
-});
+}
 
-/* 3D CARD EFFECT */
+/* GLOW ORBS */
 
-const cards =
-document.querySelectorAll(
-".service-card,.stat-card,.dashboard-card"
+for(let i=0;i<12;i++){
+
+const orb =
+document.createElement("div");
+
+const size =
+Math.random()*160 + 80;
+
+orb.style.position =
+"absolute";
+
+orb.style.width =
+size + "px";
+
+orb.style.height =
+size + "px";
+
+orb.style.borderRadius =
+"50%";
+
+orb.style.filter =
+"blur(60px)";
+
+orb.style.opacity =
+"0.12";
+
+orb.style.background =
+`
+linear-gradient(
+45deg,
+#2563eb,
+#06b6d4,
+#7c3aed
+)
+`;
+
+orb.style.left =
+Math.random() *
+window.innerWidth + "px";
+
+orb.style.top =
+Math.random() *
+window.innerHeight + "px";
+
+orb.style.animation =
+`
+orbFloat
+${Math.random()*20+20}s
+ease-in-out infinite
+`;
+
+particlesContainer
+.appendChild(orb);
+
+}
+
+/* NETWORK DOTS */
+
+for(let i=0;i<25;i++){
+
+const dot =
+document.createElement("div");
+
+dot.style.position =
+"absolute";
+
+dot.style.width =
+"6px";
+
+dot.style.height =
+"6px";
+
+dot.style.borderRadius =
+"50%";
+
+dot.style.background =
+"#60a5fa";
+
+dot.style.boxShadow =
+"0 0 20px #60a5fa";
+
+dot.style.left =
+Math.random() *
+window.innerWidth + "px";
+
+dot.style.top =
+Math.random() *
+window.innerHeight + "px";
+
+dot.style.animation =
+`
+networkPulse
+${Math.random()*4+2}s
+infinite
+`;
+
+particlesContainer
+.appendChild(dot);
+
+}
+
+console.log(
+"OMKLJ ULTIMATE PARTICLE ENGINE LOADED"
 );
-
-cards.forEach((card)=>{
-
-card.addEventListener(
-"mousemove",(e)=>{

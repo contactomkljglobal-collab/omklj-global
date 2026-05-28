@@ -1,256 +1,146 @@
+/* =========================
+   PARTICLES
+========================= */
+
 const particlesContainer =
 document.querySelector(".particles");
 
-/* MAIN PARTICLES */
-
-for(let i=0;i<160;i++){
+for(let i=0;i<40;i++){
 
 const particle =
 document.createElement("span");
 
-const size =
-Math.random()*4 + 1;
-
-particle.style.width =
-size + "px";
-
-particle.style.height =
-size + "px";
-
-particle.style.position =
-"absolute";
-
-particle.style.borderRadius =
-"50%";
-
-particle.style.background =
-`rgba(
-${80 + Math.random()*120},
-${120 + Math.random()*120},
-255,
-${Math.random()}
-)`;
-
 particle.style.left =
-Math.random() *
-window.innerWidth + "px";
+Math.random()*100 + "%";
 
 particle.style.top =
-Math.random() *
-window.innerHeight + "px";
+Math.random()*100 + "%";
 
-particle.style.boxShadow =
-"0 0 20px rgba(96,165,250,0.6)";
-
-particle.style.animation =
-`
-particleFloat
-${Math.random()*20+10}s
-linear infinite
-`;
-
-particlesContainer
-.appendChild(particle);
-
-}
-
-/* STARS */
-
-for(let i=0;i<100;i++){
-
-const star =
-document.createElement("div");
-
-const size =
-Math.random()*2 + 1;
-
-star.style.position =
-"absolute";
-
-star.style.width =
-size + "px";
-
-star.style.height =
-size + "px";
-
-star.style.borderRadius =
-"50%";
-
-star.style.background =
-"white";
-
-star.style.left =
-Math.random() *
-window.innerWidth + "px";
-
-star.style.top =
-Math.random() *
-window.innerHeight + "px";
-
-star.style.opacity =
-Math.random();
-
-star.style.animation =
-`
-twinkle
-${Math.random()*5+3}s
-infinite
-`;
-
-particlesContainer
-.appendChild(star);
-
-}
-
-/* METEORS */
-
-for(let i=0;i<6;i++){
-
-const meteor =
-document.createElement("div");
-
-meteor.style.position =
-"absolute";
-
-meteor.style.width =
-"220px";
-
-meteor.style.height =
-"2px";
-
-meteor.style.background =
-"linear-gradient(to right,white,transparent)";
-
-meteor.style.transform =
-"rotate(-35deg)";
-
-meteor.style.opacity =
-"0";
-
-meteor.style.top =
-Math.random()*400 + "px";
-
-meteor.style.left =
-Math.random()*1200 + "px";
-
-meteor.style.animation =
-`
-meteorFall
-${Math.random()*8+6}s
-linear infinite
-`;
-
-meteor.style.animationDelay =
+particle.style.animationDelay =
 Math.random()*10 + "s";
 
-particlesContainer
-.appendChild(meteor);
+particle.style.animationDuration =
+Math.random()*10 + 10 + "s";
+
+particlesContainer.appendChild(particle);
 
 }
 
-/* GLOW ORBS */
+/* =========================
+   NAVBAR SCROLL
+========================= */
 
-for(let i=0;i<12;i++){
+const navbar =
+document.querySelector(".navbar");
 
-const orb =
-document.createElement("div");
+window.addEventListener("scroll",()=>{
 
-const size =
-Math.random()*160 + 80;
+if(window.scrollY > 50){
 
-orb.style.position =
-"absolute";
+navbar.style.background =
+"rgba(4,8,20,0.85)";
 
-orb.style.width =
-size + "px";
+}else{
 
-orb.style.height =
-size + "px";
-
-orb.style.borderRadius =
-"50%";
-
-orb.style.filter =
-"blur(60px)";
-
-orb.style.opacity =
-"0.12";
-
-orb.style.background =
-`
-linear-gradient(
-45deg,
-#2563eb,
-#06b6d4,
-#7c3aed
-)
-`;
-
-orb.style.left =
-Math.random() *
-window.innerWidth + "px";
-
-orb.style.top =
-Math.random() *
-window.innerHeight + "px";
-
-orb.style.animation =
-`
-orbFloat
-${Math.random()*20+20}s
-ease-in-out infinite
-`;
-
-particlesContainer
-.appendChild(orb);
+navbar.style.background =
+"rgba(4,8,20,0.55)";
 
 }
 
-/* NETWORK DOTS */
+});
 
-for(let i=0;i<25;i++){
+/* =========================
+   SCROLL REVEAL
+========================= */
 
-const dot =
-document.createElement("div");
+const revealItems =
+document.querySelectorAll(
+".stat-card,.service-card"
+);
 
-dot.style.position =
-"absolute";
+function reveal(){
 
-dot.style.width =
-"6px";
+const trigger =
+window.innerHeight * 0.85;
 
-dot.style.height =
-"6px";
+revealItems.forEach((item)=>{
 
-dot.style.borderRadius =
-"50%";
+const top =
+item.getBoundingClientRect().top;
 
-dot.style.background =
-"#60a5fa";
+if(top < trigger){
 
-dot.style.boxShadow =
-"0 0 20px #60a5fa";
+item.style.opacity = "1";
 
-dot.style.left =
-Math.random() *
-window.innerWidth + "px";
-
-dot.style.top =
-Math.random() *
-window.innerHeight + "px";
-
-dot.style.animation =
-`
-networkPulse
-${Math.random()*4+2}s
-infinite
-`;
-
-particlesContainer
-.appendChild(dot);
+item.style.transform =
+"translateY(0px)";
 
 }
+
+});
+
+}
+
+revealItems.forEach((item)=>{
+
+item.style.opacity = "0";
+
+item.style.transform =
+"translateY(50px)";
+
+item.style.transition =
+"0.8s ease";
+
+});
+
+window.addEventListener(
+"scroll",
+reveal
+);
+
+reveal();
+
+/* =========================
+   BUTTON EFFECT
+========================= */
+
+const buttons =
+document.querySelectorAll(
+".primary-btn,.secondary-btn"
+);
+
+buttons.forEach((btn)=>{
+
+btn.addEventListener(
+"mouseenter",()=>{
+
+btn.style.transform =
+"translateY(-4px)";
+
+});
+
+btn.addEventListener(
+"mouseleave",()=>{
+
+btn.style.transform =
+"translateY(0px)";
+
+});
+
+});
+
+/* =========================
+   PERFORMANCE
+========================= */
+
+window.addEventListener(
+"resize",()=>{
+
+document.body.style.overflowX =
+"hidden";
+
+});
 
 console.log(
-"OMKLJ ULTIMATE PARTICLE ENGINE LOADED"
+"OMKLJ GLOBAL SYSTEM READY 🚀"
 );

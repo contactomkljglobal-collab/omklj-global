@@ -224,21 +224,17 @@ animation:floatParticle 14s linear infinite;
 }
 
 @keyframes floatParticle{
-
 0%{
-transform:translateY(0px);
-opacity:0;
-}
-
-50%{
-opacity:1;
-}
-
-100%{
 transform:translateY(-120vh);
 opacity:0;
 }
-
+50%{
+opacity:1;
+}
+100%{
+transform:translateY(120vh);
+opacity:0;
+}
 }
 
 /* =========================

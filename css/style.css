@@ -377,7 +377,59 @@ width:50px;
 height:120px;
 background:linear-gradient(
 180deg,
-#fff7ad
+#fff7ad,
+#facc15,
+#fb923c,
+#ef4444,
+#7f1d1d
+);
+}
+
+.left-fire,
+.right-fire{
+width:35px;
+height:90px;
+background:linear-gradient(
+180deg,
+#fff7ad,
+#facc15,
+#fb923c,
+#dc2626
+);
+}
+
+@keyframes firePulse{
+0%{
+transform:translateX(-50%) scaleY(.85);
+}
+100%{
+transform:translateX(-50%) scaleY(1.15);
+}
+}
+
+@media(max-width:992px){
+
+.rocket-scene{
+position:relative;
+right:auto;
+top:auto;
+transform:none;
+margin-top:50px;
+}
+
+.rocket-wrapper{
+transform:scale(.8);
+}
+
+}
+
+@media(max-width:768px){
+
+.rocket-wrapper{
+transform:scale(.65);
+}
+
+}
 
 /* =========================
    STATS

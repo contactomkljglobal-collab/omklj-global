@@ -247,107 +247,137 @@ opacity:0;
 
 .rocket-scene{
 position:absolute;
-right:8%;
+right:5%;
 top:50%;
 transform:translateY(-50%);
-z-index:4;
+z-index:5;
 }
 
-.rocket-glow{
+.space-glow{
 position:absolute;
-width:220px;
-height:220px;
-background:#0072ff;
-border-radius:50%;
-filter:blur(100px);
-opacity:0.35;
-top:30px;
-left:-40px;
+width:500px;
+height:500px;
+background:radial-gradient(circle,#00c6ff33,#7c3aed22,transparent 70%);
+filter:blur(80px);
+left:-120px;
+top:-100px;
 }
 
-.rocket-launch{
-position:relative;
+.rocket-wrapper{
+display:flex;
+align-items:flex-end;
+gap:20px;
 animation:rocketFloat 5s ease-in-out infinite;
 }
 
 @keyframes rocketFloat{
-
-0%{
-transform:translateY(0px);
+0%{transform:translateY(0);}
+50%{transform:translateY(-20px);}
+100%{transform:translateY(0);}
 }
 
-50%{
-transform:translateY(-20px);
-}
+/* MAIN ROCKET */
 
-100%{
-transform:translateY(0px);
-}
-
-}
-
-.rocket-body{
+.main-rocket{
 position:relative;
-width:100px;
-height:220px;
-background:linear-gradient(to bottom,#ffffff,#dbeafe);
-border-radius:60px 60px 20px 20px;
+display:flex;
+flex-direction:column;
+align-items:center;
+}
+
+.rocket-top{
+width:0;
+height:0;
+border-left:35px solid transparent;
+border-right:35px solid transparent;
+border-bottom:70px solid #f8fafc;
+filter:drop-shadow(0 0 20px rgba(255,255,255,0.4));
+}
+
+.rocket-core{
+position:relative;
+width:70px;
+height:260px;
+background:linear-gradient(
+180deg,
+#ffffff 0%,
+#dbeafe 25%,
+#93c5fd 50%,
+#3b82f6 75%,
+#1e3a8a 100%
+);
+border-radius:0 0 35px 35px;
+overflow:hidden;
+box-shadow:
+0 0 40px rgba(0,114,255,.4),
+inset 0 0 25px rgba(255,255,255,.5);
 }
 
 .window{
-position:absolute;
-top:45px;
-left:50%;
-transform:translateX(-50%);
-width:38px;
-height:38px;
+width:22px;
+height:22px;
 border-radius:50%;
-background:#58a6ff;
-box-shadow:0 0 20px rgba(88,166,255,0.8);
+background:#38bdf8;
+border:2px solid white;
+margin:18px auto;
+box-shadow:0 0 20px #38bdf8;
 }
 
-.rocket-wing{
+.omklj-badge{
 position:absolute;
-bottom:25px;
-width:28px;
-height:60px;
-background:#ef4444;
-}
-
-.left-wing{
-left:-20px;
-clip-path:polygon(100% 0,0 100%,100% 100%);
-}
-
-.right-wing{
-right:-20px;
-clip-path:polygon(0 0,100% 100%,0 100%);
-}
-
-.fire{
-position:absolute;
-bottom:-70px;
+bottom:20px;
 left:50%;
 transform:translateX(-50%);
-width:28px;
-height:90px;
-background:linear-gradient(to bottom,#fde047,#fb923c,#dc2626);
+font-size:12px;
+font-weight:700;
+color:white;
+}
+
+/* BOOSTERS */
+
+.booster{
+display:flex;
+flex-direction:column;
+align-items:center;
+position:relative;
+}
+
+.booster .rocket-top{
+border-left:25px solid transparent;
+border-right:25px solid transparent;
+border-bottom:50px solid #e2e8f0;
+}
+
+.booster .rocket-core{
+width:50px;
+height:190px;
+background:linear-gradient(
+180deg,
+#f8fafc,
+#cbd5e1,
+#64748b
+);
+border-radius:0 0 25px 25px;
+}
+
+/* FIRE */
+
+.engine-fire{
+position:absolute;
+bottom:-100px;
+left:50%;
+transform:translateX(-50%);
 border-radius:50%;
 filter:blur(8px);
-animation:fireMove 0.3s infinite alternate;
+animation:firePulse .25s infinite alternate;
 }
 
-@keyframes fireMove{
-
-0%{
-height:75px;
-}
-
-100%{
-height:100px;
-}
-
-}
+.center-fire{
+width:50px;
+height:120px;
+background:linear-gradient(
+180deg,
+#fff7ad
 
 /* =========================
    STATS

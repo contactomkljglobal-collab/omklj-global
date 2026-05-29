@@ -1,19 +1,21 @@
 const express = require("express");
 const router = express.Router();
 
-const { registerUser } = require("../controllers/authController");
+const {
+  registerUser
+} = require("../controllers/authController");
 
-// Test Route
+// Test route
 router.get("/", (req, res) => {
-  res.send("Auth Route Working ✅");
+  res.send("Auth Route Working");
 });
 
-// Test Register Route
+// Test register route
 router.get("/register", (req, res) => {
-  res.send("Register API Working ✅");
+  res.send("Register Route Working");
 });
 
-// Actual Register API
+// Actual register route
 router.post("/register", registerUser);
 
 module.exports = router;

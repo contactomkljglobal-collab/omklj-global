@@ -578,8 +578,29 @@ transform:none;
 
 @media(max-width:768px){
 
+.menu-toggle{
+display:block;
+font-size:30px;
+color:white;
+cursor:pointer;
+}
+
 nav{
 display:none;
+position:absolute;
+top:90px;
+right:20px;
+background:#081227;
+padding:20px;
+border-radius:15px;
+flex-direction:column;
+gap:15px;
+min-width:180px;
+z-index:1000;
+}
+
+nav.active{
+display:flex;
 }
 
 .navbar{

@@ -319,16 +319,6 @@ margin:18px auto;
 box-shadow:0 0 20px #38bdf8;
 }
 
-.omklj-badge{
-position:absolute;
-bottom:20px;
-left:50%;
-transform:translateX(-50%);
-font-size:12px;
-font-weight:700;
-color:white;
-}
-
 /* BOOSTERS */
 
 .booster{

@@ -49,22 +49,23 @@ border-bottom:1px solid rgba(255,255,255,0.08);
 z-index:999;
 }
 
-.logo-area{
-display:flex;
-align-items:center;
-gap:14px;
+.logo{
+    width: 90px;
+    height: 90px;
+    object-fit: contain;
+    display: block;
 }
 
-.logo{
-width:100px;
-height:100px;
-object-fit:contain;
-border-radius:0;
+.logo-area{
+    display: flex;
+    align-items: center;
+    gap: 15px;
 }
 
 .logo-area h2{
-font-size:1.4rem;
-font-weight:700;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: white;
 }
 
 nav{

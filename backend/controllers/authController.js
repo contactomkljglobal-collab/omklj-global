@@ -59,17 +59,55 @@ exports.registerUser = async (req, res) => {
 
 /* LOGIN USER */
 exports.loginUser = async (req, res) => {
-  try {
-    const { email, password } = req.body;
+try {
+const { email, password } = req.body;
 
-    if (!email || !password) {
-      return res.status(400).json({
-        message: "Please fill all fields"
-      });
-    }
+if (!email || !password) {
+  return res.status(400).json({
+    message: "Please fill all fields"
+  });
+}
 
-    const user = await User.findOne({ email });
+const user = await User.findOne({ email });
 
-    if (!user) {
-      return res.status(400).json({
-        message: "Invalid
+if (!user) {
+  return res.status(400).json({
+    message: "Invalid email or password"
+  });
+}
+
+const isMatch = await bcrypt.compare(password, user.password);
+
+if (!isMatch) {
+  return res.status(400).json({
+    message: "Invalid email or password"
+  });
+}
+
+const token = jwt.sign(
+  { id: user._id },
+  process.env.JWT_SECRET,
+  {
+    expiresIn: "30d"
+  }
+);
+
+res.status(200).json({
+  success: true,
+  _id: user._id,
+  name: user.name,
+  email: user.email,
+  token
+});
+
+} catch (error) {
+console.error("LOGIN ERROR:", error);
+
+res.status(500).json({
+  success: false,
+  error: error.message,
+  stack: error.stack
+});
+
+}
+};

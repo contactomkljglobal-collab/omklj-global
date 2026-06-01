@@ -245,7 +245,7 @@ opacity:0;
 .rocket-scene{
 position:absolute;
 right:5%;
-top:25%;
+top:40%;
 transform:translateY(-50%);
 z-index:5;
 }

@@ -1,186 +1,795 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>OMKLJ India - Worker Registration</title>
+
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif}
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
 body{
 background:#020617;
-color:#fff;
+color:white;
 overflow-x:hidden;
 min-height:100vh;
-}
-.stars{
-position:fixed;inset:0;pointer-events:none;
-background:
-radial-gradient(circle at 20% 20%,rgba(0,170,255,.18),transparent 25%),
-radial-gradient(circle at 80% 30%,rgba(0,120,255,.12),transparent 25%),
-radial-gradient(circle at 50% 80%,rgba(0,170,255,.15),transparent 25%);
-animation:floatbg 10s ease-in-out infinite alternate;
-}
-@keyframes floatbg{
-from{transform:translateY(0)}
-to{transform:translateY(-20px)}
-}
-.container{
 position:relative;
-z-index:2;
-max-width:1100px;
+}
+
+/* ======================
+   GALAXY BACKGROUND
+====================== */
+
+body::before{
+content:"";
+position:fixed;
+width:800px;
+height:800px;
+border-radius:50%;
+
+background:
+radial-gradient(
+circle,
+rgba(0,170,255,.28),
+transparent 70%
+);
+
+top:-250px;
+left:-200px;
+
+animation:
+orbOne 18s ease-in-out infinite alternate;
+
+z-index:-4;
+}
+
+body::after{
+content:"";
+position:fixed;
+width:700px;
+height:700px;
+border-radius:50%;
+
+background:
+radial-gradient(
+circle,
+rgba(130,0,255,.18),
+transparent 70%
+);
+
+bottom:-250px;
+right:-150px;
+
+animation:
+orbTwo 20s ease-in-out infinite alternate;
+
+z-index:-4;
+}
+
+@keyframes orbOne{
+
+0%{
+transform:translate(0,0);
+}
+
+100%{
+transform:translate(140px,80px);
+}
+
+}
+
+@keyframes orbTwo{
+
+0%{
+transform:translate(0,0);
+}
+
+100%{
+transform:translate(-120px,-100px);
+}
+
+}
+
+/* ======================
+   STARS
+====================== */
+
+.stars{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+overflow:hidden;
+pointer-events:none;
+z-index:-3;
+}
+
+.star{
+position:absolute;
+background:white;
+border-radius:50%;
+animation:twinkle infinite;
+}
+
+.star:nth-child(1){
+top:10%;
+left:15%;
+width:2px;
+height:2px;
+animation-duration:4s;
+}
+
+.star:nth-child(2){
+top:20%;
+left:80%;
+width:3px;
+height:3px;
+animation-duration:5s;
+}
+
+.star:nth-child(3){
+top:35%;
+left:50%;
+width:2px;
+height:2px;
+animation-duration:6s;
+}
+
+.star:nth-child(4){
+top:60%;
+left:25%;
+width:3px;
+height:3px;
+animation-duration:4s;
+}
+
+.star:nth-child(5){
+top:75%;
+left:70%;
+width:2px;
+height:2px;
+animation-duration:5s;
+}
+
+.star:nth-child(6){
+top:45%;
+left:90%;
+width:3px;
+height:3px;
+animation-duration:6s;
+}
+
+.star:nth-child(7){
+top:85%;
+left:40%;
+width:2px;
+height:2px;
+animation-duration:4s;
+}
+
+.star:nth-child(8){
+top:15%;
+left:60%;
+width:3px;
+height:3px;
+animation-duration:5s;
+}
+
+.star:nth-child(9){
+top:30%;
+left:30%;
+width:2px;
+height:2px;
+animation-duration:6s;
+}
+
+.star:nth-child(10){
+top:90%;
+left:85%;
+width:3px;
+height:3px;
+animation-duration:4s;
+}
+
+@keyframes twinkle{
+
+0%{
+opacity:.2;
+transform:scale(1);
+}
+
+50%{
+opacity:1;
+transform:scale(1.8);
+}
+
+100%{
+opacity:.2;
+transform:scale(1);
+}
+
+}
+
+/* ======================
+   CONTAINER
+====================== */
+
+.container{
+max-width:1200px;
 margin:auto;
 padding:40px 20px;
+position:relative;
+z-index:2;
 }
-.logo-section{text-align:center;margin-bottom:25px}
+
+/* ======================
+   LOGO
+====================== */
+
+.logo-section{
+text-align:center;
+margin-bottom:30px;
+animation:fadeUp 1.2s ease;
+}
+
 .logo-section img{
-width:140px;
-filter:drop-shadow(0 0 15px #00aaff);
-animation:floatlogo 4s ease-in-out infinite;
+width:150px;
+
+filter:
+drop-shadow(0 0 15px #00aaff)
+drop-shadow(0 0 25px #00aaff);
+
+animation:
+logoFloat 4s ease-in-out infinite;
 }
-@keyframes floatlogo{
-50%{transform:translateY(-10px)}
+
+.logo-section h1{
+font-size:2.7rem;
+margin-top:12px;
+font-weight:800;
 }
-.logo-section h1{font-size:2.4rem;margin-top:10px}
-.logo-section p{color:#c8d4f0}
+
+  /* ======================
+   BENEFITS
+====================== */
+
 .benefits{
 display:grid;
 grid-template-columns:repeat(5,1fr);
-gap:10px;
-margin:25px 0;
+gap:12px;
+margin-bottom:25px;
 }
+
 .benefit{
-background:rgba(255,255,255,.06);
-backdrop-filter:blur(10px);
-padding:12px;
-border-radius:12px;
+background:rgba(255,255,255,.05);
+border:1px solid rgba(255,255,255,.08);
+backdrop-filter:blur(14px);
+
+padding:14px;
+border-radius:16px;
+
 text-align:center;
+
+transition:.3s;
 }
+
+.benefit:hover{
+transform:translateY(-6px);
+box-shadow:0 0 20px rgba(0,170,255,.25);
+}
+
+.benefit span{
+display:block;
+font-size:.9rem;
+margin-top:5px;
+}
+
+/* ======================
+   FORM CARD
+====================== */
+
 .form-card{
+
 background:rgba(255,255,255,.06);
-backdrop-filter:blur(18px);
+
 border:1px solid rgba(255,255,255,.1);
-border-radius:24px;
-padding:30px;
-box-shadow:0 0 30px rgba(0,170,255,.15);
+
+backdrop-filter:blur(20px);
+
+border-radius:28px;
+
+padding:35px;
+
+box-shadow:
+0 0 30px rgba(0,170,255,.15);
+
+animation:fadeUp 1.5s ease;
+
 }
+
+.form-card h2{
+font-size:2rem;
+margin-bottom:10px;
+}
+
+.form-card p{
+color:#d6dff5;
+}
+
+/* ======================
+   SECTION TITLE
+====================== */
+
 .section-title{
-margin:20px 0 12px;
-color:#59c5ff;
+
+margin-top:30px;
+margin-bottom:15px;
+
+font-size:1.1rem;
 font-weight:700;
+
+color:#5cc9ff;
+
+border-left:4px solid #00aaff;
+
+padding-left:12px;
 }
+
+/* ======================
+   GRID
+====================== */
+
 .grid{
 display:grid;
 grid-template-columns:1fr 1fr;
-gap:16px;
+gap:18px;
 }
-input,select,textarea{
+
+/* ======================
+   FORM FIELDS
+====================== */
+
+.field{
+display:flex;
+flex-direction:column;
+margin-bottom:15px;
+}
+
+label{
+margin-bottom:8px;
+font-size:.95rem;
+font-weight:500;
+}
+
+input,
+select,
+textarea{
+
 width:100%;
-padding:14px;
+
+padding:14px 16px;
+
 border:none;
-border-radius:12px;
-background:#12203f;
-color:#fff;
+
 outline:none;
-}
-label{display:block;margin-bottom:6px;font-size:.95rem}
-.field{margin-bottom:14px}
-.notice{
+
+border-radius:14px;
+
 background:#12203f;
-padding:16px;
-border-radius:14px;
-margin-top:15px;
-}
-.submit-btn{
-width:100%;
-padding:16px;
-margin-top:20px;
-border:none;
-border-radius:14px;
-font-size:1rem;
-font-weight:700;
-cursor:pointer;
-background:linear-gradient(90deg,#00aaff,#0066ff);
+
 color:white;
-box-shadow:0 0 20px rgba(0,170,255,.4);
+
+transition:.3s;
+
 }
-.submit-btn:hover{transform:translateY(-2px)}
+
+textarea{
+resize:none;
+height:120px;
+}
+
+input:focus,
+select:focus,
+textarea:focus{
+
+box-shadow:
+0 0 0 2px #00aaff,
+0 0 20px rgba(0,170,255,.25);
+
+}
+
+/* ======================
+   FILE INPUT
+====================== */
+
+input[type="file"]{
+
+padding:12px;
+
+cursor:pointer;
+
+}
+
+/* ======================
+   NOTICE BOX
+====================== */
+
+.notice{
+
+background:#12203f;
+
+padding:18px;
+
+border-radius:16px;
+
+margin-top:18px;
+
+line-height:1.8;
+
+border-left:4px solid #00aaff;
+
+}
+
+.notice h3{
+margin-bottom:10px;
+color:#5cc9ff;
+}
+
+/* ======================
+   BUTTON
+====================== */
+
+.submit-btn{
+
+width:100%;
+
+padding:18px;
+
+margin-top:25px;
+
+border:none;
+
+border-radius:16px;
+
+font-size:1rem;
+
+font-weight:700;
+
+cursor:pointer;
+
+background:
+linear-gradient(
+90deg,
+#00aaff,
+#0066ff
+);
+
+color:white;
+
+box-shadow:
+0 0 25px rgba(0,170,255,.4);
+
+transition:.3s;
+
+}
+
+.submit-btn:hover{
+
+transform:translateY(-4px);
+
+box-shadow:
+0 0 35px rgba(0,170,255,.6);
+
+}
+
+/* ======================
+   MOBILE
+====================== */
+
 @media(max-width:768px){
-.logo-section h1{font-size:1.8rem}
-.benefits{grid-template-columns:1fr 1fr}
-.grid{grid-template-columns:1fr}
-.container{padding:20px 14px}
-.form-card{padding:20px}
+
+.container{
+padding:20px 14px;
 }
+
+.logo-section img{
+width:120px;
+}
+
+.logo-section h1{
+font-size:1.9rem;
+}
+
+.benefits{
+grid-template-columns:1fr 1fr;
+}
+
+.grid{
+grid-template-columns:1fr;
+}
+
+.form-card{
+padding:22px;
+}
+
+}
+
+/* ======================
+   END STYLE
+====================== */
+
 </style>
+
 </head>
+
 <body>
-<div class="stars"></div>
+
+<div class="stars">
+
+<div class="star"></div>
+<div class="star"></div>
+<div class="star"></div>
+<div class="star"></div>
+<div class="star"></div>
+<div class="star"></div>
+<div class="star"></div>
+<div class="star"></div>
+<div class="star"></div>
+<div class="star"></div>
+
+</div>
 
 <div class="container">
 
 <div class="logo-section">
-<img src="https://i.ibb.co/N24ghXDh/Picsart-26-06-01-01-49-36-525.png" alt="OMKLJ Logo">
+
+<img
+src="https://i.ibb.co/N24ghXDh/Picsart-26-06-01-01-49-36-525.png"
+alt="OMKLJ Logo"
+>
+
 <h1>OMKLJ INDIA</h1>
-<p>Verified Workers • Verified Employers • Trusted Opportunities</p>
+
+<p>
+Verified Workers • Verified Employers • Trusted Opportunities
+</p>
+
 </div>
 
 <div class="benefits">
-<div class="benefit">✓ Verified Employers</div>
-<div class="benefit">✓ Secure Payments</div>
-<div class="benefit">✓ QR Attendance</div>
-<div class="benefit">✓ Trust Score</div>
-<div class="benefit">✓ Nearby Jobs</div>
+
+<div class="benefit">
+🛡
+<span>Verified Employers</span>
+</div>
+
+<div class="benefit">
+💰
+<span>Secure Payments</span>
+</div>
+
+<div class="benefit">
+📍
+<span>Nearby Jobs</span>
+</div>
+
+<div class="benefit">
+📱
+<span>QR Attendance</span>
+</div>
+
+<div class="benefit">
+⭐
+<span>Trust Score</span>
+</div>
+
 </div>
 
 <div class="form-card">
-<h2>👷 Worker Registration</h2>
 
-<h3 class="section-title">Personal Information</h3>
-<div class="grid">
-<div class="field"><label>Full Name</label><input type="text"></div>
-<div class="field"><label>Mobile Number</label><input type="tel"></div>
-<div class="field"><label>Email Address</label><input type="email"></div>
-<div class="field"><label>Age (21+)</label><input type="number"></div>
+<h2>👷🏻‍♂️ Worker Registration</h2>
+
+<p>
+Create your verified OMKLJ worker account.
+</p>
+
+<div class="section-title">
+Personal Information
 </div>
 
-<h3 class="section-title">Location</h3>
-<div class="grid">
-<div class="field"><label>State</label><input type="text"></div>
-<div class="field"><label>District</label><input type="text"></div>
-</div>
+.logo-section p{
+color:#d7e4ff;
+margin-top:10px;
+}
 
-<h3 class="section-title">Work Information</h3>
-<div class="grid">
+@keyframes logoFloat{
+
+50%{
+transform:translateY(-12px);
+}
+
+}
+
+@keyframes fadeUp{
+
+from{
+opacity:0;
+transform:translateY(30px);
+}
+
+to{
+opacity:1;
+transform:translateY(0);
+}
+
+}
+
+  <div class="grid">
+
 <div class="field">
+<label>Full Name</label>
+<input type="text" placeholder="Enter Full Name">
+</div>
+
+<div class="field">
+<label>Mobile Number</label>
+<input type="tel" placeholder="Enter Mobile Number">
+</div>
+
+<div class="field">
+<label>Email Address</label>
+<input type="email" placeholder="Enter Email Address">
+</div>
+
+<div class="field">
+<label>Age (21+)</label>
+<input type="number" placeholder="Enter Age">
+</div>
+
+</div>
+
+<div class="section-title">
+Location
+</div>
+
+<div class="grid">
+
+<div class="field">
+<label>State</label>
+<input type="text" placeholder="State">
+</div>
+
+<div class="field">
+<label>District</label>
+<input type="text" placeholder="District">
+</div>
+
+</div>
+
+<div class="section-title">
+Work Information
+</div>
+
+<div class="grid">
+
+<div class="field">
+
 <label>Work Category</label>
-<select><option>Driver</option><option>Cleaner</option><option>Cook</option><option>Electrician</option></select>
+
+<select>
+
+<option>Driver</option>
+<option>Cleaner</option>
+<option>Cook</option>
+<option>Electrician</option>
+<option>Plumber</option>
+<option>Mechanic</option>
+<option>Security Guard</option>
+<option>Delivery Worker</option>
+<option>Office Assistant</option>
+<option>Data Entry Operator</option>
+
+</select>
+
 </div>
+
 <div class="field">
+
 <label>Employment Type</label>
-<select><option>Part-Time</option><option>Full-Time</option><option>Both</option></select>
-</div>
+
+<select>
+
+<option>Part-Time</option>
+<option>Full-Time</option>
+<option>Both</option>
+
+</select>
+
 </div>
 
-<h3 class="section-title">Verification</h3>
-<div class="grid">
-<div class="field"><label>Aadhaar Number</label><input type="text"></div>
-<div class="field"><label>Profile Photo</label><input type="file"></div>
 </div>
 
-<h3 class="section-title">Emergency Contact</h3>
+<div class="section-title">
+Verification
+</div>
+
 <div class="grid">
-<div class="field"><label>Contact Name</label><input type="text"></div>
-<div class="field"><label>Contact Number</label><input type="tel"></div>
+
+<div class="field">
+<label>Aadhaar Number</label>
+<input type="text" placeholder="Enter Aadhaar Number">
+</div>
+
+<div class="field">
+<label>Profile Photo</label>
+<input type="file">
+</div>
+
+</div>
+
+<div class="section-title">
+Emergency Contact
+</div>
+
+<div class="grid">
+
+<div class="field">
+<label>Contact Name</label>
+<input type="text" placeholder="Emergency Contact Name">
+</div>
+
+<div class="field">
+<label>Contact Number</label>
+<input type="tel" placeholder="Emergency Contact Number">
+</div>
+
 </div>
 
 <div class="notice">
-<b>Important:</b> One Aadhaar = One OMKLJ Account. Duplicate accounts may be frozen pending verification.
+
+<h3>Important Notice</h3>
+
+One Aadhaar = One OMKLJ Account.<br>
+Duplicate accounts may be frozen pending verification.<br>
+Workers found providing false information may be suspended.
+
 </div>
 
-<button class="submit-btn">Create Verified Worker Account →</button>
+<div class="notice">
+
+<h3>Worker Benefits</h3>
+
+✓ Verified Employers<br>
+✓ Nearby Jobs<br>
+✓ QR Attendance Tracking<br>
+✓ Trust Score System<br>
+✓ Secure Opportunities
 
 </div>
+
+<button class="submit-btn">
+Create Verified Worker Account →
+</button>
+
 </div>
+
+</div>
+
 </body>
 </html>

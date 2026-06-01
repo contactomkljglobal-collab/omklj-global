@@ -6,7 +6,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>OMKLJ India - Worker Registration</title>
+<title>OMKLJ India - Worker Dashboard</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
@@ -17,10 +17,6 @@ margin:0;
 padding:0;
 box-sizing:border-box;
 font-family:'Poppins',sans-serif;
-}
-
-html{
-scroll-behavior:smooth;
 }
 
 body{
@@ -38,31 +34,37 @@ position:relative;
 body::before{
 content:"";
 position:fixed;
-width:800px;
-height:800px;
+
+width:900px;
+height:900px;
+
 border-radius:50%;
 
 background:
 radial-gradient(
 circle,
-rgba(0,170,255,.28),
+rgba(0,170,255,.25),
 transparent 70%
 );
 
-top:-250px;
-left:-200px;
+top:-300px;
+left:-250px;
 
 animation:
-orbOne 18s ease-in-out infinite alternate;
+orbOne 20s ease-in-out infinite alternate;
 
 z-index:-4;
 }
 
 body::after{
+
 content:"";
+
 position:fixed;
-width:700px;
-height:700px;
+
+width:800px;
+height:800px;
+
 border-radius:50%;
 
 background:
@@ -73,10 +75,10 @@ transparent 70%
 );
 
 bottom:-250px;
-right:-150px;
+right:-200px;
 
 animation:
-orbTwo 20s ease-in-out infinite alternate;
+orbTwo 22s ease-in-out infinite alternate;
 
 z-index:-4;
 }
@@ -88,7 +90,7 @@ transform:translate(0,0);
 }
 
 100%{
-transform:translate(140px,80px);
+transform:translate(150px,100px);
 }
 
 }
@@ -100,7 +102,7 @@ transform:translate(0,0);
 }
 
 100%{
-transform:translate(-120px,-100px);
+transform:translate(-150px,-100px);
 }
 
 }
@@ -115,7 +117,6 @@ top:0;
 left:0;
 width:100%;
 height:100%;
-overflow:hidden;
 pointer-events:none;
 z-index:-3;
 }
@@ -127,85 +128,14 @@ border-radius:50%;
 animation:twinkle infinite;
 }
 
-.star:nth-child(1){
-top:10%;
-left:15%;
-width:2px;
-height:2px;
-animation-duration:4s;
-}
-
-.star:nth-child(2){
-top:20%;
-left:80%;
-width:3px;
-height:3px;
-animation-duration:5s;
-}
-
-.star:nth-child(3){
-top:35%;
-left:50%;
-width:2px;
-height:2px;
-animation-duration:6s;
-}
-
-.star:nth-child(4){
-top:60%;
-left:25%;
-width:3px;
-height:3px;
-animation-duration:4s;
-}
-
-.star:nth-child(5){
-top:75%;
-left:70%;
-width:2px;
-height:2px;
-animation-duration:5s;
-}
-
-.star:nth-child(6){
-top:45%;
-left:90%;
-width:3px;
-height:3px;
-animation-duration:6s;
-}
-
-.star:nth-child(7){
-top:85%;
-left:40%;
-width:2px;
-height:2px;
-animation-duration:4s;
-}
-
-.star:nth-child(8){
-top:15%;
-left:60%;
-width:3px;
-height:3px;
-animation-duration:5s;
-}
-
-.star:nth-child(9){
-top:30%;
-left:30%;
-width:2px;
-height:2px;
-animation-duration:6s;
-}
-
-.star:nth-child(10){
-top:90%;
-left:85%;
-width:3px;
-height:3px;
-animation-duration:4s;
-}
+.star:nth-child(1){top:10%;left:12%;width:2px;height:2px;animation-duration:4s;}
+.star:nth-child(2){top:15%;left:80%;width:3px;height:3px;animation-duration:5s;}
+.star:nth-child(3){top:30%;left:55%;width:2px;height:2px;animation-duration:6s;}
+.star:nth-child(4){top:45%;left:20%;width:3px;height:3px;animation-duration:4s;}
+.star:nth-child(5){top:60%;left:85%;width:2px;height:2px;animation-duration:5s;}
+.star:nth-child(6){top:75%;left:40%;width:3px;height:3px;animation-duration:6s;}
+.star:nth-child(7){top:88%;left:70%;width:2px;height:2px;animation-duration:4s;}
+.star:nth-child(8){top:22%;left:35%;width:3px;height:3px;animation-duration:5s;}
 
 @keyframes twinkle{
 
@@ -227,247 +157,253 @@ transform:scale(1);
 }
 
 /* ======================
-   CONTAINER
+   MAIN CONTAINER
 ====================== */
 
 .container{
-max-width:1200px;
+max-width:1300px;
 margin:auto;
-padding:40px 20px;
+padding:30px 20px;
 position:relative;
 z-index:2;
 }
 
 /* ======================
-   LOGO
+   HEADER
 ====================== */
 
-.logo-section{
-text-align:center;
-margin-bottom:30px;
-animation:fadeUp 1.2s ease;
+.dashboard-header{
+
+display:flex;
+justify-content:space-between;
+align-items:center;
+
+background:rgba(255,255,255,.05);
+
+border:1px solid rgba(255,255,255,.08);
+
+backdrop-filter:blur(18px);
+
+padding:20px;
+
+border-radius:22px;
+
+margin-bottom:20px;
+
 }
 
-.logo-section img{
-width:150px;
+.logo-area{
+display:flex;
+align-items:center;
+gap:15px;
+}
+
+.logo-area img{
+width:70px;
 
 filter:
-drop-shadow(0 0 15px #00aaff)
-drop-shadow(0 0 25px #00aaff);
+drop-shadow(0 0 12px #00aaff);
 
 animation:
-logoFloat 4s ease-in-out infinite;
+floatLogo 4s ease-in-out infinite;
 }
 
-.logo-section h1{
-font-size:2.7rem;
-margin-top:12px;
-font-weight:800;
+@keyframes floatLogo{
+
+50%{
+transform:translateY(-8px);
 }
 
-  /* ======================
-   BENEFITS
+}
+
+.worker-info h2{
+font-size:1.5rem;
+}
+
+.worker-info p{
+color:#b8c8ea;
+margin-top:5px;
+}
+
+.verify-badge{
+
+background:#0d2a55;
+
+padding:10px 15px;
+
+border-radius:12px;
+
+font-weight:600;
+
+color:#59c5ff;
+
+}
+
+/* ======================
+   STATS
 ====================== */
 
-.benefits{
+.stats-grid{
+
 display:grid;
-grid-template-columns:repeat(5,1fr);
-gap:12px;
-margin-bottom:25px;
+
+grid-template-columns:
+repeat(4,1fr);
+
+gap:15px;
+
+margin-bottom:20px;
 }
 
-.benefit{
-background:rgba(255,255,255,.05);
-border:1px solid rgba(255,255,255,.08);
-backdrop-filter:blur(14px);
+.stat-card{
 
-padding:14px;
-border-radius:16px;
+background:rgba(255,255,255,.05);
+
+border:1px solid rgba(255,255,255,.08);
+
+backdrop-filter:blur(15px);
+
+padding:20px;
+
+border-radius:20px;
 
 text-align:center;
 
 transition:.3s;
 }
 
-.benefit:hover{
-transform:translateY(-6px);
-box-shadow:0 0 20px rgba(0,170,255,.25);
-}
+.stat-card:hover{
 
-.benefit span{
-display:block;
-font-size:.9rem;
-margin-top:5px;
-}
-
-/* ======================
-   FORM CARD
-====================== */
-
-.form-card{
-
-background:rgba(255,255,255,.06);
-
-border:1px solid rgba(255,255,255,.1);
-
-backdrop-filter:blur(20px);
-
-border-radius:28px;
-
-padding:35px;
+transform:translateY(-5px);
 
 box-shadow:
-0 0 30px rgba(0,170,255,.15);
-
-animation:fadeUp 1.5s ease;
+0 0 20px rgba(0,170,255,.2);
 
 }
 
-.form-card h2{
+.stat-card h3{
 font-size:2rem;
-margin-bottom:10px;
+color:#59c5ff;
 }
 
-.form-card p{
-color:#d6dff5;
+.stat-card p{
+margin-top:8px;
+color:#cfdcff;
 }
-
-/* ======================
-   SECTION TITLE
+   /* ======================
+   JOB SECTION
 ====================== */
 
 .section-title{
 
-margin-top:30px;
-margin-bottom:15px;
+font-size:1.3rem;
 
-font-size:1.1rem;
 font-weight:700;
 
-color:#5cc9ff;
+margin-bottom:15px;
 
-border-left:4px solid #00aaff;
+color:#59c5ff;
 
-padding-left:12px;
 }
 
-/* ======================
-   GRID
-====================== */
+.jobs-grid{
 
-.grid{
 display:grid;
-grid-template-columns:1fr 1fr;
+
+grid-template-columns:
+repeat(2,1fr);
+
 gap:18px;
+
+margin-bottom:25px;
 }
 
-/* ======================
-   FORM FIELDS
-====================== */
+.job-card{
 
-.field{
-display:flex;
-flex-direction:column;
+background:rgba(255,255,255,.05);
+
+border:1px solid rgba(255,255,255,.08);
+
+backdrop-filter:blur(15px);
+
+border-radius:22px;
+
+padding:22px;
+
+transition:.3s;
+}
+
+.job-card:hover{
+
+transform:translateY(-5px);
+
+box-shadow:
+0 0 20px rgba(0,170,255,.2);
+
+}
+
+.job-title{
+
+font-size:1.2rem;
+
+font-weight:700;
+
+margin-bottom:10px;
+}
+
+.job-company{
+
+color:#59c5ff;
+
+margin-bottom:12px;
+}
+
+.job-details{
+
+display:grid;
+
+grid-template-columns:
+1fr 1fr;
+
+gap:10px;
+
 margin-bottom:15px;
 }
 
-label{
-margin-bottom:8px;
-font-size:.95rem;
-font-weight:500;
-}
-
-input,
-select,
-textarea{
-
-width:100%;
-
-padding:14px 16px;
-
-border:none;
-
-outline:none;
-
-border-radius:14px;
+.job-detail{
 
 background:#12203f;
 
-color:white;
+padding:10px;
 
-transition:.3s;
+border-radius:10px;
 
+text-align:center;
 }
 
-textarea{
-resize:none;
-height:120px;
+.job-detail span{
+
+display:block;
+
+font-size:.8rem;
+
+color:#b8c8ea;
 }
 
-input:focus,
-select:focus,
-textarea:focus{
-
-box-shadow:
-0 0 0 2px #00aaff,
-0 0 20px rgba(0,170,255,.25);
-
-}
-
-/* ======================
-   FILE INPUT
-====================== */
-
-input[type="file"]{
-
-padding:12px;
-
-cursor:pointer;
-
-}
-
-/* ======================
-   NOTICE BOX
-====================== */
-
-.notice{
-
-background:#12203f;
-
-padding:18px;
-
-border-radius:16px;
-
-margin-top:18px;
-
-line-height:1.8;
-
-border-left:4px solid #00aaff;
-
-}
-
-.notice h3{
-margin-bottom:10px;
-color:#5cc9ff;
-}
-
-/* ======================
-   BUTTON
-====================== */
-
-.submit-btn{
-
-width:100%;
-
-padding:18px;
-
-margin-top:25px;
-
-border:none;
-
-border-radius:16px;
+.job-detail strong{
 
 font-size:1rem;
+}
+
+.apply-btn{
+
+width:100%;
+
+padding:14px;
+
+border:none;
+
+border-radius:14px;
 
 font-weight:700;
 
@@ -482,57 +418,110 @@ linear-gradient(
 
 color:white;
 
-box-shadow:
-0 0 25px rgba(0,170,255,.4);
-
 transition:.3s;
+}
+
+.apply-btn:hover{
+
+transform:translateY(-3px);
 
 }
 
-.submit-btn:hover{
+/* ======================
+   NOTIFICATIONS
+====================== */
 
-transform:translateY(-4px);
+.notifications{
 
-box-shadow:
-0 0 35px rgba(0,170,255,.6);
+background:rgba(255,255,255,.05);
 
+border:1px solid rgba(255,255,255,.08);
+
+backdrop-filter:blur(15px);
+
+border-radius:22px;
+
+padding:22px;
+
+margin-bottom:20px;
+}
+
+.notification{
+
+background:#12203f;
+
+padding:14px;
+
+border-radius:12px;
+
+margin-bottom:10px;
+}
+
+/* ======================
+   WORK HISTORY
+====================== */
+
+.history{
+
+background:rgba(255,255,255,.05);
+
+border:1px solid rgba(255,255,255,.08);
+
+backdrop-filter:blur(15px);
+
+border-radius:22px;
+
+padding:22px;
+}
+
+.history-item{
+
+display:flex;
+
+justify-content:space-between;
+
+padding:12px;
+
+border-bottom:
+1px solid rgba(255,255,255,.08);
+}
+
+.history-item:last-child{
+border-bottom:none;
 }
 
 /* ======================
    MOBILE
 ====================== */
 
-@media(max-width:768px){
+@media(max-width:900px){
 
-.container{
-padding:20px 14px;
+.stats-grid{
+grid-template-columns:
+1fr 1fr;
 }
 
-.logo-section img{
-width:120px;
-}
-
-.logo-section h1{
-font-size:1.9rem;
-}
-
-.benefits{
-grid-template-columns:1fr 1fr;
-}
-
-.grid{
+.jobs-grid{
 grid-template-columns:1fr;
 }
 
-.form-card{
-padding:22px;
+.dashboard-header{
+flex-direction:column;
+gap:15px;
+text-align:center;
 }
 
 }
 
-/* ======================
-   END STYLE
-====================== */
+@media(max-width:600px){
+
+.stats-grid{
+grid-template-columns:1fr;
+}
+
+}
+
+/* END CSS */
 
 </style>
 
@@ -550,246 +539,276 @@ padding:22px;
 <div class="star"></div>
 <div class="star"></div>
 <div class="star"></div>
-<div class="star"></div>
-<div class="star"></div>
 
 </div>
 
 <div class="container">
 
-<div class="logo-section">
+<div class="dashboard-header">
+
+<div class="logo-area">
 
 <img
 src="https://i.ibb.co/N24ghXDh/Picsart-26-06-01-01-49-36-525.png"
-alt="OMKLJ Logo"
+alt="OMKLJ"
 >
 
-<h1>OMKLJ INDIA</h1>
+<div class="worker-info">
+
+<h2>
+Welcome, Worker
+</h2>
 
 <p>
-Verified Workers • Verified Employers • Trusted Opportunities
+Verified Worker Dashboard
 </p>
 
 </div>
 
-<div class="benefits">
-
-<div class="benefit">
-🛡
-<span>Verified Employers</span>
 </div>
 
-<div class="benefit">
-💰
-<span>Secure Payments</span>
-</div>
+<div class="verify-badge">
 
-<div class="benefit">
-📍
-<span>Nearby Jobs</span>
-</div>
+✅ Verified Account
 
-<div class="benefit">
-📱
-<span>QR Attendance</span>
-</div>
-
-<div class="benefit">
-⭐
-<span>Trust Score</span>
 </div>
 
 </div>
 
-<div class="form-card">
+<div class="stats-grid">
 
-<h2>👷🏻‍♂️ Worker Registration</h2>
+<div class="stat-card">
+
+<h3>92</h3>
 
 <p>
-Create your verified OMKLJ worker account.
+Trust Score
 </p>
 
-<div class="section-title">
-Personal Information
 </div>
 
-.logo-section p{
-color:#d7e4ff;
-margin-top:10px;
-}
+<div class="stat-card">
 
-@keyframes logoFloat{
+<h3>18</h3>
 
-50%{
-transform:translateY(-12px);
-}
-
-}
-
-@keyframes fadeUp{
-
-from{
-opacity:0;
-transform:translateY(30px);
-}
-
-to{
-opacity:1;
-transform:translateY(0);
-}
-
-}
-
-  <div class="grid">
-
-<div class="field">
-<label>Full Name</label>
-<input type="text" placeholder="Enter Full Name">
-</div>
-
-<div class="field">
-<label>Mobile Number</label>
-<input type="tel" placeholder="Enter Mobile Number">
-</div>
-
-<div class="field">
-<label>Email Address</label>
-<input type="email" placeholder="Enter Email Address">
-</div>
-
-<div class="field">
-<label>Age (21+)</label>
-<input type="number" placeholder="Enter Age">
-</div>
+<p>
+Jobs Completed
+</p>
 
 </div>
 
-<div class="section-title">
-Location
-</div>
+<div class="stat-card">
 
-<div class="grid">
+<h3>₹12,500</h3>
 
-<div class="field">
-<label>State</label>
-<input type="text" placeholder="State">
-</div>
-
-<div class="field">
-<label>District</label>
-<input type="text" placeholder="District">
-</div>
+<p>
+Total Earnings
+</p>
 
 </div>
 
-<div class="section-title">
-Work Information
-</div>
+<div class="stat-card">
 
-<div class="grid">
+<h3>5</h3>
 
-<div class="field">
-
-<label>Work Category</label>
-
-<select>
-
-<option>Driver</option>
-<option>Cleaner</option>
-<option>Cook</option>
-<option>Electrician</option>
-<option>Plumber</option>
-<option>Mechanic</option>
-<option>Security Guard</option>
-<option>Delivery Worker</option>
-<option>Office Assistant</option>
-<option>Data Entry Operator</option>
-
-</select>
-
-</div>
-
-<div class="field">
-
-<label>Employment Type</label>
-
-<select>
-
-<option>Part-Time</option>
-<option>Full-Time</option>
-<option>Both</option>
-
-</select>
+<p>
+New Jobs
+</p>
 
 </div>
 
 </div>
 
-<div class="section-title">
-Verification
+<h2 class="section-title">
+
+💼 Available Jobs
+
+</h2>
+
+<div class="jobs-grid">
+
+   <!-- JOB CARD 1 -->
+
+<div class="job-card">
+
+<div class="job-title">
+Cleaner Required
 </div>
 
-<div class="grid">
-
-<div class="field">
-<label>Aadhaar Number</label>
-<input type="text" placeholder="Enter Aadhaar Number">
+<div class="job-company">
+ABC Super Market
 </div>
 
-<div class="field">
-<label>Profile Photo</label>
-<input type="file">
+<div class="job-details">
+
+<div class="job-detail">
+<span>Distance</span>
+<strong>2 KM</strong>
 </div>
 
+<div class="job-detail">
+<span>Hours</span>
+<strong>8 Hrs</strong>
 </div>
 
-<div class="section-title">
-Emergency Contact
+<div class="job-detail">
+<span>Rate</span>
+<strong>₹100/hr</strong>
 </div>
 
-<div class="grid">
-
-<div class="field">
-<label>Contact Name</label>
-<input type="text" placeholder="Emergency Contact Name">
+<div class="job-detail">
+<span>Earnings</span>
+<strong>₹800</strong>
 </div>
-
-<div class="field">
-<label>Contact Number</label>
-<input type="tel" placeholder="Emergency Contact Number">
-</div>
-
-</div>
-
-<div class="notice">
-
-<h3>Important Notice</h3>
-
-One Aadhaar = One OMKLJ Account.<br>
-Duplicate accounts may be frozen pending verification.<br>
-Workers found providing false information may be suspended.
-
-</div>
-
-<div class="notice">
-
-<h3>Worker Benefits</h3>
-
-✓ Verified Employers<br>
-✓ Nearby Jobs<br>
-✓ QR Attendance Tracking<br>
-✓ Trust Score System<br>
-✓ Secure Opportunities
 
 </div>
 
-<button class="submit-btn">
-Create Verified Worker Account →
+<button class="apply-btn">
+Apply Now
+</button>
+
+</div>
+
+<!-- JOB CARD 2 -->
+
+<div class="job-card">
+
+<div class="job-title">
+Shop Helper
+</div>
+
+<div class="job-company">
+Rourkela Traders
+</div>
+
+<div class="job-details">
+
+<div class="job-detail">
+<span>Distance</span>
+<strong>3 KM</strong>
+</div>
+
+<div class="job-detail">
+<span>Hours</span>
+<strong>6 Hrs</strong>
+</div>
+
+<div class="job-detail">
+<span>Rate</span>
+<strong>₹120/hr</strong>
+</div>
+
+<div class="job-detail">
+<span>Earnings</span>
+<strong>₹720</strong>
+</div>
+
+</div>
+
+<button class="apply-btn">
+Apply Now
 </button>
 
 </div>
 
 </div>
 
+<h2 class="section-title">
+
+🔔 Notifications
+
+</h2>
+
+<div class="notifications">
+
+<div class="notification">
+New job available near your location.
+</div>
+
+<div class="notification">
+Your profile verification is approved.
+</div>
+
+<div class="notification">
+Trust score increased by 2 points.
+</div>
+
+</div>
+
+<h2 class="section-title">
+
+📅 Work History
+
+</h2>
+
+<div class="history">
+
+<div class="history-item">
+
+<span>
+Cleaner - XYZ Store
+</span>
+
+<strong>
+₹700
+</strong>
+
+</div>
+
+<div class="history-item">
+
+<span>
+Delivery Helper
+</span>
+
+<strong>
+₹850
+</strong>
+
+</div>
+
+<div class="history-item">
+
+<span>
+Warehouse Worker
+</span>
+
+<strong>
+₹1,200
+</strong>
+
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+/* Demo Apply Button */
+
+const applyButtons =
+document.querySelectorAll(
+".apply-btn"
+);
+
+applyButtons.forEach(button=>{
+
+button.addEventListener(
+"click",
+function(){
+
+alert(
+"Application submitted successfully."
+);
+
+}
+);
+
+});
+
+</script>
+
 </body>
+
 </html>

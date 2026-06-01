@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>OMKLJ India - Post Job</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+background:#020617;
+color:white;
+overflow-x:hidden;
+min-height:100vh;
+position:relative;
+}
+
+/* ======================
+   GALAXY BACKGROUND
+====================== */
+
+body::before{
+
+content:"";
+
+position:fixed;
+
+width:900px;
+height:900px;
+
+border-radius:50%;
+
+background:
+radial-gradient(
+circle,
+rgba(0,170,255,.25),
+transparent 70%
+);
+
+top:-300px;
+left:-250px;
+
+animation:
+orbOne 20s ease-in-out infinite alternate;
+
+z-index:-4;
+}
+
+body::after{
+
+content:"";
+
+position:fixed;
+
+width:800px;
+height:800px;
+
+border-radius:50%;
+
+background:
+radial-gradient(
+circle,
+rgba(130,0,255,.18),
+transparent 70%
+);
+
+bottom:-250px;
+right:-200px;
+
+animation:
+orbTwo 22s ease-in-out infinite alternate;
+
+z-index:-4;
+}
+
+@keyframes orbOne{
+
+0%{
+transform:translate(0,0);
+}
+
+100%{
+transform:translate(150px,100px);
+}
+
+}
+
+@keyframes orbTwo{
+
+0%{
+transform:translate(0,0);
+}
+
+100%{
+transform:translate(-150px,-100px);
+}
+
+}
+
+/* ======================
+   STARS
+====================== */
+
+.stars{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+pointer-events:none;
+z-index:-3;
+}
+
+.star{
+position:absolute;
+background:white;
+border-radius:50%;
+animation:twinkle infinite;
+}
+
+.star:nth-child(1){top:10%;left:12%;width:2px;height:2px;animation-duration:4s;}
+.star:nth-child(2){top:15%;left:80%;width:3px;height:3px;animation-duration:5s;}
+.star:nth-child(3){top:30%;left:55%;width:2px;height:2px;animation-duration:6s;}
+.star:nth-child(4){top:45%;left:20%;width:3px;height:3px;animation-duration:4s;}
+.star:nth-child(5){top:60%;left:85%;width:2px;height:2px;animation-duration:5s;}
+.star:nth-child(6){top:75%;left:40%;width:3px;height:3px;animation-duration:6s;}
+.star:nth-child(7){top:88%;left:70%;width:2px;height:2px;animation-duration:4s;}
+.star:nth-child(8){top:22%;left:35%;width:3px;height:3px;animation-duration:5s;}
+
+@keyframes twinkle{
+
+0%{
+opacity:.2;
+transform:scale(1);
+}
+
+50%{
+opacity:1;
+transform:scale(1.8);
+}
+
+100%{
+opacity:.2;
+transform:scale(1);
+}
+
+}
+
+/* ======================
+   CONTAINER
+====================== */
+
+.container{
+max-width:1200px;
+margin:auto;
+padding:40px 20px;
+position:relative;
+z-index:2;
+}
+
+/* ======================
+   HEADER
+====================== */
+
+.logo-section{
+text-align:center;
+margin-bottom:30px;
+}
+
+.logo-section img{
+width:140px;
+
+filter:
+drop-shadow(0 0 15px #00aaff)
+drop-shadow(0 0 25px #00aaff);
+
+animation:
+logoFloat 4s ease-in-out infinite;
+}
+
+.logo-section h1{
+font-size:2.8rem;
+margin-top:12px;
+font-weight:800;
+}
+
+.logo-section p{
+margin-top:10px;
+color:#d7e4ff;
+}
+
+@keyframes logoFloat{
+
+50%{
+transform:translateY(-12px);
+}
+
+}
+
+  /* ======================
+   FORM CARD
+====================== */
+
+.form-card{
+background:rgba(255,255,255,.06);
+border:1px solid rgba(255,255,255,.1);
+backdrop-filter:blur(20px);
+border-radius:28px;
+padding:35px;
+box-shadow:0 0 30px rgba(0,170,255,.15);
+}
+
+.form-card h2{
+font-size:2rem;
+margin-bottom:10px;
+}
+
+.section-title{
+margin-top:30px;
+margin-bottom:15px;
+font-size:1.1rem;
+font-weight:700;
+color:#5cc9ff;
+border-left:4px solid #00aaff;
+padding-left:12px;
+}
+
+.grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:18px;
+}
+
+.field{
+display:flex;
+flex-direction:column;
+margin-bottom:15px;
+}
+
+label{
+margin-bottom:8px;
+font-size:.95rem;
+font-weight:500;
+}
+
+input,
+select,
+textarea{
+width:100%;
+padding:14px 16px;
+border:none;
+outline:none;
+border-radius:14px;
+background:#12203f;
+color:white;
+transition:.3s;
+}
+
+textarea{
+resize:none;
+height:140px;
+}
+
+input:focus,
+select:focus,
+textarea:focus{
+box-shadow:
+0 0 0 2px #00aaff,
+0 0 20px rgba(0,170,255,.25);
+}
+
+.calculator-box{
+background:#081a36;
+padding:18px;
+border-radius:16px;
+margin-top:15px;
+text-align:center;
+font-size:1.1rem;
+font-weight:700;
+color:#59c5ff;
+}
+
+.notice{
+background:#12203f;
+padding:18px;
+border-radius:16px;
+margin-top:18px;
+line-height:1.8;
+border-left:4px solid #00aaff;
+}
+
+.notice h3{
+margin-bottom:10px;
+color:#5cc9ff;
+}
+
+.submit-btn{
+width:100%;
+padding:18px;
+margin-top:25px;
+border:none;
+border-radius:16px;
+font-size:1rem;
+font-weight:700;
+cursor:pointer;
+
+background:
+linear-gradient(
+90deg,
+#00aaff,
+#0066ff
+);
+
+color:white;
+
+box-shadow:
+0 0 25px rgba(0,170,255,.4);
+
+transition:.3s;
+}
+
+.submit-btn:hover{
+transform:translateY(-4px);
+box-shadow:
+0 0 35px rgba(0,170,255,.6);
+}
+
+@media(max-width:768px){
+
+.container{
+padding:20px 14px;
+}
+
+.logo-section img{
+width:120px;
+}
+
+.logo-section h1{
+font-size:1.9rem;
+}
+
+.grid{
+grid-template-columns:1fr;
+}
+
+.form-card{
+padding:22px;
+}
+
+}
+
+/* END CSS */
+
+</style>
+
+</head>
+
+<body>
+
+<div class="stars">
+
+<div class="star"></div>
+<div class="star"></div>
+<div class="star"></div>
+<div class="star"></div>
+<div class="star"></div>
+<div class="star"></div>
+<div class="star"></div>
+<div class="star"></div>
+
+</div>
+
+<div class="container">
+
+<div class="logo-section">
+
+<img
+src="https://i.ibb.co/N24ghXDh/Picsart-26-06-01-01-49-36-525.png"
+alt="OMKLJ Logo"
+>
+
+<h1>OMKLJ INDIA</h1>
+
+<p>
+Create New Job Requirement
+</p>
+
+</div>
+
+<div class="form-card">
+
+<h2>
+📋 Post New Job
+</h2>
+
+<div class="section-title">
+Job Information
+</div>
+
+  <div class="grid">
+
+<div class="field">
+<label>Job Title *</label>
+<input type="text" class="protected-input">
+</div>
+
+<div class="field">
+<label>Worker Category *</label>
+
+<select>
+<option>Cleaner</option>
+<option>Driver</option>
+<option>Cook</option>
+<option>Electrician</option>
+<option>Plumber</option>
+<option>Mechanic</option>
+<option>Security Guard</option>
+<option>Delivery Worker</option>
+<option>Office Assistant</option>
+<option>Data Entry Operator</option>
+<option>Warehouse Worker</option>
+<option>Packer</option>
+<option>Loader</option>
+<option>Cashier</option>
+<option>Gardener</option>
+<option>Painter</option>
+</select>
+
+</div>
+
+<div class="field">
+<label>Start Date *</label>
+<input type="date">
+</div>
+
+<div class="field">
+<label>Workers Required *</label>
+<input type="number" min="1">
+</div>
+
+<div class="field">
+<label>Start Time *</label>
+<input type="time" id="startTime">
+</div>
+
+<div class="field">
+<label>End Time *</label>
+<input type="time" id="endTime">
+</div>
+
+<div class="field">
+<label>Hourly Rate (₹) *</label>
+<input type="number" id="hourlyRate">
+</div>
+
+<div class="field">
+<label>Work Location *</label>
+<input type="text" class="protected-input">
+</div>
+
+</div>
+
+<div class="field">
+<label>Job Description *</label>
+
+<textarea
+id="jobDescription"
+class="protected-input"
+maxlength="100"
+placeholder="Maximum 100 characters"
+></textarea>
+
+</div>
+
+<div class="calculator-box">
+
+Working Hours:
+<span id="hoursResult">0</span>
+
+<br><br>
+
+Estimated Earnings:
+₹<span id="earningsResult">0</span>
+
+</div>
+
+<div class="notice">
+
+<h3>
+OMKLJ Content Policy
+</h3>
+
+Adult services,
+illegal activities,
+child labour,
+drugs,
+weapons,
+gambling,
+and external contact details are prohibited.
+
+</div>
+
+<button class="submit-btn">
+
+📋 Publish Job
+
+</button>
+
+</div>
+
+</div>
+
+<script>
+
+/* ======================
+   CONTENT FILTER
+====================== */
+
+const blockedWords = [
+
+"sex",
+"sexual",
+"rape",
+"porn",
+"adult",
+"escort",
+"prostitute",
+"nude",
+"hookup",
+"dating",
+
+"fuck",
+"fucking",
+
+"drugs",
+"cocaine",
+"heroin",
+"marijuana",
+"ganja",
+"charas",
+
+"gambling",
+"betting",
+
+"weapon",
+"gun",
+"terror",
+"trafficking",
+
+"child labour",
+"child labor",
+"minor",
+"underage",
+
+"whatsapp",
+"telegram",
+"instagram",
+"snapchat",
+"discord",
+
+"http",
+"https",
+"www"
+
+];
+
+function containsBlockedContent(text){
+
+const value = text.toLowerCase();
+
+for(let word of blockedWords){
+
+if(value.includes(word)){
+return true;
+}
+
+}
+
+return false;
+
+}
+
+const protectedFields =
+document.querySelectorAll(
+".protected-input"
+);
+
+protectedFields.forEach(field=>{
+
+field.addEventListener(
+"input",
+function(){
+
+if(
+containsBlockedContent(
+this.value
+)
+){
+
+alert(
+"Invalid content detected."
+);
+
+this.value="";
+
+}
+
+if(this.value.length > 100){
+
+this.value =
+this.value.substring(0,100);
+
+}
+
+}
+);
+
+});
+
+/* ======================
+   HOURS CALCULATOR
+====================== */
+
+const startTime =
+document.getElementById("startTime");
+
+const endTime =
+document.getElementById("endTime");
+
+const hourlyRate =
+document.getElementById("hourlyRate");
+
+const hoursResult =
+document.getElementById("hoursResult");
+
+const earningsResult =
+document.getElementById("earningsResult");
+
+function calculateEarnings(){
+
+if(
+startTime.value &&
+endTime.value
+){
+
+const start =
+new Date(
+"1970-01-01T" +
+startTime.value
+);
+
+const end =
+new Date(
+"1970-01-01T" +
+endTime.value
+);
+
+const diff =
+(end-start)/(1000*60*60);
+
+if(diff > 0){
+
+hoursResult.textContent =
+diff;
+
+const earnings =
+diff *
+(Number(hourlyRate.value)||0);
+
+earningsResult.textContent =
+earnings;
+
+}
+
+}
+
+}
+
+startTime.addEventListener(
+"input",
+calculateEarnings
+);
+
+endTime.addEventListener(
+"input",
+calculateEarnings
+);
+
+hourlyRate.addEventListener(
+"input",
+calculateEarnings
+);
+
+/* ======================
+   PUBLISH BUTTON
+====================== */
+
+const publishBtn =
+document.querySelector(
+".submit-btn"
+);
+
+publishBtn.addEventListener(
+"click",
+function(){
+
+alert(
+"Job Published Successfully."
+);
+
+}
+);
+
+</script>
+
+</body>
+</html>

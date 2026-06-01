@@ -446,9 +446,117 @@ Register Business Employer →
 </button>
 
 </div>
+<script>
 
+const category =
+document.getElementById("workerCategory");
+
+const otherField =
+document.getElementById("otherJobField");
+
+if(category){
+
+category.addEventListener("change",function(){
+
+if(this.value==="other"){
+otherField.style.display="block";
+}
+else{
+otherField.style.display="none";
+}
+
+});
+
+}
+
+const bannedWords = [
+
+"sex",
+"escort",
+"porn",
+"adult",
+"nude",
+"prostitute",
+"drugs",
+"gambling"
+
+];
+
+const otherInput =
+document.getElementById("otherJobInput");
+
+if(otherInput){
+
+otherInput.addEventListener("input",function(){
+
+let value =
+this.value.toLowerCase();
+
+for(let word of bannedWords){
+
+if(value.includes(word)){
+
+alert(
+"This requirement is not allowed on OMKLJ."
+);
+
+this.value="";
+
+break;
+
+}
+
+}
+
+});
+
+}
+
+const hours =
+document.getElementById("hours");
+
+const rate =
+document.getElementById("hourlyRate");
+
+const result =
+document.getElementById("earningResult");
+
+function calculatePay(){
+
+let h =
+parseFloat(hours.value) || 0;
+
+let r =
+parseFloat(rate.value) || 0;
+
+let total =
+h * r;
+
+if(total>0){
+
+result.innerHTML =
+"Estimated Earnings: ₹" + total;
+
+}
+
+}
+
+if(hours && rate){
+
+hours.addEventListener(
+"input",
+calculatePay
+);
+
+rate.addEventListener(
+"input",
+calculatePay
+);
+
+}
+
+</script>
 </div>
 
 </body>
-
 </html>

@@ -1,1 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Personal Employer Registration - OMKLJ India</title>
 
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+background:#020617;
+color:white;
+overflow-x:hidden;
+min-height:100vh;
+}
+
+/* Galaxy Background */
+
+body::before{
+content:"";
+position:fixed;
+width:100%;
+height:100%;
+top:0;
+left:0;
+background:
+radial-gradient(circle at 20% 20%,rgba(0,170,255,.25),transparent 25%),
+radial-gradient(circle at 80% 30%,rgba(0,120,255,.18),transparent 25%),
+radial-gradient(circle at 50% 80%,rgba(0,170,255,.15),transparent 25%);
+animation:galaxyMove 12s ease-in-out infinite alternate;
+z-index:-1;
+}
+
+@keyframes galaxyMove{
+from{transform:translateY(0);}
+to{transform:translateY(-30px);}
+}
+
+.container{
+max-width:1100px;
+margin:auto;
+padding:30px 20px;
+}
+
+.logo{
+text-align:center;
+margin-bottom:25px;
+}
+
+.logo img{
+width:130px;
+filter:drop-shadow(0 0 20px #00aaff);
+animation:floatLogo 4s ease-in-out infinite;
+}
+
+@keyframes floatLogo{
+50%{
+transform:translateY(-10px);
+}
+}
+
+.logo h1{
+font-size:2.2rem;
+margin-top:10px;
+}
+
+.logo p{
+color:#cbd5e1;
+}
+
+.glass-card{
+background:rgba(255,255,255,.05);
+backdrop-filter:blur(18px);
+border:1px solid rgba(255,255,255,.08);
+border-radius:25px;
+padding:30px;
+box-shadow:0 0 30px rgba(0,170,255,.15);
+}
+
+.section-title{
+color:#3bb7ff;
+font-size:1.2rem;
+margin:25px 0 15px;
+font-weight:700;
+}
+
+.grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:15px;
+}
+
+.field{
+display:flex;
+flex-direction:column;
+}
+
+label{
+margin-bottom:8px;
+font-size:.95rem;
+}
+
+input,
+select,
+textarea{
+padding:14px;
+border:none;
+outline:none;
+border-radius:12px;
+background:#12203f;
+color:white;
+}
+
+textarea{
+resize:none;
+height:120px;
+}
+
+.notice{
+background:#12203f;
+padding:16px;
+border-radius:15px;
+margin-top:20px;
+line-height:1.7;
+}
+
+.notice h3{
+margin-bottom:10px;
+color:#59c5ff;
+}
+
+.submit-btn{
+width:100%;
+padding:16px;
+margin-top:25px;
+border:none;
+border-radius:14px;
+font-size:1rem;
+font-weight:700;
+cursor:pointer;
+color:white;
+background:linear-gradient(90deg,#00b4ff,#0066ff);
+box-shadow:0 0 20px rgba(0,170,255,.4);
+}
+
+.submit-btn:hover{
+transform:translateY(-3px);
+}
+
+.benefits{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:10px;
+margin-bottom:20px;
+}
+
+.benefit{
+background:rgba(255,255,255,.05);
+padding:12px;
+border-radius:12px;
+text-align:center;
+}
+
+@media(max-width:768px){
+
+.grid{
+grid-template-columns:1fr;
+}
+
+.benefits{
+grid-template-columns:1fr 1fr;
+}
+
+.logo h1{
+font-size:1.7rem;
+}
+
+.glass-card{
+padding:20px;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="logo">
+
+<img src="https://i.ibb.co/N24ghXDh/Picsart-26-06-01-01-49-36-525.png">
+
+<h1>OMKLJ INDIA</h1>
+
+<p>Personal Employer Registration</p>
+
+</div>
+
+<div class="benefits">
+
+<div class="benefit">🏠 Home Verified</div>
+<div class="benefit">👨‍👩‍👧 Family Verified</div>
+<div class="benefit">🔒 Secure Hiring</div>
+<div class="benefit">✅ Trusted Workers</div>
+
+</div>
+
+<div class="glass-card">
+
+<h2>🏠 Register As Personal Employer</h2>
+
+<div class="section-title">Personal Information</div>
+
+<div class="grid">
+
+<div class="field">
+<label>Full Name *</label>
+<input type="text">
+</div>
+
+<div class="field">
+<label>Mobile Number *</label>
+<input type="tel">
+</div>
+
+<div class="field">
+<label>Email Address *</label>
+<input type="email">
+</div>
+
+<div class="field">
+<label>Aadhaar Number *</label>
+<input type="text">
+</div>
+
+</div>
+
+<div class="section-title">Home Verification</div>
+
+<div class="grid">
+
+<div class="field">
+<label>State *</label>
+<input type="text">
+</div>
+
+<div class="field">
+<label>District *</label>
+<input type="text">
+</div>
+
+</div>
+
+<div class="field" style="margin-top:15px;">
+<label>Complete Address *</label>
+<textarea></textarea>
+</div>
+
+<div class="grid">
+
+<div class="field">
+<label>Upload House Photo *</label>
+<input type="file">
+</div>
+
+<div class="field">
+<label>Upload Employer Photo *</label>
+<input type="file">
+</div>
+
+</div>
+
+<div class="section-title">Hiring Requirement</div>
+
+<div class="grid">
+
+<div class="field">
+<label>Worker Type *</label>
+
+<select id="workerType">
+
+<option value="">Select Worker</option>
+
+<option>House Maid</option>
+<option>Personal Driver</option>
+<option>Cook</option>
+<option>Caretaker</option>
+<option>Elderly Care Assistant</option>
+<option>Housekeeper</option>
+<option>Baby Care Assistant</option>
+<option>Gardener</option>
+
+<option value="other">Other</option>
+
+</select>
+
+</div>
+
+<div class="field">
+<label>Monthly Salary (₹) *</label>
+<input type="number">
+</div>
+
+</div>
+
+<div class="field" id="otherWorkerField" style="display:none; margin-top:15px;">
+<label>Specify Worker Requirement *</label>
+<input type="text" id="otherWorkerInput">
+</div>
+
+<div class="grid">
+
+<div class="field">
+<label>Accommodation Provided?</label>
+<select>
+<option>Yes</option>
+<option>No</option>
+</select>
+</div>
+
+<div class="field">
+<label>Food Provided?</label>
+<select>
+<option>Yes</option>
+<option>No</option>
+</select>
+</div>
+
+<div class="field">
+<label>Expected Joining Date *</label>
+<input type="date">
+</div>
+
+</div>
+
+<div class="notice">
+
+<h3>OMKLJ Personal Employer Rules</h3>
+
+Full-Time Jobs Only.<br>
+Monthly Salary Mandatory.<br>
+Fake profiles will be permanently blocked.<br>
+One Aadhaar = One Account.
+
+</div>
+
+<div class="notice">
+
+<h3>Safety Notice</h3>
+
+All workers must complete verification before joining.
+
+OMKLJ may suspend accounts involved in fraud, abuse, illegal activities, or false information.
+
+</div>
+
+<button class="submit-btn">
+Register Personal Employer →
+</button>
+
+</div>
+
+</div>
+
+<script>
+
+const workerType =
+document.getElementById("workerType");
+
+const otherField =
+document.getElementById("otherWorkerField");
+
+workerType.addEventListener("change",function(){
+
+if(this.value==="other"){
+otherField.style.display="block";
+}
+else{
+otherField.style.display="none";
+}
+
+});
+
+const bannedWords = [
+"sex",
+"escort",
+"porn",
+"adult",
+"nude",
+"prostitute",
+"drugs",
+"gambling"
+];
+
+const otherInput =
+document.getElementById("otherWorkerInput");
+
+otherInput.addEventListener("input",function(){
+
+let value = this.value.toLowerCase();
+
+for(let word of bannedWords){
+
+if(value.includes(word)){
+
+alert("This requirement is not allowed on OMKLJ.");
+
+this.value="";
+
+break;
+
+}
+
+}
+
+});
+
+</script>
+
+</body>
+</html>

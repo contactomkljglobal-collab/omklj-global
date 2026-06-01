@@ -1,213 +1,186 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Worker Registration - OMKLJ India</title>
-
+<title>OMKLJ India - Worker Registration</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Poppins,sans-serif;
-}
-
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif}
 body{
-background:#030617;
-color:white;
-padding:20px;
+background:#020617;
+color:#fff;
+overflow-x:hidden;
+min-height:100vh;
 }
-
+.stars{
+position:fixed;inset:0;pointer-events:none;
+background:
+radial-gradient(circle at 20% 20%,rgba(0,170,255,.18),transparent 25%),
+radial-gradient(circle at 80% 30%,rgba(0,120,255,.12),transparent 25%),
+radial-gradient(circle at 50% 80%,rgba(0,170,255,.15),transparent 25%);
+animation:floatbg 10s ease-in-out infinite alternate;
+}
+@keyframes floatbg{
+from{transform:translateY(0)}
+to{transform:translateY(-20px)}
+}
 .container{
-max-width:700px;
+position:relative;
+z-index:2;
+max-width:1100px;
 margin:auto;
+padding:40px 20px;
 }
-
-h1{
+.logo-section{text-align:center;margin-bottom:25px}
+.logo-section img{
+width:140px;
+filter:drop-shadow(0 0 15px #00aaff);
+animation:floatlogo 4s ease-in-out infinite;
+}
+@keyframes floatlogo{
+50%{transform:translateY(-10px)}
+}
+.logo-section h1{font-size:2.4rem;margin-top:10px}
+.logo-section p{color:#c8d4f0}
+.benefits{
+display:grid;
+grid-template-columns:repeat(5,1fr);
+gap:10px;
+margin:25px 0;
+}
+.benefit{
+background:rgba(255,255,255,.06);
+backdrop-filter:blur(10px);
+padding:12px;
+border-radius:12px;
 text-align:center;
-margin-bottom:10px;
 }
-
-.subtitle{
-text-align:center;
-color:#b6c2e0;
-margin-bottom:30px;
+.form-card{
+background:rgba(255,255,255,.06);
+backdrop-filter:blur(18px);
+border:1px solid rgba(255,255,255,.1);
+border-radius:24px;
+padding:30px;
+box-shadow:0 0 30px rgba(0,170,255,.15);
 }
-
-.form-box{
-background:#081227;
-padding:25px;
-border-radius:20px;
-border:1px solid rgba(255,255,255,0.08);
+.section-title{
+margin:20px 0 12px;
+color:#59c5ff;
+font-weight:700;
 }
-
-label{
-display:block;
-margin-top:15px;
-margin-bottom:8px;
-font-weight:600;
+.grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:16px;
 }
-
-input,
-select,
-textarea{
+input,select,textarea{
 width:100%;
 padding:14px;
 border:none;
-border-radius:10px;
-background:#132040;
-color:white;
+border-radius:12px;
+background:#12203f;
+color:#fff;
+outline:none;
 }
-
-input::placeholder{
-color:#b6c2e0;
-}
-
+label{display:block;margin-bottom:6px;font-size:.95rem}
+.field{margin-bottom:14px}
 .notice{
-margin-top:25px;
-padding:15px;
-background:#132040;
-border-radius:12px;
-border-left:4px solid #2ea8ff;
+background:#12203f;
+padding:16px;
+border-radius:14px;
+margin-top:15px;
 }
-
-.notice h3{
-margin-bottom:10px;
-}
-
-.notice p{
-line-height:1.6;
-color:#d6dff5;
-}
-
-.register-btn{
+.submit-btn{
 width:100%;
-margin-top:25px;
-padding:15px;
-background:#2ea8ff;
-color:white;
+padding:16px;
+margin-top:20px;
 border:none;
-border-radius:12px;
-font-size:16px;
+border-radius:14px;
+font-size:1rem;
 font-weight:700;
 cursor:pointer;
+background:linear-gradient(90deg,#00aaff,#0066ff);
+color:white;
+box-shadow:0 0 20px rgba(0,170,255,.4);
 }
-
-.register-btn:hover{
-opacity:0.9;
+.submit-btn:hover{transform:translateY(-2px)}
+@media(max-width:768px){
+.logo-section h1{font-size:1.8rem}
+.benefits{grid-template-columns:1fr 1fr}
+.grid{grid-template-columns:1fr}
+.container{padding:20px 14px}
+.form-card{padding:20px}
 }
-
 </style>
 </head>
-
 <body>
+<div class="stars"></div>
 
 <div class="container">
 
-<h1>👷 Worker Registration</h1>
+<div class="logo-section">
+<img src="https://i.ibb.co/N24ghXDh/Picsart-26-06-01-01-49-36-525.png" alt="OMKLJ Logo">
+<h1>OMKLJ INDIA</h1>
+<p>Verified Workers • Verified Employers • Trusted Opportunities</p>
+</div>
 
-<p class="subtitle">
-Join OMKLJ India and find verified opportunities.
-</p>
+<div class="benefits">
+<div class="benefit">✓ Verified Employers</div>
+<div class="benefit">✓ Secure Payments</div>
+<div class="benefit">✓ QR Attendance</div>
+<div class="benefit">✓ Trust Score</div>
+<div class="benefit">✓ Nearby Jobs</div>
+</div>
 
-<div class="form-box">
+<div class="form-card">
+<h2>👷 Worker Registration</h2>
 
-<label>Full Name</label>
-<input type="text" placeholder="Enter your full name">
+<h3 class="section-title">Personal Information</h3>
+<div class="grid">
+<div class="field"><label>Full Name</label><input type="text"></div>
+<div class="field"><label>Mobile Number</label><input type="tel"></div>
+<div class="field"><label>Email Address</label><input type="email"></div>
+<div class="field"><label>Age (21+)</label><input type="number"></div>
+</div>
 
-<label>Mobile Number</label>
-<input type="tel" placeholder="Enter mobile number">
+<h3 class="section-title">Location</h3>
+<div class="grid">
+<div class="field"><label>State</label><input type="text"></div>
+<div class="field"><label>District</label><input type="text"></div>
+</div>
 
-<label>Email Address</label>
-<input type="email" placeholder="Enter email address">
-
-<label>Aadhaar Number</label>
-<input type="text" placeholder="Enter Aadhaar number">
-
-<label>Age</label>
-<input type="number" placeholder="21+ Only">
-
-<label>Gender</label>
-<select>
-<option>Select Gender</option>
-<option>Male</option>
-<option>Female</option>
-<option>Other</option>
-</select>
-
-<label>State</label>
-<input type="text" placeholder="Enter state">
-
-<label>District</label>
-<input type="text" placeholder="Enter district">
-
+<h3 class="section-title">Work Information</h3>
+<div class="grid">
+<div class="field">
 <label>Work Category</label>
-<select>
-<option>Select Category</option>
-<option>Driver</option>
-<option>Cleaner</option>
-<option>Cook</option>
-<option>Security Guard</option>
-<option>Shop Helper</option>
-<option>Delivery Worker</option>
-<option>Electrician</option>
-<option>Plumber</option>
-<option>Mechanic</option>
-<option>Warehouse Staff</option>
-<option>Gardener</option>
-<option>Other</option>
-</select>
-
+<select><option>Driver</option><option>Cleaner</option><option>Cook</option><option>Electrician</option></select>
+</div>
+<div class="field">
 <label>Employment Type</label>
-<select>
-<option>Select Type</option>
-<option>Part-Time</option>
-<option>Full-Time</option>
-<option>Both</option>
-</select>
+<select><option>Part-Time</option><option>Full-Time</option><option>Both</option></select>
+</div>
+</div>
 
-<label>Emergency Contact Number</label>
-<input type="tel" placeholder="Emergency contact">
+<h3 class="section-title">Verification</h3>
+<div class="grid">
+<div class="field"><label>Aadhaar Number</label><input type="text"></div>
+<div class="field"><label>Profile Photo</label><input type="file"></div>
+</div>
 
-<label>Upload Profile Photo</label>
-<input type="file">
-
-<div class="notice">
-
-<h3>Important Notice</h3>
-
-<p>
-One Aadhaar = One OMKLJ Account.
-Multiple accounts are not allowed.
-If duplicate accounts are detected,
-all linked accounts may be frozen until verification is completed.
-</p>
-
+<h3 class="section-title">Emergency Contact</h3>
+<div class="grid">
+<div class="field"><label>Contact Name</label><input type="text"></div>
+<div class="field"><label>Contact Number</label><input type="tel"></div>
 </div>
 
 <div class="notice">
-
-<h3>Worker Declaration</h3>
-
-<p>
-I confirm that all information provided is correct.
-Providing false information, fake documents,
-or misleading details may result in permanent suspension.
-</p>
-
+<b>Important:</b> One Aadhaar = One OMKLJ Account. Duplicate accounts may be frozen pending verification.
 </div>
 
-<button class="register-btn">
-Register Now
-</button>
+<button class="submit-btn">Create Verified Worker Account →</button>
 
 </div>
-
 </div>
-
 </body>
 </html>

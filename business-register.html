@@ -1,1 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Business Employer Registration - OMKLJ India</title>
 
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+background:#020617;
+color:white;
+overflow-x:hidden;
+min-height:100vh;
+position:relative;
+}
+
+/* Galaxy Background */
+
+body::before{
+content:"";
+position:fixed;
+width:100%;
+height:100%;
+top:0;
+left:0;
+background:
+radial-gradient(circle at 20% 30%, rgba(0,170,255,.25), transparent 25%),
+radial-gradient(circle at 80% 20%, rgba(0,100,255,.18), transparent 25%),
+radial-gradient(circle at 50% 80%, rgba(0,170,255,.15), transparent 30%);
+animation:galaxyMove 12s ease-in-out infinite alternate;
+z-index:-2;
+}
+
+@keyframes galaxyMove{
+from{
+transform:translateY(0);
+}
+to{
+transform:translateY(-30px);
+}
+}
+
+.container{
+max-width:1100px;
+margin:auto;
+padding:30px 20px;
+}
+
+.logo{
+text-align:center;
+margin-bottom:25px;
+}
+
+.logo img{
+width:130px;
+filter:drop-shadow(0 0 20px #00aaff);
+animation:floatLogo 4s ease-in-out infinite;
+}
+
+@keyframes floatLogo{
+50%{
+transform:translateY(-10px);
+}
+}
+
+.logo h1{
+font-size:2.2rem;
+margin-top:10px;
+}
+
+.logo p{
+color:#cbd5e1;
+}
+
+.glass-card{
+background:rgba(255,255,255,.05);
+backdrop-filter:blur(18px);
+border:1px solid rgba(255,255,255,.08);
+border-radius:25px;
+padding:30px;
+box-shadow:0 0 30px rgba(0,170,255,.15);
+}
+
+.section-title{
+color:#3bb7ff;
+font-size:1.2rem;
+margin:25px 0 15px;
+font-weight:700;
+}
+
+.grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:15px;
+}
+
+.field{
+display:flex;
+flex-direction:column;
+}
+
+label{
+margin-bottom:8px;
+font-size:.95rem;
+}
+
+input,
+select,
+textarea{
+padding:14px;
+border:none;
+outline:none;
+border-radius:12px;
+background:#12203f;
+color:white;
+}
+
+textarea{
+resize:none;
+height:120px;
+}
+
+.notice{
+background:#12203f;
+padding:16px;
+border-radius:15px;
+margin-top:20px;
+line-height:1.7;
+}
+
+.notice h3{
+margin-bottom:10px;
+color:#59c5ff;
+}
+
+.submit-btn{
+width:100%;
+padding:16px;
+margin-top:25px;
+border:none;
+border-radius:14px;
+font-size:1rem;
+font-weight:700;
+cursor:pointer;
+color:white;
+background:linear-gradient(90deg,#00b4ff,#0066ff);
+box-shadow:0 0 20px rgba(0,170,255,.4);
+transition:.3s;
+}
+
+.submit-btn:hover{
+transform:translateY(-3px);
+}
+
+.benefits{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:10px;
+margin-bottom:20px;
+}
+
+.benefit{
+background:rgba(255,255,255,.05);
+padding:12px;
+border-radius:12px;
+text-align:center;
+}
+
+@media(max-width:768px){
+
+.grid{
+grid-template-columns:1fr;
+}
+
+.benefits{
+grid-template-columns:1fr 1fr;
+}
+
+.logo h1{
+font-size:1.7rem;
+}
+
+.glass-card{
+padding:20px;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="logo">
+
+<img src="https://i.ibb.co/N24ghXDh/Picsart-26-06-01-01-49-36-525.png">
+
+<h1>OMKLJ INDIA</h1>
+
+<p>Business Employer Registration</p>
+
+</div>
+
+<div class="benefits">
+
+<div class="benefit">🏪 Verified Business</div>
+
+<div class="benefit">⚡ Fast Hiring</div>
+
+<div class="benefit">📍 Nearby Workers</div>
+
+<div class="benefit">🔒 Secure Platform</div>
+
+</div>
+
+<div class="glass-card">
+
+<h2>🏪 Register Your Business</h2>
+
+<div class="section-title">Business Details</div>
+
+<div class="grid">
+
+<div class="field">
+<label>Business Name</label>
+<input type="text">
+</div>
+
+<div class="field">
+<label>Owner Name</label>
+<input type="text">
+</div>
+
+<div class="field">
+<label>Mobile Number</label>
+<input type="tel">
+</div>
+
+<div class="field">
+<label>Email Address</label>
+<input type="email">
+</div>
+
+<div class="field">
+<label>GST Number (Optional)</label>
+<input type="text">
+</div>
+
+<div class="field">
+<label>District</label>
+<input type="text">
+</div>
+
+</div>
+
+<div class="field" style="margin-top:15px;">
+<label>Shop Address</label>
+<textarea></textarea>
+</div>
+
+<div class="section-title">Shop Verification</div>
+
+<div class="grid">
+
+<div class="field">
+<label>Upload Shop Photo *</label>
+<input type="file">
+</div>
+
+<div class="field">
+<label>Upload Owner Photo</label>
+<input type="file">
+</div>
+
+<div class="field">
+<label>Business License (Optional)</label>
+<input type="file">
+</div>
+
+<div class="field">
+<label>State</label>
+<input type="text">
+</div>
+
+</div>
+
+<div class="section-title">Hiring Requirements</div>
+
+<div class="grid">
+
+<div class="field">
+<label>Worker Category Needed</label>
+<select>
+<option>Cleaner</option>
+<option>Driver</option>
+<option>Cook</option>
+<option>Security Guard</option>
+<option>Shop Helper</option>
+<option>Delivery Worker</option>
+</select>
+</div>
+
+<div class="field">
+<label>Number Of Workers Required</label>
+<input type="number">
+</div>
+
+<div class="field">
+<label>Working Hours</label>
+<input type="text">
+</div>
+
+<div class="field">
+<label>Expected Joining Date</label>
+<input type="date">
+</div>
+
+</div>
+
+<div class="notice">
+
+<h3>OMKLJ Business Rules</h3>
+
+Business Employers can hire Part-Time workers only.<br>
+Workers must be verified before joining.<br>
+Fake business registrations will be permanently blocked.<br>
+Business details must be accurate.
+
+</div>
+
+<div class="notice">
+
+<h3>Worker Safety Verification</h3>
+
+Before worker QR code generation, the employer must confirm whether the worker appears under the influence of alcohol or intoxicating substances.
+
+If reported, OMKLJ may temporarily hold verification for review.
+
+</div>
+
+<button class="submit-btn">
+
+Register Business Employer →
+
+</button>
+
+</div>
+
+</div>
+
+</body>
+</html>

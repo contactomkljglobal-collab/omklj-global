@@ -4,9 +4,13 @@
 <head>
 
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>OMKLJ India - Business Employer Registration</title>
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>
+OMKLJ INDIA - Business Registration
+</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
@@ -19,16 +23,17 @@ box-sizing:border-box;
 font-family:'Poppins',sans-serif;
 }
 
-html{
-scroll-behavior:smooth;
-}
-
 body{
+
 background:#020617;
-color:#ffffff;
-overflow-x:hidden;
+color:white;
+
 min-height:100vh;
+
+overflow-x:hidden;
+
 position:relative;
+
 }
 
 /* ======================
@@ -36,7 +41,9 @@ position:relative;
 ====================== */
 
 body::before{
+
 content:"";
+
 position:fixed;
 
 width:900px;
@@ -51,13 +58,14 @@ rgba(0,170,255,.25),
 transparent 70%
 );
 
-top:-300px;
+top:-250px;
 left:-250px;
 
 animation:
-orbOne 20s ease-in-out infinite alternate;
+orbOne 18s ease-in-out infinite alternate;
 
 z-index:-4;
+
 }
 
 body::after{
@@ -74,17 +82,18 @@ border-radius:50%;
 background:
 radial-gradient(
 circle,
-rgba(130,0,255,.18),
+rgba(128,0,255,.18),
 transparent 70%
 );
 
 bottom:-250px;
-right:-200px;
+right:-250px;
 
 animation:
 orbTwo 22s ease-in-out infinite alternate;
 
 z-index:-4;
+
 }
 
 @keyframes orbOne{
@@ -94,7 +103,7 @@ transform:translate(0,0);
 }
 
 100%{
-transform:translate(150px,100px);
+transform:translate(150px,90px);
 }
 
 }
@@ -106,7 +115,7 @@ transform:translate(0,0);
 }
 
 100%{
-transform:translate(-150px,-100px);
+transform:translate(-140px,-100px);
 }
 
 }
@@ -116,32 +125,97 @@ transform:translate(-150px,-100px);
 ====================== */
 
 .stars{
+
 position:fixed;
+
 top:0;
 left:0;
+
 width:100%;
 height:100%;
+
 pointer-events:none;
+
 z-index:-3;
+
 }
 
 .star{
+
 position:absolute;
+
 background:white;
+
 border-radius:50%;
-animation:twinkle infinite;
+
+animation:
+twinkle infinite;
+
 }
 
-.star:nth-child(1){top:10%;left:12%;width:2px;height:2px;animation-duration:4s;}
-.star:nth-child(2){top:15%;left:80%;width:3px;height:3px;animation-duration:5s;}
-.star:nth-child(3){top:30%;left:55%;width:2px;height:2px;animation-duration:6s;}
-.star:nth-child(4){top:45%;left:20%;width:3px;height:3px;animation-duration:4s;}
-.star:nth-child(5){top:60%;left:85%;width:2px;height:2px;animation-duration:5s;}
-.star:nth-child(6){top:75%;left:40%;width:3px;height:3px;animation-duration:6s;}
-.star:nth-child(7){top:88%;left:70%;width:2px;height:2px;animation-duration:4s;}
-.star:nth-child(8){top:22%;left:35%;width:3px;height:3px;animation-duration:5s;}
-.star:nth-child(9){top:52%;left:60%;width:2px;height:2px;animation-duration:6s;}
-.star:nth-child(10){top:82%;left:18%;width:3px;height:3px;animation-duration:4s;}
+.star:nth-child(1){
+top:10%;
+left:12%;
+width:2px;
+height:2px;
+animation-duration:4s;
+}
+
+.star:nth-child(2){
+top:20%;
+left:75%;
+width:3px;
+height:3px;
+animation-duration:5s;
+}
+
+.star:nth-child(3){
+top:35%;
+left:50%;
+width:2px;
+height:2px;
+animation-duration:6s;
+}
+
+.star:nth-child(4){
+top:60%;
+left:25%;
+width:3px;
+height:3px;
+animation-duration:4s;
+}
+
+.star:nth-child(5){
+top:75%;
+left:80%;
+width:2px;
+height:2px;
+animation-duration:5s;
+}
+
+.star:nth-child(6){
+top:85%;
+left:40%;
+width:3px;
+height:3px;
+animation-duration:6s;
+}
+
+.star:nth-child(7){
+top:25%;
+left:25%;
+width:2px;
+height:2px;
+animation-duration:5s;
+}
+
+.star:nth-child(8){
+top:55%;
+left:70%;
+width:3px;
+height:3px;
+animation-duration:4s;
+}
 
 @keyframes twinkle{
 
@@ -167,49 +241,69 @@ transform:scale(1);
 ====================== */
 
 .container{
+
 max-width:1200px;
+
 margin:auto;
+
 padding:40px 20px;
+
 position:relative;
+
 z-index:2;
+
 }
 
 /* ======================
-   LOGO
+   HEADER
 ====================== */
 
 .logo-section{
+
 text-align:center;
+
 margin-bottom:30px;
-animation:fadeUp 1s ease;
+
+animation:
+fadeUp 1s ease;
+
 }
 
 .logo-section img{
+
 width:150px;
 
 filter:
 drop-shadow(0 0 15px #00aaff)
-drop-shadow(0 0 25px #00aaff);
+drop-shadow(0 0 30px #00aaff);
 
 animation:
 logoFloat 4s ease-in-out infinite;
+
 }
 
 .logo-section h1{
+
 font-size:2.8rem;
+
 margin-top:12px;
+
 font-weight:800;
+
 }
 
 .logo-section p{
+
 margin-top:10px;
+
 color:#d7e4ff;
+
 }
 
 @keyframes logoFloat{
 
 50%{
-transform:translateY(-12px);
+transform:translateY(-10px);
 }
 
 }
@@ -227,30 +321,63 @@ transform:translateY(0);
 }
 
 }
-  /* ======================
+
+   /* ======================
    BENEFITS
 ====================== */
 
 .benefits{
+
 display:grid;
-grid-template-columns:repeat(4,1fr);
-gap:12px;
+
+grid-template-columns:
+repeat(4,1fr);
+
+gap:15px;
+
 margin-bottom:25px;
+
 }
 
 .benefit{
-background:rgba(255,255,255,.05);
-border:1px solid rgba(255,255,255,.08);
-backdrop-filter:blur(14px);
-padding:14px;
-border-radius:16px;
+
+background:
+rgba(255,255,255,.05);
+
+border:
+1px solid rgba(255,255,255,.08);
+
+backdrop-filter:
+blur(15px);
+
+padding:18px;
+
+border-radius:18px;
+
 text-align:center;
+
 transition:.3s;
+
 }
 
 .benefit:hover{
-transform:translateY(-6px);
-box-shadow:0 0 20px rgba(0,170,255,.25);
+
+transform:
+translateY(-6px);
+
+box-shadow:
+0 0 20px rgba(0,170,255,.25);
+
+}
+
+.benefit h3{
+
+font-size:1rem;
+
+margin-bottom:8px;
+
+color:#59c5ff;
+
 }
 
 /* ======================
@@ -258,116 +385,186 @@ box-shadow:0 0 20px rgba(0,170,255,.25);
 ====================== */
 
 .form-card{
-background:rgba(255,255,255,.06);
-border:1px solid rgba(255,255,255,.1);
-backdrop-filter:blur(20px);
+
+background:
+rgba(255,255,255,.06);
+
+border:
+1px solid rgba(255,255,255,.1);
+
+backdrop-filter:
+blur(20px);
+
 border-radius:28px;
+
 padding:35px;
-box-shadow:0 0 30px rgba(0,170,255,.15);
-animation:fadeUp 1.3s ease;
+
+box-shadow:
+0 0 30px rgba(0,170,255,.15);
+
 }
 
 .form-card h2{
-font-size:2rem;
-margin-bottom:10px;
-}
 
-/* ======================
-   TITLES
-====================== */
+font-size:2rem;
+
+margin-bottom:10px;
+
+}
 
 .section-title{
+
 margin-top:30px;
+
 margin-bottom:15px;
+
 font-size:1.1rem;
+
 font-weight:700;
-color:#5cc9ff;
-border-left:4px solid #00aaff;
+
+color:#59c5ff;
+
+border-left:
+4px solid #00aaff;
+
 padding-left:12px;
+
 }
 
-/* ======================
-   GRID
-====================== */
-
 .grid{
+
 display:grid;
-grid-template-columns:1fr 1fr;
+
+grid-template-columns:
+1fr 1fr;
+
 gap:18px;
+
 }
 
 .field{
+
 display:flex;
+
 flex-direction:column;
+
 margin-bottom:15px;
+
 }
 
 label{
+
 margin-bottom:8px;
+
 font-size:.95rem;
+
 font-weight:500;
+
 }
 
 input,
 select,
 textarea{
+
 width:100%;
+
 padding:14px 16px;
+
 border:none;
+
 outline:none;
+
 border-radius:14px;
+
 background:#12203f;
+
 color:white;
+
 transition:.3s;
+
 }
 
 textarea{
-resize:none;
+
 height:120px;
+
+resize:none;
+
 }
 
 input:focus,
 select:focus,
 textarea:focus{
+
 box-shadow:
 0 0 0 2px #00aaff,
 0 0 20px rgba(0,170,255,.25);
+
 }
 
 .notice{
+
 background:#12203f;
+
 padding:18px;
+
 border-radius:16px;
+
 margin-top:18px;
+
 line-height:1.8;
-border-left:4px solid #00aaff;
+
+border-left:
+4px solid #00aaff;
+
 }
 
 .notice h3{
+
 margin-bottom:10px;
-color:#5cc9ff;
+
+color:#59c5ff;
+
 }
 
 .earnings-box{
+
 background:#081a36;
+
 padding:18px;
+
 border-radius:16px;
+
 margin-top:18px;
+
 font-size:1.1rem;
+
 font-weight:700;
+
 text-align:center;
+
 color:#59c5ff;
+
 }
 
 .submit-btn{
+
 width:100%;
+
 padding:18px;
+
 margin-top:25px;
+
 border:none;
+
 border-radius:16px;
+
 font-size:1rem;
+
 font-weight:700;
+
 cursor:pointer;
+
 background:
 linear-gradient(
 90deg,
@@ -381,13 +578,22 @@ box-shadow:
 0 0 25px rgba(0,170,255,.4);
 
 transition:.3s;
+
 }
 
 .submit-btn:hover{
-transform:translateY(-4px);
+
+transform:
+translateY(-4px);
+
 box-shadow:
 0 0 35px rgba(0,170,255,.6);
+
 }
+
+/* ======================
+   MOBILE
+====================== */
 
 @media(max-width:768px){
 
@@ -404,7 +610,8 @@ font-size:1.9rem;
 }
 
 .benefits{
-grid-template-columns:1fr 1fr;
+grid-template-columns:
+1fr 1fr;
 }
 
 .grid{
@@ -435,8 +642,6 @@ padding:22px;
 <div class="star"></div>
 <div class="star"></div>
 <div class="star"></div>
-<div class="star"></div>
-<div class="star"></div>
 
 </div>
 
@@ -452,7 +657,7 @@ alt="OMKLJ Logo"
 <h1>OMKLJ INDIA</h1>
 
 <p>
-Business Employer Registration
+Verified Business Registration
 </p>
 
 </div>
@@ -460,19 +665,23 @@ Business Employer Registration
 <div class="benefits">
 
 <div class="benefit">
-🏪 Verified Business
+<h3>🏪 Verified Business</h3>
+Trusted Employers
 </div>
 
 <div class="benefit">
-⚡ Fast Hiring
+<h3>⚡ Fast Hiring</h3>
+Quick Recruitment
 </div>
 
 <div class="benefit">
-📍 Nearby Workers
+<h3>📍 Local Workers</h3>
+Nearby Workforce
 </div>
 
 <div class="benefit">
-🔒 Secure Platform
+<h3>🛡 Secure Platform</h3>
+Protected Hiring
 </div>
 
 </div>
@@ -480,23 +689,23 @@ Business Employer Registration
 <div class="form-card">
 
 <h2>
-🏪 Business Employer Registration
+🏪 Business Registration
 </h2>
 
 <div class="section-title">
 Business Information
 </div>
 
-  <div class="grid">
+   <div class="grid">
 
 <div class="field">
 <label>Business Name *</label>
-<input type="text" class="protected-input" maxlength="100">
+<input type="text" class="protected-input">
 </div>
 
 <div class="field">
 <label>Owner Name *</label>
-<input type="text" class="protected-input" maxlength="100">
+<input type="text" class="protected-input">
 </div>
 
 <div class="field">
@@ -509,39 +718,6 @@ Business Information
 <input type="email">
 </div>
 
-<div class="field">
-<label>Aadhaar Number *</label>
-<input type="text">
-</div>
-
-<div class="field">
-<label>GST Number (Optional)</label>
-<input type="text">
-</div>
-
-</div>
-
-<div class="section-title">
-Business Location
-</div>
-
-<div class="grid">
-
-<div class="field">
-<label>State *</label>
-<input type="text" class="protected-input">
-</div>
-
-<div class="field">
-<label>District *</label>
-<input type="text" class="protected-input">
-</div>
-
-</div>
-
-<div class="field">
-<label>Complete Address *</label>
-<textarea class="protected-input"></textarea>
 </div>
 
 <div class="section-title">
@@ -551,7 +727,33 @@ Business Verification
 <div class="grid">
 
 <div class="field">
-<label>Shop Photo *</label>
+<label>Business Type *</label>
+
+<select>
+
+<option>Shop</option>
+<option>Restaurant</option>
+<option>Office</option>
+<option>Warehouse</option>
+<option>Factory</option>
+<option>Hotel</option>
+<option>Supermarket</option>
+
+<option value="other">
+Other
+</option>
+
+</select>
+
+</div>
+
+<div class="field">
+<label>GST Number (Optional)</label>
+<input type="text">
+</div>
+
+<div class="field">
+<label>Business Photo *</label>
 <input type="file">
 </div>
 
@@ -560,16 +762,11 @@ Business Verification
 <input type="file">
 </div>
 
-<div class="field">
-<label>Business License (Optional)</label>
-<input type="file">
 </div>
 
 <div class="field">
-<label>Emergency Contact *</label>
-<input type="tel">
-</div>
-
+<label>Business Address *</label>
+<textarea class="protected-input"></textarea>
 </div>
 
 <div class="section-title">
@@ -587,26 +784,19 @@ Hiring Requirement
 <option>Cleaner</option>
 <option>Driver</option>
 <option>Cook</option>
-<option>Security Guard</option>
-<option>Shop Helper</option>
-<option>Delivery Worker</option>
 <option>Electrician</option>
 <option>Plumber</option>
 <option>Mechanic</option>
+<option>Security Guard</option>
+<option>Delivery Worker</option>
 <option>Office Assistant</option>
-<option>Receptionist</option>
+<option>Data Entry Operator</option>
 <option>Warehouse Worker</option>
 <option>Packer</option>
 <option>Loader</option>
 <option>Cashier</option>
-<option>Sales Executive</option>
 <option>Gardener</option>
 <option>Painter</option>
-<option>AC Technician</option>
-<option>Computer Operator</option>
-<option>Data Entry Operator</option>
-<option>Kitchen Helper</option>
-<option>Waiter</option>
 
 <option value="other">
 Other
@@ -621,11 +811,21 @@ Other
 <input type="number" min="1">
 </div>
 
+<div class="field">
+<label>Working Hours Per Day *</label>
+<input type="number" id="hoursInput">
+</div>
+
+<div class="field">
+<label>Hourly Rate (₹) *</label>
+<input type="number" id="rateInput">
+</div>
+
 </div>
 
 <div
 class="field"
-id="otherField"
+id="otherRequirement"
 style="display:none;"
 >
 
@@ -635,7 +835,6 @@ Describe Requirement
 
 <input
 type="text"
-id="otherInput"
 class="protected-input"
 maxlength="100"
 placeholder="Maximum 100 characters"
@@ -643,63 +842,11 @@ placeholder="Maximum 100 characters"
 
 </div>
 
-<div class="grid">
-
-<div class="field">
-
-<label>Job Type *</label>
-
-<select>
-
-<option>One Day Job</option>
-<option>Multi Day Job</option>
-<option>Weekly Requirement</option>
-<option>Monthly Requirement</option>
-
-</select>
-
-</div>
-
-<div class="field">
-<label>Job Date *</label>
-<input type="date">
-</div>
-
-<div class="field">
-<label>Start Time *</label>
-<input type="time" id="startTime">
-</div>
-
-<div class="field">
-<label>End Time *</label>
-<input type="time" id="endTime">
-</div>
-
-<div class="field">
-<label>Hourly Rate (₹) *</label>
-<input
-type="number"
-id="hourlyRate"
-placeholder="100"
->
-</div>
-
-<div class="field">
-<label>Work Location *</label>
-<input type="text" class="protected-input">
-</div>
-
-</div>
-
 <div class="earnings-box">
 
-Working Hours:
-<span id="hoursResult">0</span>
+Estimated Daily Earnings:
 
-<br><br>
-
-Estimated Earnings:
-₹<span id="earningsResult">0</span>
+₹<span id="earnings">0</span>
 
 </div>
 
@@ -709,31 +856,34 @@ Estimated Earnings:
 OMKLJ Content Policy
 </h3>
 
-Adult services, illegal activities,
-child labour, drugs,
-weapons, gambling,
-and external contact details
-are strictly prohibited.
-
-Violations may result in account suspension
-or permanent removal.
+Adult services,
+illegal activities,
+child labour,
+drugs,
+weapons,
+gambling,
+and external contact details are prohibited.
 
 </div>
 
 <div class="notice">
 
 <h3>
-Worker Safety Verification
+Business Safety Notice
 </h3>
 
-Before QR generation,
-the employer must confirm that the worker does not appear under the influence of alcohol or intoxicating substances.
+All workers must be treated fairly.
+
+Fraud, abuse, harassment,
+or false information may result in account suspension.
 
 </div>
 
-<button class="submit-btn">
+<button
+class="submit-btn"
+onclick="window.location.href='business-dashboard.html'">
 
-Register Business Employer →
+Register Business →
 
 </button>
 
@@ -748,22 +898,72 @@ Register Business Employer →
 ====================== */
 
 const workerCategory =
-document.getElementById("workerCategory");
+document.getElementById(
+"workerCategory"
+);
 
-const otherField =
-document.getElementById("otherField");
+const otherRequirement =
+document.getElementById(
+"otherRequirement"
+);
 
 workerCategory.addEventListener(
 "change",
 function(){
 
 if(this.value==="other"){
-otherField.style.display="block";
+
+otherRequirement.style.display="block";
+
 }else{
-otherField.style.display="none";
+
+otherRequirement.style.display="none";
+
 }
 
 }
+);
+
+/* ======================
+   EARNINGS CALCULATOR
+====================== */
+
+const hoursInput =
+document.getElementById(
+"hoursInput"
+);
+
+const rateInput =
+document.getElementById(
+"rateInput"
+);
+
+const earnings =
+document.getElementById(
+"earnings"
+);
+
+function updateEarnings(){
+
+const hours =
+Number(hoursInput.value)||0;
+
+const rate =
+Number(rateInput.value)||0;
+
+earnings.textContent =
+hours * rate;
+
+}
+
+hoursInput.addEventListener(
+"input",
+updateEarnings
+);
+
+rateInput.addEventListener(
+"input",
+updateEarnings
 );
 
 /* ======================
@@ -820,7 +1020,8 @@ const blockedWords = [
 
 function containsBlockedContent(text){
 
-const value = text.toLowerCase();
+const value =
+text.toLowerCase();
 
 for(let word of blockedWords){
 
@@ -852,17 +1053,10 @@ this.value
 ){
 
 alert(
-"Invalid content detected. Please enter valid information."
+"Invalid content detected."
 );
 
 this.value="";
-
-}
-
-if(this.value.length > 100){
-
-this.value =
-this.value.substring(0,100);
 
 }
 
@@ -870,80 +1064,6 @@ this.value.substring(0,100);
 );
 
 });
-
-/* ======================
-   HOURS CALCULATOR
-====================== */
-
-const startTime =
-document.getElementById("startTime");
-
-const endTime =
-document.getElementById("endTime");
-
-const hourlyRate =
-document.getElementById("hourlyRate");
-
-const hoursResult =
-document.getElementById("hoursResult");
-
-const earningsResult =
-document.getElementById("earningsResult");
-
-function calculateEarnings(){
-
-if(
-startTime.value &&
-endTime.value
-){
-
-const start =
-new Date(
-"1970-01-01T" +
-startTime.value
-);
-
-const end =
-new Date(
-"1970-01-01T" +
-endTime.value
-);
-
-const diff =
-(end-start)/(1000*60*60);
-
-if(diff > 0){
-
-hoursResult.textContent =
-diff;
-
-const earnings =
-diff *
-(Number(hourlyRate.value)||0);
-
-earningsResult.textContent =
-earnings;
-
-}
-
-}
-
-}
-
-startTime.addEventListener(
-"input",
-calculateEarnings
-);
-
-endTime.addEventListener(
-"input",
-calculateEarnings
-);
-
-hourlyRate.addEventListener(
-"input",
-calculateEarnings
-);
 
 </script>
 

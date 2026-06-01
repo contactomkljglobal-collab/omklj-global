@@ -296,36 +296,125 @@ padding:20px;
 
 </div>
 
-<div class="section-title">Hiring Requirements</div>
+<div class="section-title">👷 Hiring Requirements</div>
 
 <div class="grid">
 
 <div class="field">
-<label>Worker Category Needed</label>
-<select>
+<label>Worker Category *</label>
+
+<select id="workerCategory">
+
+<option value="">Select Category</option>
+
 <option>Cleaner</option>
 <option>Driver</option>
 <option>Cook</option>
 <option>Security Guard</option>
 <option>Shop Helper</option>
 <option>Delivery Worker</option>
+<option>Electrician</option>
+<option>Plumber</option>
+<option>Mechanic</option>
+<option>Office Assistant</option>
+<option>Receptionist</option>
+<option>Warehouse Worker</option>
+<option>Packer</option>
+<option>Loader</option>
+<option>Cashier</option>
+<option>Sales Executive</option>
+<option>Gardener</option>
+<option>Painter</option>
+<option>AC Technician</option>
+<option>Computer Operator</option>
+<option>Data Entry Operator</option>
+<option>Kitchen Helper</option>
+<option>Waiter</option>
+
+<option value="other">Other</option>
+
 </select>
 </div>
 
 <div class="field">
-<label>Number Of Workers Required</label>
-<input type="number">
+<label>Number Of Workers Required *</label>
+<input type="number" min="1">
+</div>
+
+</div>
+
+
+<div class="field" id="otherJobField" style="display:none; margin-top:15px;">
+
+<label>Describe Requirement *</label>
+
+<input
+type="text"
+id="otherJobInput"
+placeholder="Example: Festival Helper, Banner Installer"
+>
+
+</div>
+
+
+<div class="grid">
+
+<div class="field">
+<label>Hours Required *</label>
+<input
+type="number"
+id="hours"
+placeholder="Example: 8"
+>
 </div>
 
 <div class="field">
-<label>Working Hours</label>
-<input type="text">
+<label>Hourly Rate (₹) *</label>
+<input
+type="number"
+id="hourlyRate"
+placeholder="Example: 100"
+>
 </div>
 
 <div class="field">
-<label>Expected Joining Date</label>
+<label>Job Date *</label>
 <input type="date">
 </div>
+
+<div class="field">
+<label>Job Duration *</label>
+
+<select>
+<option>One Day Job</option>
+<option>2-3 Days</option>
+<option>Weekly Requirement</option>
+</select>
+
+</div>
+
+<div class="field">
+<label>Start Time *</label>
+<input type="time">
+</div>
+
+<div class="field">
+<label>End Time *</label>
+<input type="time">
+</div>
+
+</div>
+
+
+<div class="notice">
+
+<h3>Estimated Worker Earnings</h3>
+
+<p id="earningResult">
+
+Enter Hours and Hourly Rate
+
+</p>
 
 </div>
 
@@ -361,4 +450,5 @@ Register Business Employer →
 </div>
 
 </body>
+
 </html>

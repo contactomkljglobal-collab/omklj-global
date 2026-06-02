@@ -11,31 +11,18 @@ const connectDB = require("./config/db");
 ========================= */
 
 const authRoutes = require("./routes/authRoutes");
-
 const workerRoutes = require("./routes/workerRoutes");
-
 const businessRoutes = require("./routes/businessRoutes");
+const personalRoutes = require("./routes/personalRoutes");
 
 /*
-UNCOMMENT WHEN CREATED
+CREATE THESE FILES LATER
 
-const personalRoutes =
-require("./routes/personalRoutes");
-
-const jobRoutes =
-require("./routes/jobRoutes");
-
-const applicationRoutes =
-require("./routes/applicationRoutes");
-
-const dashboardRoutes =
-require("./routes/dashboardRoutes");
-
-const paymentRoutes =
-require("./routes/paymentRoutes");
-
-const ratingRoutes =
-require("./routes/ratingRoutes");
+const jobRoutes = require("./routes/jobRoutes");
+const applicationRoutes = require("./routes/applicationRoutes");
+const dashboardRoutes = require("./routes/dashboardRoutes");
+const paymentRoutes = require("./routes/paymentRoutes");
+const ratingRoutes = require("./routes/ratingRoutes");
 */
 
 /* =========================
@@ -83,13 +70,13 @@ app.use(
   businessRoutes
 );
 
-/*
-UNCOMMENT WHEN CREATED
-
 app.use(
   "/api/personal",
   personalRoutes
 );
+
+/*
+UNCOMMENT AFTER FILES EXIST
 
 app.use(
   "/api/jobs",
@@ -139,8 +126,7 @@ app.get("/health", (req, res) => {
 
     success: true,
 
-    message:
-      "OMKLJ Server Active"
+    message: "OMKLJ Server Active"
 
   });
 

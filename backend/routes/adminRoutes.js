@@ -1,5 +1,4 @@
 const express = require("express");
-
 const router = express.Router();
 
 const {
@@ -9,22 +8,10 @@ const {
   rejectWorker
 } = require("../controllers/adminController");
 
-router.get(
-  "/dashboard",
-  getDashboardStats
-);
+router.get("/dashboard", getDashboardStats);
+router.get("/workers", getAllWorkers);
 
-router.get(
-  "/workers",
-  getAllWorkers
-);
-router.put(
-  "/workers/:id/approve",
-  approveWorker
-);
+router.put("/workers/:id/approve", approveWorker);
+router.put("/workers/:id/reject", rejectWorker);
 
-router.put(
-  "/workers/:id/reject",
-  rejectWorker
-);
 module.exports = router;

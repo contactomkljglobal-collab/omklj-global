@@ -2,20 +2,454 @@
 <html lang="en">
 
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="viewport"
+content="width=device-width,
+initial-scale=1.0">
 
 <title>OMKLJ India</title>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect"
+href="https://fonts.googleapis.com">
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="preconnect"
+href="https://fonts.gstatic.com"
+crossorigin>
 
-<link rel="stylesheet" href="css/style.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+rel="stylesheet">
+
+<link rel="stylesheet"
+href="css/style.css">
+
+<style>
+
+:root{
+
+--omklj-blue:#00aaff;
+--omklj-dark:#020617;
+--omklj-card:#12203f;
+--omklj-red:#ff3b3b;
+
+}
+
+.founder-overlay{
+
+position:fixed;
+
+top:0;
+left:0;
+
+width:100%;
+height:100%;
+
+background:
+radial-gradient(
+circle at center,
+#06152d,
+#020617
+);
+
+display:none;
+
+justify-content:center;
+align-items:center;
+
+flex-direction:column;
+
+z-index:99999;
+
+overflow:hidden;
+
+}
+
+.founder-overlay.active{
+
+display:flex;
+
+animation:
+overlayFade .8s ease;
+
+}
+
+@keyframes overlayFade{
+
+from{
+opacity:0;
+}
+
+to{
+opacity:1;
+}
+
+}
+
+.warp-bg{
+
+position:absolute;
+
+width:100%;
+height:100%;
+
+overflow:hidden;
+
+pointer-events:none;
+
+}
+
+.warp-line{
+
+position:absolute;
+
+width:2px;
+
+height:120px;
+
+background:
+linear-gradient(
+transparent,
+#00aaff,
+transparent
+);
+
+animation:
+warpMove 1s linear infinite;
+
+opacity:.6;
+
+}
+
+@keyframes warpMove{
+
+from{
+
+transform:
+translateY(-200px);
+
+}
+
+to{
+
+transform:
+translateY(120vh);
+
+}
+
+}
+
+.control-center{
+
+position:relative;
+
+z-index:5;
+
+width:90%;
+max-width:500px;
+
+background:
+rgba(18,32,63,.92);
+
+backdrop-filter:
+blur(10px);
+
+border:
+1px solid rgba(
+0,170,255,.3
+);
+
+border-radius:24px;
+
+padding:35px;
+
+text-align:center;
+
+box-shadow:
+0 0 60px rgba(
+0,170,255,.15
+);
+
+}
+
+.founder-logo{
+
+width:100px;
+
+height:100px;
+
+object-fit:contain;
+
+margin-bottom:20px;
+
+animation:
+logoFloat 3s ease-in-out infinite;
+
+}
+
+@keyframes logoFloat{
+
+0%{
+transform:
+translateY(0);
+}
+
+50%{
+transform:
+translateY(-10px);
+}
+
+100%{
+transform:
+translateY(0);
+}
+
+}
+
+.founder-title{
+
+font-size:38px;
+
+font-weight:800;
+
+color:#ffffff;
+
+margin-bottom:10px;
+
+letter-spacing:2px;
+
+}
+
+.founder-subtitle{
+
+color:#00aaff;
+
+font-size:16px;
+
+margin-bottom:30px;
+
+line-height:1.8;
+
+}
+
+.access-line{
+
+height:2px;
+
+width:100%;
+
+background:
+linear-gradient(
+90deg,
+transparent,
+#00aaff,
+transparent
+);
+
+margin:20px 0;
+
+}
+
+.founder-input{
+
+width:100%;
+
+padding:16px;
+
+border:none;
+
+outline:none;
+
+border-radius:14px;
+
+background:#0b1630;
+
+color:white;
+
+margin-bottom:15px;
+
+font-size:15px;
+
+}
+
+.founder-btn{
+
+width:100%;
+
+padding:16px;
+
+border:none;
+
+border-radius:14px;
+
+cursor:pointer;
+
+font-weight:700;
+
+font-size:15px;
+
+background:
+linear-gradient(
+135deg,
+#00aaff,
+#005eff
+);
+
+color:white;
+
+transition:.3s;
+
+}
+
+.founder-btn:hover{
+
+transform:
+translateY(-3px);
+
+}
+
+.founder-message{
+
+margin-top:15px;
+
+color:#ff4d4d;
+
+font-size:14px;
+
+}
+
+.sequence-indicator{
+
+position:fixed;
+
+bottom:20px;
+
+right:20px;
+
+background:
+rgba(0,0,0,.4);
+
+padding:10px 15px;
+
+border-radius:12px;
+
+font-size:12px;
+
+display:none;
+
+color:white;
+
+z-index:9999;
+
+}
+
+.rocket-boost{
+
+animation:
+rocketBoost .9s ease forwards;
+
+}
+
+@keyframes rocketBoost{
+
+0%{
+transform:
+scale(1);
+}
+
+50%{
+transform:
+scale(1.05);
+}
+
+100%{
+transform:
+scale(0);
+opacity:0;
+}
+
+}
+
+</style>
+
 </head>
 
 <body>
+
+<div
+class="sequence-indicator"
+id="sequenceIndicator">
+
+Founder Sequence:
+0 / 5
+
+</div>
+
+<div
+class="founder-overlay"
+id="founderOverlay">
+
+<div class="warp-bg"
+id="warpBg">
+
+</div>
+
+  <div class="control-center">
+
+<img
+src="https://i.ibb.co/N24ghXDh/Picsart-26-06-01-01-49-36-525.png"
+class="founder-logo"
+alt="OMKLJ">
+
+<div class="founder-title">
+HEY ACE
+</div>
+
+<div class="founder-subtitle">
+
+WELCOME BACK
+
+<br><br>
+
+OMKLJ CONTROL CENTER
+
+<br><br>
+
+AUTHORIZED FOUNDER ACCESS ONLY
+
+</div>
+
+<div class="access-line"></div>
+
+<input
+type="text"
+id="founderId"
+class="founder-input"
+placeholder="Founder ID">
+
+<input
+type="password"
+id="founderPassword"
+class="founder-input"
+placeholder="Founder Password">
+
+<button
+class="founder-btn"
+onclick="founderLogin()">
+
+ENTER CONTROL CENTER
+
+</button>
+
+<div
+class="founder-message"
+id="founderMessage">
+
+</div>
+
+</div>
+
+</div>
 
 <!-- NAVBAR -->
 
@@ -28,23 +462,56 @@ src="https://i.ibb.co/N24ghXDh/Picsart-26-06-01-01-49-36-525.png"
 class="logo"
 alt="OMKLJ India Logo">
 
-<h2>OMKLJ INDIA</h2>
+<h2>
+
+<span class="founder-letter"
+data-letter="O">O</span>
+
+<span class="founder-letter"
+data-letter="M">M</span>
+
+<span class="founder-letter"
+data-letter="K">K</span>
+
+<span class="founder-letter"
+data-letter="L">L</span>
+
+<span class="founder-letter"
+data-letter="J">J</span>
+
+INDIA
+
+</h2>
 
 </div>
 
-<div class="menu-toggle" onclick="toggleMenu()">
+<div
+class="menu-toggle"
+onclick="toggleMenu()">
+
 <span></span>
 <span></span>
 <span></span>
+
 </div>
 
 <nav id="navMenu">
 
 <a href="#home">Home</a>
+
 <a href="#about">About</a>
-<a href="#how">How It Works</a>
-<a href="#services">Services</a>
-<a href="#contact">Contact</a>
+
+<a href="#how">
+How It Works
+</a>
+
+<a href="#services">
+Services
+</a>
+
+<a href="#contact">
+Contact
+</a>
 
 </nav>
 
@@ -52,7 +519,9 @@ alt="OMKLJ India Logo">
 
 <!-- HERO -->
 
-<section id="home" class="hero">
+<section
+id="home"
+class="hero">
 
 <div class="hero-bg"></div>
 
@@ -61,56 +530,82 @@ alt="OMKLJ India Logo">
 <div class="hero-content">
 
 <div class="badge">
+
 🚀 India's Smart Workforce Platform
+
 </div>
 
 <h1 class="hero-title">
-Connecting Workers <br>
+
+Connecting Workers
+<br>
 With Opportunity
+
 </h1>
 
 <p class="hero-subtitle">
+
 OMKLJ India helps businesses find verified workers and helps workers discover nearby earning opportunities quickly and safely.
+
 </p>
 
 <div class="hero-buttons">
 
 <button class="primary-btn">
+
 Find Work
+
 </button>
 
 <button class="secondary-btn">
+
 Post Job
+
 </button>
 
 </div>
 
 <div class="floating-tags">
 
-<div class="tag">Nearby Jobs</div>
+<div class="tag">
+Nearby Jobs
+</div>
 
-<div class="tag">Verified Workers</div>
+<div class="tag">
+Verified Workers
+</div>
 
-<div class="tag">AI Matching</div>
+<div class="tag">
+AI Matching
+</div>
 
-<div class="tag">Fast Hiring</div>
-
+<div class="tag">
+Fast Hiring
 </div>
 
 </div>
 
-<!-- ROCKET -->
+</div>
 
 <div class="rocket-scene">
 
 <div class="space-glow"></div>
 
-<div class="rocket-wrapper">
+<div
+class="rocket-wrapper"
+id="rocketWrapper">
 
-<div class="booster booster-left">
+<div
+class="booster booster-left">
+
 <div class="rocket-top"></div>
+
 <div class="rocket-core"></div>
-<div class="engine-fire left-fire"></div>
+
+<div
+class="engine-fire left-fire">
+</div>
+
 </div>
 
 <div class="main-rocket">
@@ -125,15 +620,22 @@ Post Job
 
 </div>
 
-<div class="engine-fire center-fire"></div>
+<div
+class="engine-fire center-fire">
+</div>
 
 </div>
 
-<div class="booster booster-right">
+<div
+class="booster booster-right">
 
 <div class="rocket-top"></div>
+
 <div class="rocket-core"></div>
-<div class="engine-fire right-fire"></div>
+
+<div
+class="engine-fire right-fire">
+</div>
 
 </div>
 
@@ -143,8 +645,7 @@ Post Job
 
 </section>
 
-<!-- STATS -->
-
+  <!-- STATS -->
 <section class="stats">
 
 <div class="stat-card">
@@ -169,158 +670,6 @@ Post Job
 
 </section>
 
-<!-- ABOUT -->
-
-<section id="about" class="services">
-
-<h2 class="section-title">
-About OMKLJ India
-</h2>
-
-<div class="services-grid">
-
-<div class="service-card">
-
-<h3>Verified Workforce</h3>
-
-<p>
-Every worker completes identity verification before receiving jobs.
-</p>
-
-</div>
-
-<div class="service-card">
-
-<h3>Trusted Businesses</h3>
-
-<p>
-Businesses are verified before posting opportunities.
-</p>
-
-</div>
-
-<div class="service-card">
-
-<h3>Nationwide Mission</h3>
-
-<p>
-Helping reduce unemployment and create opportunities across India.
-</p>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- HOW IT WORKS -->
-
-<section id="how" class="services">
-
-<h2 class="section-title">
-How OMKLJ Works
-</h2>
-
-<div class="services-grid">
-
-<div class="service-card">
-<h3>1. Register</h3>
-<p>Create account and complete verification.</p>
-</div>
-
-<div class="service-card">
-<h3>2. Post Job</h3>
-<p>Businesses publish work opportunities.</p>
-</div>
-
-<div class="service-card">
-<h3>3. Match</h3>
-<p>Nearby workers receive notifications.</p>
-</div>
-
-<div class="service-card">
-<h3>4. Accept</h3>
-<p>Worker accepts the opportunity.</p>
-</div>
-
-<div class="service-card">
-<h3>5. Complete</h3>
-<p>Job gets completed successfully.</p>
-</div>
-
-<div class="service-card">
-<h3>6. Payment</h3>
-<p>Secure payment after work completion.</p>
-</div>
-
-</div>
-
-</section>
-
-<!-- SERVICES -->
-
-<section id="services" class="services">
-
-<h2 class="section-title">
-Why Choose OMKLJ India?
-</h2>
-
-<div class="services-grid">
-
-<div class="service-card">
-
-<h3>AI Job Matching</h3>
-
-<p>
-Smart technology connects the right worker with the right job.
-</p>
-
-</div>
-
-<div class="service-card">
-
-<h3>Location Based Jobs</h3>
-
-<p>
-Workers receive opportunities near their location.
-</p>
-
-</div>
-
-<div class="service-card">
-
-<h3>Fast Hiring</h3>
-
-<p>
-Businesses can hire workers within minutes.
-</p>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- CTA -->
-
-<section class="cta-section">
-
-<h2>
-Ready To Join OMKLJ India?
-</h2>
-
-<p>
-Start building India's largest opportunity network.
-</p>
-
-<a href="choose-role.html" class="primary-btn">
-Get Started
-</a>
-
-</section>
-
-<!-- CONTACT -->
-
 <footer id="contact">
 
 <h3>OMKLJ India</h3>
@@ -341,12 +690,268 @@ Connecting Opportunity With Talent
 
 <script src="js/app.js"></script>
 
-  <script>
-function toggleMenu() {
-document.querySelector("nav").classList.toggle("active");
-document.querySelector(".menu-toggle").classList.toggle("active");
+<script>
+
+function toggleMenu(){
+
+document
+.querySelector("nav")
+.classList
+.toggle("active");
+
+document
+.querySelector(".menu-toggle")
+.classList
+.toggle("active");
+
 }
-  </script>
+
+/* =========================
+   FOUNDER ACCESS SYSTEM
+========================= */
+
+const founderSequence =
+
+["O","M","K","L","J"];
+
+let currentSequence = [];
+
+const letters =
+
+document.querySelectorAll(
+".founder-letter"
+);
+
+const indicator =
+
+document.getElementById(
+"sequenceIndicator"
+);
+
+letters.forEach(letter => {
+
+letter.style.cursor =
+"pointer";
+
+letter.addEventListener(
+"click",
+function(){
+
+const clicked =
+
+this.dataset.letter;
+
+currentSequence.push(
+clicked
+);
+
+indicator.style.display =
+"block";
+
+indicator.innerText =
+
+`Founder Sequence:
+${currentSequence.length} / 5`;
+
+for(
+let i=0;
+i<currentSequence.length;
+i++
+){
+
+if(
+currentSequence[i]
+!== founderSequence[i]
+){
+
+currentSequence = [];
+
+indicator.innerText =
+"Sequence Reset";
+
+setTimeout(()=>{
+
+indicator.style.display =
+"none";
+
+},1000);
+
+return;
+
+}
+
+}
+
+if(
+currentSequence.length
+=== 5
+){
+
+launchFounderMode();
+
+currentSequence = [];
+
+}
+
+});
+
+});
+
+/* =========================
+   ROCKET LAUNCH
+========================= */
+
+function launchFounderMode(){
+
+const rocket =
+
+document.getElementById(
+"rocketWrapper"
+);
+
+rocket.classList.add(
+"rocket-boost"
+);
+
+createWarpLines();
+
+setTimeout(()=>{
+
+document
+.getElementById(
+"founderOverlay"
+)
+.classList.add(
+"active"
+);
+
+},900);
+
+}
+
+/* =========================
+   WARP SPEED EFFECT
+========================= */
+
+function createWarpLines(){
+
+const warpBg =
+
+document.getElementById(
+"warpBg"
+);
+
+warpBg.innerHTML = "";
+
+for(let i=0;i<120;i++){
+
+const line =
+
+document.createElement(
+"div"
+);
+
+line.className =
+"warp-line";
+
+line.style.left =
+Math.random()*100+"%";
+
+line.style.animationDelay =
+Math.random()+"s";
+
+warpBg.appendChild(
+line
+);
+
+}
+
+}
+
+/* =========================
+   FOUNDER LOGIN
+========================= */
+
+function founderLogin(){
+
+const founderId =
+
+document
+.getElementById(
+"founderId"
+)
+.value;
+
+const founderPassword =
+
+document
+.getElementById(
+"founderPassword"
+)
+.value;
+
+if(
+
+founderId ===
+"ACE"
+
+&&
+
+founderPassword ===
+"OMKLJ@Founder"
+
+){
+
+localStorage.setItem(
+"adminLoggedIn",
+"true"
+);
+
+document
+.getElementById(
+"founderMessage"
+)
+.style.color =
+"#00ff88";
+
+document
+.getElementById(
+"founderMessage"
+)
+.innerText =
+
+"ACCESS GRANTED";
+
+setTimeout(()=>{
+
+window.location.href =
+"admin-dashboard.html";
+
+},1200);
+
+}
+else{
+
+document
+.getElementById(
+"founderMessage"
+)
+.style.color =
+"#ff4d4d";
+
+document
+.getElementById(
+"founderMessage"
+)
+.innerText =
+
+"ACCESS DENIED";
+
+}
+
+}
+
+</script>
 
 </body>
 </html>

@@ -6,44 +6,148 @@ dotenv.config();
 
 const connectDB = require("./config/db");
 
-/* ROUTES */
+/* =========================
+   ROUTES
+========================= */
+
 const authRoutes = require("./routes/authRoutes");
+
 const workerRoutes = require("./routes/workerRoutes");
 
-/* APP */
+const businessRoutes = require("./routes/businessRoutes");
+
+/*
+UNCOMMENT WHEN CREATED
+
+const personalRoutes =
+require("./routes/personalRoutes");
+
+const jobRoutes =
+require("./routes/jobRoutes");
+
+const applicationRoutes =
+require("./routes/applicationRoutes");
+
+const dashboardRoutes =
+require("./routes/dashboardRoutes");
+
+const paymentRoutes =
+require("./routes/paymentRoutes");
+
+const ratingRoutes =
+require("./routes/ratingRoutes");
+*/
+
+/* =========================
+   APP
+========================= */
+
 const app = express();
 
-/* CONNECT DATABASE */
+/* =========================
+   DATABASE
+========================= */
+
 connectDB();
 
-/* MIDDLEWARE */
+/* =========================
+   MIDDLEWARE
+========================= */
+
 app.use(cors());
 
 app.use(express.json());
 
-app.use(express.urlencoded({ extended: true }));
+app.use(
+  express.urlencoded({
+    extended: true
+  })
+);
 
-/* API ROUTES */
+/* =========================
+   API ROUTES
+========================= */
 
-app.use("/api/auth", authRoutes);
+app.use(
+  "/api/auth",
+  authRoutes
+);
 
-app.use("/api/workers", workerRoutes);
+app.use(
+  "/api/workers",
+  workerRoutes
+);
 
-/* TEST ROUTE */
+app.use(
+  "/api/business",
+  businessRoutes
+);
+
+/*
+UNCOMMENT WHEN CREATED
+
+app.use(
+  "/api/personal",
+  personalRoutes
+);
+
+app.use(
+  "/api/jobs",
+  jobRoutes
+);
+
+app.use(
+  "/api/applications",
+  applicationRoutes
+);
+
+app.use(
+  "/api/dashboard",
+  dashboardRoutes
+);
+
+app.use(
+  "/api/payments",
+  paymentRoutes
+);
+
+app.use(
+  "/api/ratings",
+  ratingRoutes
+);
+*/
+
+/* =========================
+   ROOT ROUTE
+========================= */
 
 app.get("/", (req, res) => {
-  res.send("OMKLJ Backend Running 🚀");
+
+  res.send(
+    "OMKLJ Backend Running 🚀"
+  );
+
 });
 
-/* HEALTH CHECK */
+/* =========================
+   HEALTH CHECK
+========================= */
 
 app.get("/health", (req, res) => {
+
   res.status(200).json({
+
     success: true,
-    message: "OMKLJ Server Active"
+
+    message:
+      "OMKLJ Server Active"
+
   });
+
 });
 
-/* EXPORT APP */
+/* =========================
+   EXPORT
+========================= */
 
 module.exports = app;

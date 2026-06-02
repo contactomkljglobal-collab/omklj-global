@@ -18,6 +18,8 @@ const businessRoutes = require("./routes/businessRoutes");
 
 const personalRoutes = require("./routes/personalRoutes");
 
+const adminRoutes = require("./routes/adminRoutes");
+
 const jobRoutes = require("./routes/jobRoutes");
 
 const applicationRoutes =
@@ -89,6 +91,11 @@ app.use(
 app.use(
   "/api/dashboard",
   dashboardRoutes
+);
+
+app.use(
+   "/api/admin", 
+   adminRoutes
 );
 
 /* =========================

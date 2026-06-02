@@ -11,19 +11,20 @@ const connectDB = require("./config/db");
 ========================= */
 
 const authRoutes = require("./routes/authRoutes");
+
 const workerRoutes = require("./routes/workerRoutes");
+
 const businessRoutes = require("./routes/businessRoutes");
+
 const personalRoutes = require("./routes/personalRoutes");
 
-/*
-CREATE THESE FILES LATER
-
 const jobRoutes = require("./routes/jobRoutes");
-const applicationRoutes = require("./routes/applicationRoutes");
-const dashboardRoutes = require("./routes/dashboardRoutes");
-const paymentRoutes = require("./routes/paymentRoutes");
-const ratingRoutes = require("./routes/ratingRoutes");
-*/
+
+const applicationRoutes =
+require("./routes/applicationRoutes");
+
+const dashboardRoutes =
+require("./routes/dashboardRoutes");
 
 /* =========================
    APP
@@ -75,9 +76,6 @@ app.use(
   personalRoutes
 );
 
-/*
-UNCOMMENT AFTER FILES EXIST
-
 app.use(
   "/api/jobs",
   jobRoutes
@@ -92,17 +90,6 @@ app.use(
   "/api/dashboard",
   dashboardRoutes
 );
-
-app.use(
-  "/api/payments",
-  paymentRoutes
-);
-
-app.use(
-  "/api/ratings",
-  ratingRoutes
-);
-*/
 
 /* =========================
    ROOT ROUTE
@@ -126,7 +113,8 @@ app.get("/health", (req, res) => {
 
     success: true,
 
-    message: "OMKLJ Server Active"
+    message:
+      "OMKLJ Server Active"
 
   });
 

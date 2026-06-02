@@ -10,19 +10,22 @@ const workerSchema = new mongoose.Schema(
 
     fullName: {
         type: String,
-        required: true
+        required: true,
+        trim: true
     },
 
     phone: {
         type: String,
         required: true,
-        unique: true
+        unique: true,
+        match: /^[0-9]{10}$/
     },
 
     aadhaarNumber: {
         type: String,
         required: true,
-        unique: true
+        unique: true,
+        match: /^[0-9]{12}$/
     },
 
     dateOfBirth: {
@@ -30,27 +33,36 @@ const workerSchema = new mongoose.Schema(
     },
 
     gender: {
-        type: String
+        type: String,
+        enum: ["Male", "Female", "Other"]
     },
 
     state: {
-        type: String
+        type: String,
+        required: true,
+        trim: true
     },
 
     district: {
-        type: String
+        type: String,
+        required: true,
+        trim: true
     },
 
     address: {
-        type: String
+        type: String,
+        required: true,
+        trim: true
     },
 
     workCategory: {
-        type: String
+        type: String,
+        required: true
     },
 
     employmentType: {
-        type: String
+        type: String,
+        required: true
     },
 
     trustScore: {
@@ -85,15 +97,18 @@ const workerSchema = new mongoose.Schema(
     },
 
     profilePhoto: {
-        type: String
+        type: String,
+        required: true
     },
 
     aadhaarFront: {
-        type: String
+        type: String,
+        required: true
     },
 
     aadhaarBack: {
-        type: String
+        type: String,
+        required: true
     }
 },
 {

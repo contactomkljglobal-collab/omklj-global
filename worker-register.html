@@ -890,11 +890,48 @@ return;
 
 }
 
-/* BACKEND CONNECTION COMING NEXT */
+try {
 
-alert(
-"Validation Successful. Ready for backend registration."
-);
+  const response = await fetch(
+    "https://omklj-global.vercel.app/api/auth/register",
+    {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        name: fullName,
+        email: email,
+        password: aadhaarNumber,
+        role: "worker"
+      })
+    }
+  );
+
+  const data = await response.json();
+
+  if (!response.ok) {
+    alert(data.message || "Registration Failed");
+    return;
+  }
+
+  alert("Worker Registered Successfully");
+
+  localStorage.setItem(
+    "omkljUser",
+    JSON.stringify(data)
+  );
+
+  window.location.href =
+    "worker-dashboard.html";
+
+} catch (error) {
+
+  console.error(error);
+
+  alert("Server Error. Please try again.");
+
+}
 
 }
 );

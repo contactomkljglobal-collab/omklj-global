@@ -63,8 +63,68 @@ const getAllWorkers = async (req, res) => {
 
   }
 };
+const approveWorker = async (req, res) => {
 
+  try {
+
+    const worker =
+      await Worker.findByIdAndUpdate(
+        req.params.id,
+        {
+          isVerified: true,
+          verificationStatus: "approved"
+        },
+        { new: true }
+      );
+
+    res.status(200).json({
+      success: true,
+      message: "Worker Approved",
+      worker
+    });
+
+  } catch (error) {
+
+    res.status(500).json({
+      success: false,
+      message: "Approval Failed"
+    });
+
+  }
+};
+
+const rejectWorker = async (req, res) => {
+
+  try {
+
+    const worker =
+      await Worker.findByIdAndUpdate(
+        req.params.id,
+        {
+          isVerified: false,
+          verificationStatus: "rejected"
+        },
+        { new: true }
+      );
+
+    res.status(200).json({
+      success: true,
+      message: "Worker Rejected",
+      worker
+    });
+
+  } catch (error) {
+
+    res.status(500).json({
+      success: false,
+      message: "Rejection Failed"
+    });
+
+  }
+};
 module.exports = {
   getDashboardStats,
-  getAllWorkers
+  getAllWorkers,
+  approveWorker,
+  rejectWorker
 };

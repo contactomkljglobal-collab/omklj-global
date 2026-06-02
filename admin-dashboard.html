@@ -161,133 +161,128 @@ OMKLJ INDIA ADMIN
 </div>
 
 <script>
+<script>
 
-const API =
-"https://omklj-global.vercel.app/api/admin";
+const API = "https://omklj-global.vercel.app/api/admin";
 
-async function loadWorkers(){
+async function loadWorkers() {
 
-try{
+  try {
 
-const response =
-await fetch(
-`${API}/workers`
-);
+    const response = await fetch(`${API}/workers`);
+    const data = await response.json();
 
-const data =
-await response.json();
+    const workers = data.workers || [];
 
-const workers =
-data.workers || [];
+    document.getElementById("totalWorkers").innerText =
+      workers.length;
 
-document.getElementById(
-"totalWorkers"
-).innerText =
-workers.length;
+    document.getElementById("pendingWorkers").innerText =
+      workers.filter(
+        w => w.verificationStatus === "pending"
+      ).length;
 
-document.getElementById(
-"pendingWorkers"
-).innerText =
-workers.filter(
-w =>
-w.verificationStatus ===
-"pending"
-).length;
+    document.getElementById("approvedWorkers").innerText =
+      workers.filter(
+        w => w.verificationStatus === "approved"
+      ).length;
 
-document.getElementById(
-"approvedWorkers"
-).innerText =
-workers.filter(
-w =>
-w.verificationStatus ===
-"approved"
-).length;
+    document.getElementById("rejectedWorkers").innerText =
+      workers.filter(
+        w => w.verificationStatus === "rejected"
+      ).length;
 
-document.getElementById(
-"rejectedWorkers"
-).innerText =
-workers.filter(
-w =>
-w.verificationStatus ===
-"rejected"
-).length;
+    const table =
+      document.getElementById("workerTable");
 
-const table =
-document.getElementById(
-"workerTable"
-);
+    table.innerHTML = "";
 
-table.innerHTML = "";
+    workers.forEach(worker => {
 
-workers.forEach(worker => {
+      table.innerHTML += `
+        <tr>
+          <td>${worker.fullName}</td>
+          <td>${worker.phone}</td>
+          <td>${worker.workCategory}</td>
+          <td>${worker.verificationStatus}</td>
 
-table.innerHTML += `
-<tr>
+          <td>
 
-<td>${worker.fullName}</td>
+            <button
+              class="approve"
+              onclick="approveWorker('${worker._id}')"
+            >
+              Approve
+            </button>
 
-<td>${worker.phone}</td>
+            <button
+              class="reject"
+              onclick="rejectWorker('${worker._id}')"
+            >
+              Reject
+            </button>
 
-<td>${worker.workCategory}</td>
+          </td>
+        </tr>
+      `;
 
-<td>${worker.verificationStatus}</td>
+    });
 
-<td>
+  } catch (error) {
 
-<button
-class="approve"
-onclick="approveWorker('${worker._id}')">
+    console.error(error);
 
-Approve
-
-</button>
-
-<button
-class="reject"
-onclick="rejectWorker('${worker._id}')">
-
-Reject
-
-</button>
-
-</td>
-
-</tr>
-`;
-
-});
-
-}catch(error){
-
-console.error(error);
+  }
 
 }
 
+async function approveWorker(id) {
+
+  try {
+
+    const response = await fetch(
+      `${API}/workers/${id}/approve`,
+      {
+        method: "PUT"
+      }
+    );
+
+    const data = await response.json();
+
+    alert(data.message);
+
+    loadWorkers();
+
+  } catch (error) {
+
+    console.error(error);
+
+  }
+
 }
 
-async function approveWorker(id){
+async function rejectWorker(id) {
 
-await fetch(
-`${API}/approve/${id}`,
-{
-method:"PUT"
-}
-);
+  try {
 
-loadWorkers();
+    const response = await fetch(
+      `${API}/workers/${id}/reject`,
+      {
+        method: "PUT"
+      }
+    );
 
-}
+    const data = await response.json();
 
-async function rejectWorker(id){
+    alert(data.message);
 
-await fetch(
-`${API}/reject/${id}`,
-{
-method:"PUT"
-}
-);
+    loadWorkers();
 
-loadWorkers();
+  } catch (error) {
+
+    console.error(error);
+
+  }
 
 }
 

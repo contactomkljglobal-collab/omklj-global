@@ -6,8 +6,7 @@
 <meta charset="UTF-8">
 
 <meta name="viewport"
-content="width=device-width,
-initial-scale=1.0">
+content="width=device-width, initial-scale=1.0">
 
 <title>OMKLJ India</title>
 
@@ -26,19 +25,13 @@ href="css/style.css">
 
 <style>
 
-:root{
-
---omklj-blue:#00aaff;
---omklj-dark:#020617;
---omklj-card:#12203f;
---omklj-red:#ff3b3b;
-
-}
+/* ===========================
+   OMKLJ FOUNDER MODE V3
+=========================== */
 
 .founder-overlay{
 
 position:fixed;
-
 top:0;
 left:0;
 
@@ -46,20 +39,16 @@ width:100%;
 height:100%;
 
 background:
-radial-gradient(
-circle at center,
-#06152d,
-#020617
-);
+radial-gradient(circle,
+#05132c,
+#010814);
 
 display:none;
 
 justify-content:center;
 align-items:center;
 
-flex-direction:column;
-
-z-index:99999;
+z-index:999999;
 
 overflow:hidden;
 
@@ -70,11 +59,11 @@ overflow:hidden;
 display:flex;
 
 animation:
-overlayFade .8s ease;
+fadeFounder .8s ease;
 
 }
 
-@keyframes overlayFade{
+@keyframes fadeFounder{
 
 from{
 opacity:0;
@@ -86,78 +75,18 @@ opacity:1;
 
 }
 
-.warp-bg{
-
-position:absolute;
-
-width:100%;
-height:100%;
-
-overflow:hidden;
-
-pointer-events:none;
-
-}
-
-.warp-line{
-
-position:absolute;
-
-width:2px;
-
-height:120px;
-
-background:
-linear-gradient(
-transparent,
-#00aaff,
-transparent
-);
-
-animation:
-warpMove 1s linear infinite;
-
-opacity:.6;
-
-}
-
-@keyframes warpMove{
-
-from{
-
-transform:
-translateY(-200px);
-
-}
-
-to{
-
-transform:
-translateY(120vh);
-
-}
-
-}
-
-.control-center{
+.founder-panel{
 
 position:relative;
 
-z-index:5;
-
-width:90%;
-max-width:500px;
+width:92%;
+max-width:520px;
 
 background:
-rgba(18,32,63,.92);
-
-backdrop-filter:
-blur(10px);
+rgba(10,20,45,.95);
 
 border:
-1px solid rgba(
-0,170,255,.3
-);
+1px solid rgba(0,170,255,.25);
 
 border-radius:24px;
 
@@ -165,43 +94,42 @@ padding:35px;
 
 text-align:center;
 
+backdrop-filter:
+blur(15px);
+
 box-shadow:
-0 0 60px rgba(
-0,170,255,.15
-);
+0 0 60px rgba(0,170,255,.2);
+
+z-index:10;
 
 }
 
 .founder-logo{
 
-width:100px;
-
-height:100px;
+width:110px;
+height:110px;
 
 object-fit:contain;
 
 margin-bottom:20px;
 
 animation:
-logoFloat 3s ease-in-out infinite;
+floatLogo 3s ease-in-out infinite;
 
 }
 
-@keyframes logoFloat{
+@keyframes floatLogo{
 
 0%{
-transform:
-translateY(0);
+transform:translateY(0);
 }
 
 50%{
-transform:
-translateY(-10px);
+transform:translateY(-10px);
 }
 
 100%{
-transform:
-translateY(0);
+transform:translateY(0);
 }
 
 }
@@ -214,29 +142,25 @@ font-weight:800;
 
 color:#ffffff;
 
-margin-bottom:10px;
-
-letter-spacing:2px;
+margin-bottom:15px;
 
 }
 
-.founder-subtitle{
+.founder-text{
 
-color:#00aaff;
-
-font-size:16px;
-
-margin-bottom:30px;
+color:#8fd8ff;
 
 line-height:1.8;
 
+font-size:15px;
+
+margin-bottom:25px;
+
 }
 
-.access-line{
+.founder-line{
 
 height:2px;
-
-width:100%;
 
 background:
 linear-gradient(
@@ -256,17 +180,17 @@ width:100%;
 
 padding:16px;
 
+margin-bottom:15px;
+
 border:none;
 
 outline:none;
 
 border-radius:14px;
 
-background:#0b1630;
+background:#08162f;
 
 color:white;
-
-margin-bottom:15px;
 
 font-size:15px;
 
@@ -282,11 +206,9 @@ border:none;
 
 border-radius:14px;
 
-cursor:pointer;
-
 font-weight:700;
 
-font-size:15px;
+cursor:pointer;
 
 background:
 linear-gradient(
@@ -312,9 +234,9 @@ translateY(-3px);
 
 margin-top:15px;
 
-color:#ff4d4d;
-
 font-size:14px;
+
+color:#ff4d4d;
 
 }
 
@@ -323,49 +245,130 @@ font-size:14px;
 position:fixed;
 
 bottom:20px;
-
 right:20px;
 
 background:
-rgba(0,0,0,.4);
+rgba(0,0,0,.5);
 
-padding:10px 15px;
+padding:10px 14px;
 
 border-radius:12px;
 
 font-size:12px;
 
-display:none;
-
 color:white;
 
-z-index:9999;
+display:none;
+
+z-index:999999;
+
+}
+
+.founder-letter{
+
+cursor:pointer;
+
+user-select:none;
+
+transition:.3s;
+
+}
+
+.founder-letter:hover{
+
+color:#00aaff;
+
+text-shadow:
+0 0 15px #00aaff;
 
 }
 
 .rocket-boost{
 
 animation:
-rocketBoost .9s ease forwards;
+rocketBoost 1.2s ease forwards;
 
 }
 
 @keyframes rocketBoost{
 
 0%{
+
 transform:
+translateY(0)
 scale(1);
+
 }
 
 50%{
+
 transform:
-scale(1.05);
+translateY(-150px)
+scale(1.1);
+
 }
 
 100%{
+
 transform:
-scale(0);
+translateY(-1200px)
+scale(.5);
+
 opacity:0;
+
+}
+
+}
+
+.warp-bg{
+
+position:absolute;
+
+width:100%;
+height:100%;
+
+overflow:hidden;
+
+pointer-events:none;
+
+}
+
+.warp-line{
+
+position:absolute;
+
+width:2px;
+
+height:180px;
+
+background:
+linear-gradient(
+transparent,
+#00aaff,
+transparent
+);
+
+animation:
+warpMove .8s linear infinite;
+
+opacity:.7;
+
+}
+
+@keyframes warpMove{
+
+from{
+
+transform:
+translateY(-250px);
+
+}
+
+to{
+
+transform:
+translateY(120vh);
+
 }
 
 }
@@ -380,8 +383,7 @@ opacity:0;
 class="sequence-indicator"
 id="sequenceIndicator">
 
-Founder Sequence:
-0 / 5
+Founder Mode: 0 / 5
 
 </div>
 
@@ -389,23 +391,25 @@ Founder Sequence:
 class="founder-overlay"
 id="founderOverlay">
 
-<div class="warp-bg"
+<div
+class="warp-bg"
 id="warpBg">
 
 </div>
 
-  <div class="control-center">
+<div class="founder-panel">
 
 <img
 src="https://i.ibb.co/N24ghXDh/Picsart-26-06-01-01-49-36-525.png"
-class="founder-logo"
-alt="OMKLJ">
+class="founder-logo">
 
-<div class="founder-title">
+<h1 class="founder-title">
+
 HEY ACE
-</div>
 
-<div class="founder-subtitle">
+</h1>
+
+<div class="founder-text">
 
 WELCOME BACK
 
@@ -419,7 +423,7 @@ AUTHORIZED FOUNDER ACCESS ONLY
 
 </div>
 
-<div class="access-line"></div>
+<div class="founder-line"></div>
 
 <input
 type="text"
@@ -463,29 +467,17 @@ class="logo"
 alt="OMKLJ India Logo">
 
 <h2>
-
-<span class="founder-letter"
-data-letter="O">O</span>
-
-<span class="founder-letter"
-data-letter="M">M</span>
-
-<span class="founder-letter"
-data-letter="K">K</span>
-
-<span class="founder-letter"
-data-letter="L">L</span>
-
-<span class="founder-letter"
-data-letter="J">J</span>
-
+<span class="founder-letter" data-letter="O">O</span>
+<span class="founder-letter" data-letter="M">M</span>
+<span class="founder-letter" data-letter="K">K</span>
+<span class="founder-letter" data-letter="L">L</span>
+<span class="founder-letter" data-letter="J">J</span>
 INDIA
-
 </h2>
 
 </div>
 
-<div
+  <div
 class="menu-toggle"
 onclick="toggleMenu()">
 
@@ -498,20 +490,10 @@ onclick="toggleMenu()">
 <nav id="navMenu">
 
 <a href="#home">Home</a>
-
 <a href="#about">About</a>
-
-<a href="#how">
-How It Works
-</a>
-
-<a href="#services">
-Services
-</a>
-
-<a href="#contact">
-Contact
-</a>
+<a href="#how">How It Works</a>
+<a href="#services">Services</a>
+<a href="#contact">Contact</a>
 
 </nav>
 
@@ -519,9 +501,7 @@ Contact
 
 <!-- HERO -->
 
-<section
-id="home"
-class="hero">
+<section id="home" class="hero">
 
 <div class="hero-bg"></div>
 
@@ -587,6 +567,8 @@ Fast Hiring
 
 </div>
 
+<!-- ROCKET -->
+
 <div class="rocket-scene">
 
 <div class="space-glow"></div>
@@ -595,8 +577,7 @@ Fast Hiring
 class="rocket-wrapper"
 id="rocketWrapper">
 
-<div
-class="booster booster-left">
+<div class="booster booster-left">
 
 <div class="rocket-top"></div>
 
@@ -626,8 +607,7 @@ class="engine-fire center-fire">
 
 </div>
 
-<div
-class="booster booster-right">
+<div class="booster booster-right">
 
 <div class="rocket-top"></div>
 
@@ -645,30 +625,239 @@ class="engine-fire right-fire">
 
 </section>
 
-  <!-- STATS -->
+<!-- STATS -->
+
 <section class="stats">
 
 <div class="stat-card">
+
 <h2>500K+</h2>
+
 <p>Daily Opportunities</p>
+
 </div>
 
 <div class="stat-card">
+
 <h2>24/7</h2>
+
 <p>Platform Availability</p>
+
 </div>
 
 <div class="stat-card">
+
 <h2>100%</h2>
+
 <p>Verified Ecosystem</p>
+
 </div>
 
 <div class="stat-card">
+
 <h2>India</h2>
+
 <p>Nationwide Vision</p>
+
 </div>
 
 </section>
+
+<!-- ABOUT -->
+
+<section
+id="about"
+class="services">
+
+<h2 class="section-title">
+
+About OMKLJ India
+
+</h2>
+
+<div class="services-grid">
+
+<div class="service-card">
+
+<h3>Verified Workforce</h3>
+
+<p>
+
+Every worker completes identity verification before receiving jobs.
+
+</p>
+
+</div>
+
+<div class="service-card">
+
+<h3>Trusted Businesses</h3>
+
+<p>
+
+Businesses are verified before posting opportunities.
+
+</p>
+
+</div>
+
+<div class="service-card">
+
+<h3>Nationwide Mission</h3>
+
+<p>
+
+Helping reduce unemployment and create opportunities across India.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- HOW IT WORKS -->
+
+<section
+id="how"
+class="services">
+
+<h2 class="section-title">
+
+How OMKLJ Works
+
+</h2>
+
+<div class="services-grid">
+
+<div class="service-card">
+
+<h3>1. Register</h3>
+
+<p>Create account and complete verification.</p>
+
+</div>
+
+<div class="service-card">
+
+<h3>2. Post Job</h3>
+
+<p>Businesses publish work opportunities.</p>
+
+</div>
+
+<div class="service-card">
+
+<h3>3. Match</h3>
+
+<p>Nearby workers receive notifications.</p>
+
+</div>
+
+<div class="service-card">
+
+<h3>4. Accept</h3>
+
+<p>Worker accepts the opportunity.</p>
+
+</div>
+
+<div class="service-card">
+
+<h3>5. Complete</h3>
+
+<p>Job gets completed successfully.</p>
+
+</div>
+
+<div class="service-card">
+
+<h3>6. Payment</h3>
+
+<p>Secure payment after work completion.</p>
+
+</div>
+
+</div>
+
+</section>
+
+  <!-- SERVICES -->
+
+<section
+id="services"
+class="services">
+
+<h2 class="section-title">
+
+Why Choose OMKLJ India?
+
+</h2>
+
+<div class="services-grid">
+
+<div class="service-card">
+
+<h3>AI Job Matching</h3>
+
+<p>
+Smart technology connects the right worker with the right job.
+</p>
+
+</div>
+
+<div class="service-card">
+
+<h3>Location Based Jobs</h3>
+
+<p>
+Workers receive opportunities near their location.
+</p>
+
+</div>
+
+<div class="service-card">
+
+<h3>Fast Hiring</h3>
+
+<p>
+Businesses can hire workers within minutes.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- CTA -->
+
+<section class="cta-section">
+
+<h2>
+
+Ready To Join OMKLJ India?
+
+</h2>
+
+<p>
+
+Start building India's largest opportunity network.
+
+</p>
+
+<a
+href="choose-role.html"
+class="primary-btn">
+
+Get Started
+
+</a>
+
+</section>
+
+<!-- CONTACT -->
 
 <footer id="contact">
 
@@ -706,9 +895,9 @@ document
 
 }
 
-/* =========================
-   FOUNDER ACCESS SYSTEM
-========================= */
+/* ===========================
+   FOUNDER ACCESS SEQUENCE
+=========================== */
 
 const founderSequence =
 
@@ -730,9 +919,6 @@ document.getElementById(
 
 letters.forEach(letter => {
 
-letter.style.cursor =
-"pointer";
-
 letter.addEventListener(
 "click",
 function(){
@@ -748,10 +934,10 @@ clicked
 indicator.style.display =
 "block";
 
-indicator.innerText =
+indicator.innerHTML =
 
-`Founder Sequence:
-${currentSequence.length} / 5`;
+`Founder Mode:
+${currentSequence.length}/5`;
 
 for(
 let i=0;
@@ -766,7 +952,7 @@ currentSequence[i]
 
 currentSequence = [];
 
-indicator.innerText =
+indicator.innerHTML =
 "Sequence Reset";
 
 setTimeout(()=>{
@@ -774,7 +960,7 @@ setTimeout(()=>{
 indicator.style.display =
 "none";
 
-},1000);
+},1200);
 
 return;
 
@@ -783,8 +969,7 @@ return;
 }
 
 if(
-currentSequence.length
-=== 5
+currentSequence.length === 5
 ){
 
 launchFounderMode();
@@ -797,9 +982,9 @@ currentSequence = [];
 
 });
 
-/* =========================
-   ROCKET LAUNCH
-========================= */
+/* ===========================
+   ROCKET LAUNCH EFFECT
+=========================== */
 
 function launchFounderMode(){
 
@@ -813,7 +998,7 @@ rocket.classList.add(
 "rocket-boost"
 );
 
-createWarpLines();
+createWarpEffect();
 
 setTimeout(()=>{
 
@@ -825,15 +1010,15 @@ document
 "active"
 );
 
-},900);
+},1200);
 
 }
 
-/* =========================
+/* ===========================
    WARP SPEED EFFECT
-========================= */
+=========================== */
 
-function createWarpLines(){
+function createWarpEffect(){
 
 const warpBg =
 
@@ -843,7 +1028,11 @@ document.getElementById(
 
 warpBg.innerHTML = "";
 
-for(let i=0;i<120;i++){
+for(
+let i=0;
+i<140;
+i++
+){
 
 const line =
 
@@ -868,9 +1057,9 @@ line
 
 }
 
-/* =========================
+/* ===========================
    FOUNDER LOGIN
-========================= */
+=========================== */
 
 function founderLogin(){
 
@@ -880,7 +1069,8 @@ document
 .getElementById(
 "founderId"
 )
-.value;
+.value
+.trim();
 
 const founderPassword =
 
@@ -888,12 +1078,12 @@ document
 .getElementById(
 "founderPassword"
 )
-.value;
+.value
+.trim();
 
 if(
 
-founderId ===
-"ACE"
+founderId === "ACE"
 
 &&
 
@@ -918,7 +1108,7 @@ document
 .getElementById(
 "founderMessage"
 )
-.innerText =
+.innerHTML =
 
 "ACCESS GRANTED";
 
@@ -927,7 +1117,7 @@ setTimeout(()=>{
 window.location.href =
 "admin-dashboard.html";
 
-},1200);
+},1500);
 
 }
 else{
@@ -943,13 +1133,38 @@ document
 .getElementById(
 "founderMessage"
 )
-.innerText =
+.innerHTML =
 
 "ACCESS DENIED";
 
 }
 
 }
+
+/* ===========================
+   ESC KEY CLOSE
+=========================== */
+
+document.addEventListener(
+"keydown",
+function(e){
+
+if(
+e.key === "Escape"
+){
+
+document
+.getElementById(
+"founderOverlay"
+)
+.classList.remove(
+"active"
+);
+
+}
+
+}
+);
 
 </script>
 

@@ -25,9 +25,9 @@ href="css/style.css">
 
 <style>
 
-/* ===========================
-   OMKLJ FOUNDER MODE V4
-=========================== */
+/* ===================================
+   OMKLJ INDEX V5
+=================================== */
 
 .founder-overlay{
 
@@ -39,9 +39,11 @@ width:100%;
 height:100%;
 
 background:
-radial-gradient(circle,
+radial-gradient(
+circle,
 #05132c,
-#010814);
+#010814
+);
 
 display:none;
 
@@ -240,48 +242,6 @@ color:#ff4d4d;
 
 }
 
-/* NEW V4 FEATURE */
-
-.button-note{
-
-margin-top:22px;
-
-font-size:15px;
-
-font-weight:600;
-
-color:#8fd8ff;
-
-min-height:30px;
-
-animation:
-noteFade 4s infinite;
-
-}
-
-@keyframes noteFade{
-
-0%{
-opacity:0;
-transform:translateY(10px);
-}
-
-10%{
-opacity:1;
-transform:translateY(0);
-}
-
-80%{
-opacity:1;
-}
-
-100%{
-opacity:0;
-transform:translateY(-10px);
-}
-
-}
-
 .sequence-indicator{
 
 position:fixed;
@@ -306,7 +266,24 @@ z-index:999999;
 
 }
 
-   </style>
+.founder-letter{
+
+cursor:pointer;
+
+transition:.3s;
+
+}
+
+.founder-letter:hover{
+
+color:#00aaff;
+
+text-shadow:
+0 0 15px #00aaff;
+
+}
+
+</style>
 
 </head>
 
@@ -388,7 +365,7 @@ id="founderMessage">
 
 </div>
 
-<!-- NAVBAR -->
+   <!-- NAVBAR -->
 
 <header class="navbar">
 
@@ -435,16 +412,20 @@ onclick="toggleMenu()">
 <nav id="navMenu">
 
 <a href="#home">Home</a>
+
 <a href="#about">About</a>
+
 <a href="#how">How It Works</a>
+
 <a href="#services">Services</a>
+
 <a href="#contact">Contact</a>
 
 </nav>
 
 </header>
 
-<!-- HERO -->
+<!-- HERO SECTION -->
 
 <section
 id="home"
@@ -465,7 +446,9 @@ class="hero">
 <h1 class="hero-title">
 
 Connecting Workers
+
 <br>
+
 With Opportunity
 
 </h1>
@@ -478,53 +461,55 @@ OMKLJ India helps businesses find verified workers and helps workers discover ne
 
 <div class="hero-buttons">
 
-<button class="primary-btn">
+<a
+href="personal-register.html"
+class="primary-btn">
 
 Find Work
 
-</button>
+</a>
 
-<button class="secondary-btn">
+<a
+href="business-register.html"
+class="secondary-btn">
 
 Post Job
 
-</button>
-
-</div>
-
-<!-- NEW V4 ANIMATED NOTE -->
-
-<div
-class="button-note"
-id="buttonNote">
-
-💡 Find jobs near your location
+</a>
 
 </div>
 
 <div class="floating-tags">
 
 <div class="tag">
+
 Nearby Jobs
+
 </div>
 
 <div class="tag">
+
 Verified Workers
+
 </div>
 
 <div class="tag">
+
 AI Matching
+
 </div>
 
 <div class="tag">
+
 Fast Hiring
-</div>
 
 </div>
 
 </div>
 
-<!-- ROCKET -->
+</div>
+
+<!-- ROCKET SECTION -->
 
 <div class="rocket-scene">
 
@@ -542,6 +527,7 @@ id="rocketWrapper">
 
 <div
 class="engine-fire left-fire">
+
 </div>
 
 </div>
@@ -553,13 +539,16 @@ class="engine-fire left-fire">
 <div class="rocket-core">
 
 <div class="window"></div>
+
 <div class="window"></div>
+
 <div class="window"></div>
 
 </div>
 
 <div
 class="engine-fire center-fire">
+
 </div>
 
 </div>
@@ -572,6 +561,7 @@ class="engine-fire center-fire">
 
 <div
 class="engine-fire right-fire">
+
 </div>
 
 </div>
@@ -582,7 +572,7 @@ class="engine-fire right-fire">
 
 </section>
 
-   <!-- STATS -->
+   <!-- STATS SECTION -->
 
 <section class="stats">
 
@@ -620,7 +610,7 @@ class="engine-fire right-fire">
 
 </section>
 
-<!-- ABOUT -->
+<!-- ABOUT SECTION -->
 
 <section
 id="about"
@@ -636,11 +626,15 @@ About OMKLJ India
 
 <div class="service-card">
 
-<h3>Verified Workforce</h3>
+<h3>
+
+Verified Workforce
+
+</h3>
 
 <p>
 
-Every worker completes identity verification before receiving jobs.
+Every worker completes identity verification before receiving opportunities.
 
 </p>
 
@@ -648,11 +642,15 @@ Every worker completes identity verification before receiving jobs.
 
 <div class="service-card">
 
-<h3>Trusted Businesses</h3>
+<h3>
+
+Trusted Businesses
+
+</h3>
 
 <p>
 
-Businesses are verified before posting opportunities.
+Every business is reviewed and verified before accessing the OMKLJ ecosystem.
 
 </p>
 
@@ -660,11 +658,15 @@ Businesses are verified before posting opportunities.
 
 <div class="service-card">
 
-<h3>Nationwide Mission</h3>
+<h3>
+
+Nationwide Mission
+
+</h3>
 
 <p>
 
-Helping reduce unemployment and create opportunities across India.
+Building India's largest trusted workforce and opportunity platform.
 
 </p>
 
@@ -690,49 +692,97 @@ How OMKLJ Works
 
 <div class="service-card">
 
-<h3>1. Register</h3>
+<h3>
 
-<p>Create account and complete verification.</p>
+1. Register
 
-</div>
+</h3>
 
-<div class="service-card">
+<p>
 
-<h3>2. Post Job</h3>
+Create an account and complete your profile verification.
 
-<p>Businesses publish work opportunities.</p>
-
-</div>
-
-<div class="service-card">
-
-<h3>3. Match</h3>
-
-<p>Nearby workers receive notifications.</p>
+</p>
 
 </div>
 
 <div class="service-card">
 
-<h3>4. Accept</h3>
+<h3>
 
-<p>Worker accepts the opportunity.</p>
+2. Verification
+
+</h3>
+
+<p>
+
+Admin verifies worker and business profiles.
+
+</p>
 
 </div>
 
 <div class="service-card">
 
-<h3>5. Complete</h3>
+<h3>
 
-<p>Job gets completed successfully.</p>
+3. Discover
+
+</h3>
+
+<p>
+
+Workers discover nearby opportunities and businesses discover talent.
+
+</p>
 
 </div>
 
 <div class="service-card">
 
-<h3>6. Payment</h3>
+<h3>
 
-<p>Secure payment after work completion.</p>
+4. Connect
+
+</h3>
+
+<p>
+
+Workers and businesses connect directly through the platform.
+
+</p>
+
+</div>
+
+<div class="service-card">
+
+<h3>
+
+5. Complete Work
+
+</h3>
+
+<p>
+
+Jobs are completed and recorded in the system.
+
+</p>
+
+</div>
+
+<div class="service-card">
+
+<h3>
+
+6. Grow
+
+</h3>
+
+<p>
+
+Build reputation, trust and long-term opportunities.
+
+</p>
 
 </div>
 
@@ -756,30 +806,96 @@ Why Choose OMKLJ India?
 
 <div class="service-card">
 
-<h3>AI Job Matching</h3>
+<h3>
+
+AI Job Matching
+
+</h3>
 
 <p>
-Smart technology connects the right worker with the right job.
+
+Smart technology helps connect the right people to the right opportunities.
+
 </p>
 
 </div>
 
 <div class="service-card">
 
-<h3>Location Based Jobs</h3>
+<h3>
+
+Location-Based Opportunities
+
+</h3>
 
 <p>
-Workers receive opportunities near their location.
+
+Find opportunities and workers closer to your location.
+
 </p>
 
 </div>
 
 <div class="service-card">
 
-<h3>Fast Hiring</h3>
+<h3>
+
+Fast Verification
+
+</h3>
 
 <p>
-Businesses can hire workers within minutes.
+
+Secure onboarding through OMKLJ verification systems.
+
+</p>
+
+</div>
+
+<div class="service-card">
+
+<h3>
+
+Worker Profiles
+
+</h3>
+
+<p>
+
+Verified profiles increase trust and visibility.
+
+</p>
+
+</div>
+
+<div class="service-card">
+
+<h3>
+
+Business Profiles
+
+</h3>
+
+<p>
+
+Verified businesses gain access to trusted workers.
+
+</p>
+
+</div>
+
+<div class="service-card">
+
+<h3>
+
+Future Ready
+
+</h3>
+
+<p>
+
+Built to scale across India with advanced workforce solutions.
+
 </p>
 
 </div>
@@ -788,7 +904,7 @@ Businesses can hire workers within minutes.
 
 </section>
 
-<!-- CTA -->
+<!-- CTA SECTION -->
 
 <section class="cta-section">
 
@@ -814,22 +930,33 @@ Get Started
 
 </section>
 
-   <!-- CONTACT -->
+   <!-- FOOTER -->
 
 <footer id="contact">
 
-<h3>OMKLJ India</h3>
+<h3>
+
+OMKLJ India
+
+</h3>
 
 <p>
+
 India's Workforce Opportunity Platform
+
 </p>
 
 <p>
-Email: contact.omkljglobal@gmail.com
+
+Email:
+contact.omkljglobal@gmail.com
+
 </p>
 
 <p>
+
 Connecting Opportunity With Talent
+
 </p>
 
 </footer>
@@ -837,6 +964,10 @@ Connecting Opportunity With Talent
 <script src="js/app.js"></script>
 
 <script>
+
+/* ===========================
+   MOBILE MENU
+=========================== */
 
 function toggleMenu(){
 
@@ -853,144 +984,23 @@ document
 }
 
 /* ===========================
-   ANIMATED NOTES V4
-=========================== */
-
-const omkljNotes = [
-
-"💡 Find jobs near your location",
-
-"⚡ Get hired faster than ever",
-
-"🛡️ Verified workers and businesses",
-
-"🤖 AI-powered opportunity matching",
-
-"🇮🇳 Built for India's workforce",
-
-"🚀 Connecting opportunity with talent"
-
-];
-
-let noteIndex = 0;
-
-setInterval(()=>{
-
-noteIndex++;
-
-if(noteIndex >= omkljNotes.length){
-
-noteIndex = 0;
-
-}
-
-const note =
-
-document.getElementById(
-"buttonNote"
-);
-
-if(note){
-
-note.innerHTML =
-omkljNotes[noteIndex];
-
-}
-
-},4000);
-
-
-
-/* ===========================
-   ROCKET LAUNCH EFFECT
-=========================== */
-
-function launchFounderMode(){
-
-const rocket =
-
-document.getElementById(
-"rocketWrapper"
-);
-
-rocket.classList.add(
-"rocket-boost"
-);
-
-createWarpEffect();
-
-setTimeout(()=>{
-
-document
-.getElementById(
-"founderOverlay"
-)
-.classList.add(
-"active"
-);
-
-},1200);
-
-}
-
-/* ===========================
-   WARP SPEED EFFECT
-=========================== */
-
-function createWarpEffect(){
-
-const warpBg =
-
-document.getElementById(
-"warpBg"
-);
-
-warpBg.innerHTML = "";
-
-for(
-let i=0;
-i<140;
-i++
-){
-
-const line =
-
-document.createElement(
-"div"
-);
-
-line.className =
-"warp-line";
-
-line.style.left =
-Math.random()*100+"%";
-
-line.style.animationDelay =
-Math.random()+"s";
-
-warpBg.appendChild(
-line
-);
-
-}
-
-}
-
-   /* ===========================
    FOUNDER ACCESS SEQUENCE
 =========================== */
 
 const founderSequence =
+
 ["O","M","K","L","J"];
 
 let currentSequence = [];
 
 const letters =
+
 document.querySelectorAll(
 ".founder-letter"
 );
 
 const indicator =
+
 document.getElementById(
 "sequenceIndicator"
 );
@@ -1002,6 +1012,7 @@ letter.addEventListener(
 function(){
 
 const clicked =
+
 this.dataset.letter;
 
 currentSequence.push(
@@ -1056,8 +1067,89 @@ currentSequence = [];
 });
 
 });
-   
+
 /* ===========================
+   ROCKET LAUNCH EFFECT
+=========================== */
+
+function launchFounderMode(){
+
+const rocket =
+
+document.getElementById(
+"rocketWrapper"
+);
+
+if(rocket){
+
+rocket.classList.add(
+"rocket-boost"
+);
+
+}
+
+createWarpEffect();
+
+setTimeout(()=>{
+
+document
+.getElementById(
+"founderOverlay"
+)
+.classList.add(
+"active"
+);
+
+},1200);
+
+}
+
+/* ===========================
+   WARP EFFECT
+=========================== */
+
+function createWarpEffect(){
+
+const warpBg =
+
+document.getElementById(
+"warpBg"
+);
+
+if(!warpBg) return;
+
+warpBg.innerHTML = "";
+
+for(
+let i=0;
+i<140;
+i++
+){
+
+const line =
+
+document.createElement(
+"div"
+);
+
+line.className =
+"warp-line";
+
+line.style.left =
+Math.random()*100+"%";
+
+line.style.animationDelay =
+Math.random()+"s";
+
+warpBg.appendChild(
+line
+);
+
+}
+
+}
+
+   /* ===========================
    FOUNDER LOGIN
 =========================== */
 
@@ -1169,4 +1261,5 @@ document
 </script>
 
 </body>
+
 </html>

@@ -1284,6 +1284,139 @@ document.body.classList.add(
 "dashboard-ready"
 );
 
+   /* =========================================
+   OMKLJ LOCATION SYSTEM V1
+   PART 1 - WORKER GPS CAPTURE
+========================================= */
+
+let workerLocation = {
+
+    latitude: null,
+
+    longitude: null,
+
+    city: "",
+
+    state: ""
+
+};
+
+async function captureWorkerLocation() {
+
+    if (!navigator.geolocation) {
+
+        console.log(
+            "Geolocation not supported"
+        );
+
+        return;
+
+    }
+
+    navigator.geolocation.getCurrentPosition(
+
+        async function(position) {
+
+            workerLocation.latitude =
+                position.coords.latitude;
+
+            workerLocation.longitude =
+                position.coords.longitude;
+
+            console.log(
+                "Worker Location:",
+                workerLocation
+            );
+
+            localStorage.setItem(
+
+                "workerLocation",
+
+                JSON.stringify(
+                    workerLocation
+                )
+
+            );
+
+            try {
+
+                const response =
+                    await fetch(
+
+                        `https://nominatim.openstreetmap.org/reverse?format=jsonv2&lat=${workerLocation.latitude}&lon=${workerLocation.longitude}`
+
+                    );
+
+                const data =
+                    await response.json();
+
+                workerLocation.city =
+                    data.address.city ||
+
+                    data.address.town ||
+
+                    data.address.village ||
+
+                    "";
+
+                workerLocation.state =
+                    data.address.state ||
+
+                    "";
+
+                localStorage.setItem(
+
+                    "workerLocation",
+
+                    JSON.stringify(
+                        workerLocation
+                    )
+
+                );
+
+                console.log(
+                    "Location Updated:",
+                    workerLocation
+                );
+
+            }
+
+            catch(error) {
+
+                console.error(
+                    error
+                );
+
+            }
+
+        },
+
+        function(error) {
+
+            console.error(
+                error
+            );
+
+        },
+
+        {
+
+            enableHighAccuracy: true,
+
+            timeout: 10000,
+
+            maximumAge: 0
+
+        }
+
+    );
+
+}
+
+/* Auto Start */
+
+captureWorkerLocation();
+
 </script>
 
 </body>

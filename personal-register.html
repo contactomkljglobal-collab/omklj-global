@@ -5,16 +5,25 @@
 
 <meta charset="UTF-8">
 
-<meta name="viewport"
+<meta
+name="viewport"
 content="width=device-width, initial-scale=1.0">
 
 <title>
-OMKLJ INDIA - Personal Registration
+
+OMKLJ Personal Employer Registration
+
 </title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link
+href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+rel="stylesheet">
 
 <style>
+
+/* =====================================
+   OMKLJ PERSONAL REGISTER V2
+===================================== */
 
 *{
 margin:0;
@@ -26,49 +35,30 @@ font-family:'Poppins',sans-serif;
 body{
 
 background:#020617;
-color:white;
 
 min-height:100vh;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+padding:20px;
 
 overflow-x:hidden;
 
 position:relative;
 
+color:white;
+
 }
 
-/* ======================
-   GALAXY BACKGROUND
-====================== */
+/* =====================================
+   BACKGROUND EFFECTS
+===================================== */
 
 body::before{
-
-content:"";
-
-position:fixed;
-
-width:900px;
-height:900px;
-
-border-radius:50%;
-
-background:
-radial-gradient(
-circle,
-rgba(0,170,255,.25),
-transparent 70%
-);
-
-top:-250px;
-left:-250px;
-
-animation:
-orbOne 18s ease-in-out infinite alternate;
-
-z-index:-4;
-
-}
-
-body::after{
 
 content:"";
 
@@ -82,264 +72,47 @@ border-radius:50%;
 background:
 radial-gradient(
 circle,
-rgba(128,0,255,.18),
+rgba(0,170,255,.25),
+transparent 70%
+);
+
+top:-250px;
+left:-250px;
+
+z-index:-2;
+
+}
+
+body::after{
+
+content:"";
+
+position:fixed;
+
+width:700px;
+height:700px;
+
+border-radius:50%;
+
+background:
+radial-gradient(
+circle,
+rgba(140,0,255,.18),
 transparent 70%
 );
 
 bottom:-250px;
 right:-250px;
 
-animation:
-orbTwo 22s ease-in-out infinite alternate;
-
-z-index:-4;
+z-index:-2;
 
 }
 
-@keyframes orbOne{
-
-0%{
-transform:translate(0,0);
-}
-
-100%{
-transform:translate(150px,90px);
-}
-
-}
-
-@keyframes orbTwo{
-
-0%{
-transform:translate(0,0);
-}
-
-100%{
-transform:translate(-140px,-100px);
-}
-
-}
-
-/* ======================
-   STARS
-====================== */
-
-.stars{
-
-position:fixed;
-
-top:0;
-left:0;
+.register-box{
 
 width:100%;
-height:100%;
 
-pointer-events:none;
-
-z-index:-3;
-
-}
-
-.star{
-
-position:absolute;
-
-background:white;
-
-border-radius:50%;
-
-animation:
-twinkle infinite;
-
-}
-
-.star:nth-child(1){
-top:10%;
-left:12%;
-width:2px;
-height:2px;
-animation-duration:4s;
-}
-
-.star:nth-child(2){
-top:20%;
-left:75%;
-width:3px;
-height:3px;
-animation-duration:5s;
-}
-
-.star:nth-child(3){
-top:35%;
-left:50%;
-width:2px;
-height:2px;
-animation-duration:6s;
-}
-
-.star:nth-child(4){
-top:60%;
-left:25%;
-width:3px;
-height:3px;
-animation-duration:4s;
-}
-
-.star:nth-child(5){
-top:75%;
-left:80%;
-width:2px;
-height:2px;
-animation-duration:5s;
-}
-
-.star:nth-child(6){
-top:85%;
-left:40%;
-width:3px;
-height:3px;
-animation-duration:6s;
-}
-
-.star:nth-child(7){
-top:25%;
-left:25%;
-width:2px;
-height:2px;
-animation-duration:5s;
-}
-
-.star:nth-child(8){
-top:55%;
-left:70%;
-width:3px;
-height:3px;
-animation-duration:4s;
-}
-
-@keyframes twinkle{
-
-0%{
-opacity:.2;
-transform:scale(1);
-}
-
-50%{
-opacity:1;
-transform:scale(1.8);
-}
-
-100%{
-opacity:.2;
-transform:scale(1);
-}
-
-}
-
-/* ======================
-   CONTAINER
-====================== */
-
-.container{
-
-max-width:1200px;
-
-margin:auto;
-
-padding:40px 20px;
-
-position:relative;
-
-z-index:2;
-
-}
-
-/* ======================
-   HEADER
-====================== */
-
-.logo-section{
-
-text-align:center;
-
-margin-bottom:30px;
-
-animation:
-fadeUp 1s ease;
-
-}
-
-.logo-section img{
-
-width:150px;
-
-filter:
-drop-shadow(0 0 15px #00aaff)
-drop-shadow(0 0 30px #00aaff);
-
-animation:
-logoFloat 4s ease-in-out infinite;
-
-}
-
-.logo-section h1{
-
-font-size:2.8rem;
-
-margin-top:12px;
-
-font-weight:800;
-
-}
-
-.logo-section p{
-
-margin-top:10px;
-
-color:#d7e4ff;
-
-}
-
-@keyframes logoFloat{
-
-50%{
-transform:translateY(-10px);
-}
-
-}
-
-@keyframes fadeUp{
-
-from{
-opacity:0;
-transform:translateY(30px);
-}
-
-to{
-opacity:1;
-transform:translateY(0);
-}
-
-}
-
-   /* ======================
-   BENEFITS
-====================== */
-
-.benefits{
-
-display:grid;
-
-grid-template-columns:
-repeat(4,1fr);
-
-gap:15px;
-
-margin-bottom:25px;
-
-}
-
-.benefit{
+max-width:700px;
 
 background:
 rgba(255,255,255,.05);
@@ -348,117 +121,60 @@ border:
 1px solid rgba(255,255,255,.08);
 
 backdrop-filter:
-blur(15px);
-
-padding:18px;
-
-border-radius:18px;
-
-text-align:center;
-
-transition:.3s;
-
-}
-
-.benefit:hover{
-
-transform:
-translateY(-6px);
-
-box-shadow:
-0 0 20px rgba(0,170,255,.25);
-
-}
-
-.benefit h3{
-
-font-size:1rem;
-
-margin-bottom:8px;
-
-color:#59c5ff;
-
-}
-
-/* ======================
-   FORM CARD
-====================== */
-
-.form-card{
-
-background:
-rgba(255,255,255,.06);
-
-border:
-1px solid rgba(255,255,255,.1);
-
-backdrop-filter:
-blur(20px);
+blur(18px);
 
 border-radius:28px;
 
-padding:35px;
+padding:30px;
 
 box-shadow:
-0 0 30px rgba(0,170,255,.15);
+0 0 40px rgba(0,170,255,.12);
 
 }
 
-.form-card h2{
+.logo{
 
-font-size:2rem;
+display:block;
 
-margin-bottom:10px;
+width:90px;
 
-}
-
-.section-title{
-
-margin-top:30px;
+margin:auto;
 
 margin-bottom:15px;
 
-font-size:1.1rem;
+}
 
-font-weight:700;
+h1{
 
-color:#59c5ff;
+text-align:center;
 
-border-left:
-4px solid #00aaff;
-
-padding-left:12px;
+margin-bottom:8px;
 
 }
 
-.grid{
+.subtitle{
 
-display:grid;
+text-align:center;
 
-grid-template-columns:
-1fr 1fr;
+color:#9fb8df;
 
-gap:18px;
+margin-bottom:25px;
 
 }
 
-.field{
+.form-group{
 
-display:flex;
-
-flex-direction:column;
-
-margin-bottom:15px;
+margin-bottom:18px;
 
 }
 
 label{
 
+display:block;
+
 margin-bottom:8px;
 
-font-size:.95rem;
-
-font-weight:500;
+font-weight:600;
 
 }
 
@@ -468,7 +184,7 @@ textarea{
 
 width:100%;
 
-padding:14px 16px;
+padding:14px;
 
 border:none;
 
@@ -480,70 +196,51 @@ background:#12203f;
 
 color:white;
 
-transition:.3s;
+font-size:15px;
 
 }
 
 textarea{
 
-height:120px;
-
 resize:none;
 
-}
-
-input:focus,
-select:focus,
-textarea:focus{
-
-box-shadow:
-0 0 0 2px #00aaff,
-0 0 20px rgba(0,170,255,.25);
+height:120px;
 
 }
 
-.notice{
+input::placeholder,
+textarea::placeholder{
 
-background:#12203f;
-
-padding:18px;
-
-border-radius:16px;
-
-margin-top:18px;
-
-line-height:1.8;
-
-border-left:
-4px solid #00aaff;
+color:#9fb8df;
 
 }
 
-.notice h3{
+.row{
 
-margin-bottom:10px;
+display:grid;
 
-color:#59c5ff;
+grid-template-columns:
+1fr 1fr;
+
+gap:15px;
 
 }
 
-.submit-btn{
+.register-btn{
 
 width:100%;
 
-padding:18px;
-
-margin-top:25px;
+padding:16px;
 
 border:none;
 
 border-radius:16px;
 
-font-size:1rem;
+cursor:pointer;
+
+font-size:16px;
 
 font-weight:700;
-
-cursor:pointer;
 
 background:
 linear-gradient(
@@ -554,57 +251,40 @@ linear-gradient(
 
 color:white;
 
-box-shadow:
-0 0 25px rgba(0,170,255,.4);
-
 transition:.3s;
 
 }
 
-.submit-btn:hover{
+.register-btn:hover{
 
 transform:
-translateY(-4px);
-
-box-shadow:
-0 0 35px rgba(0,170,255,.6);
+translateY(-3px);
 
 }
 
-/* ======================
-   MOBILE
-====================== */
+.status-box{
 
-@media(max-width:768px){
+margin-top:18px;
 
-.container{
-padding:20px 14px;
+text-align:center;
+
+font-weight:600;
+
+color:#59c5ff;
+
 }
 
-.logo-section img{
-width:120px;
-}
+@media(max-width:700px){
 
-.logo-section h1{
-font-size:1.9rem;
-}
-
-.benefits{
-grid-template-columns:
-1fr 1fr;
-}
-
-.grid{
+.row{
 grid-template-columns:1fr;
 }
 
-.form-card{
+.register-box{
 padding:22px;
 }
 
 }
-
-/* END CSS */
 
 </style>
 
@@ -612,149 +292,144 @@ padding:22px;
 
 <body>
 
-<div class="stars">
-
-<div class="star"></div>
-<div class="star"></div>
-<div class="star"></div>
-<div class="star"></div>
-<div class="star"></div>
-<div class="star"></div>
-<div class="star"></div>
-<div class="star"></div>
-
-</div>
-
-<div class="container">
-
-<div class="logo-section">
+<div class="register-box">
 
 <img
 src="https://i.ibb.co/N24ghXDh/Picsart-26-06-01-01-49-36-525.png"
-alt="OMKLJ Logo"
->
+class="logo">
 
-<h1>OMKLJ INDIA</h1>
+<h1>
 
-<p>
-Verified Personal Registration
+Personal Employer Registration
+
+</h1>
+
+<p class="subtitle">
+
+Hire workers for home, family, and personal needs
+
 </p>
 
-</div>
+<form id="personalForm">
 
-<div class="benefits">
+<div class="row">
 
-<div class="benefit">
-<h3>🏠 Verified Homes</h3>
-Safe Environment
-</div>
+<div class="form-group">
 
-<div class="benefit">
-<h3>👨‍👩‍👧 Family Verified</h3>
-Trusted Hiring
-</div>
+<label>
 
-<div class="benefit">
-<h3>⭐ Verified Workers</h3>
-Quality Staff
-</div>
+Full Name
 
-<div class="benefit">
-<h3>🛡 Secure Platform</h3>
-Protected Hiring
-</div>
+</label>
+
+<input
+type="text"
+id="fullName"
+placeholder="Enter Full Name"
+required>
 
 </div>
 
-<div class="form-card">
+<div class="form-group">
 
-<h2>
-🏠 Personal Employer Registration
-</h2>
+<label>
 
-<div class="section-title">
-Personal Information
-</div>
+Mobile Number
 
-   <div class="grid">
+</label>
 
-<div class="field">
-<label>Full Name *</label>
-<input type="text" class="protected-input">
-</div>
+<input
+type="tel"
+id="mobile"
+placeholder="Enter Mobile Number"
+required>
 
-<div class="field">
-<label>Mobile Number *</label>
-<input type="tel">
-</div>
-
-<div class="field">
-<label>Email Address *</label>
-<input type="email">
-</div>
-
-<div class="field">
-<label>Aadhaar Number *</label>
-<input type="text">
 </div>
 
 </div>
 
-<div class="section-title">
-Home Verification
-</div>
+<div class="row">
 
-<div class="grid">
+<div class="form-group">
 
-<div class="field">
-<label>State *</label>
-<input type="text" class="protected-input">
-</div>
+<label>
 
-<div class="field">
-<label>District *</label>
-<input type="text" class="protected-input">
-</div>
+Email Address
 
-<div class="field">
-<label>House Photo *</label>
-<input type="file">
-</div>
+</label>
 
-<div class="field">
-<label>Owner Photo *</label>
-<input type="file">
-</div>
+<input
+type="email"
+id="email"
+placeholder="Enter Email Address"
+required>
 
 </div>
 
-<div class="field">
-<label>Complete Address *</label>
-<textarea class="protected-input"></textarea>
+<div class="form-group">
+
+<label>
+
+Occupation
+
+</label>
+
+<input
+type="text"
+id="occupation"
+placeholder="Enter Occupation">
+
 </div>
 
-<div class="section-title">
-Hiring Requirement
 </div>
 
-<div class="grid">
+   <div class="row">
 
-<div class="field">
+<div class="form-group">
 
-<label>Worker Type *</label>
+<label>
 
-<select id="workerType">
+Employer Type
 
-<option>House Maid</option>
-<option>Personal Driver</option>
-<option>Cook</option>
-<option>Caretaker</option>
-<option>Elderly Care Assistant</option>
-<option>Baby Care Assistant</option>
-<option>Housekeeper</option>
-<option>Gardener</option>
+</label>
 
-<option value="other">
+<select
+id="employerType"
+required>
+
+<option value="">
+Select Employer Type
+</option>
+
+<option>
+Home Owner
+</option>
+
+<option>
+Apartment Owner
+</option>
+
+<option>
+Family Assistance
+</option>
+
+<option>
+Elder Care
+</option>
+
+<option>
+Domestic Help
+</option>
+
+<option>
+Personal Driver
+</option>
+
+<option>
+Caretaker
+</option>
+
+<option>
 Other
 </option>
 
@@ -762,248 +437,551 @@ Other
 
 </div>
 
-<div class="field">
-<label>Monthly Salary (₹) *</label>
-<input type="number">
-</div>
-
-</div>
-
-<div
-class="field"
-id="otherField"
-style="display:none;"
->
+<div class="form-group">
 
 <label>
-Describe Requirement
+
+Workers Needed Usually
+
+</label>
+
+<select
+id="workersNeeded">
+
+<option>
+1
+</option>
+
+<option>
+2
+</option>
+
+<option>
+3
+</option>
+
+<option>
+4
+</option>
+
+<option>
+5+
+</option>
+
+</select>
+
+</div>
+
+</div>
+
+<div class="form-group">
+
+<label>
+
+Complete Address
+
+</label>
+
+<textarea
+id="address"
+placeholder="Enter Full Address"
+required></textarea>
+
+</div>
+
+<div class="row">
+
+<div class="form-group">
+
+<label>
+
+City
+
 </label>
 
 <input
 type="text"
-class="protected-input"
-maxlength="100"
-placeholder="Maximum 100 characters"
->
+id="city"
+placeholder="Enter City"
+required>
 
 </div>
 
-<div class="grid">
+<div class="form-group">
 
-<div class="field">
+<label>
 
-<label>Food Provided?</label>
+State
 
-<select>
-<option>Yes</option>
-<option>No</option>
+</label>
+
+<input
+type="text"
+id="state"
+placeholder="Enter State"
+required>
+
+</div>
+
+</div>
+
+<div class="row">
+
+<div class="form-group">
+
+<label>
+
+Pincode
+
+</label>
+
+<input
+type="text"
+id="pincode"
+placeholder="Enter Pincode"
+required>
+
+</div>
+
+<div class="form-group">
+
+<label>
+
+Preferred Worker Type
+
+</label>
+
+<select
+id="preferredWorker">
+
+<option>
+Cleaner
+</option>
+
+<option>
+Cook
+</option>
+
+<option>
+Driver
+</option>
+
+<option>
+Caretaker
+</option>
+
+<option>
+Gardener
+</option>
+
+<option>
+Security Guard
+</option>
+
+<option>
+Any
+</option>
+
 </select>
 
 </div>
 
-<div class="field">
+</div>
 
-<label>Accommodation Provided?</label>
+<div class="row">
 
-<select>
-<option>Yes</option>
-<option>No</option>
-</select>
+<div class="form-group">
+
+<label>
+
+Password
+
+</label>
+
+<input
+type="password"
+id="password"
+placeholder="Create Password"
+required>
 
 </div>
 
-<div class="field">
+<div class="form-group">
 
-<label>Joining Date *</label>
+<label>
 
-<input type="date">
+Confirm Password
 
-</div>
+</label>
 
-<div class="field">
-
-<label>Family Members *</label>
-
-<input type="number">
-
-</div>
+<input
+type="password"
+id="confirmPassword"
+placeholder="Confirm Password"
+required>
 
 </div>
-
-<div class="notice">
-
-<h3>
-OMKLJ Content Policy
-</h3>
-
-Adult services,
-illegal activities,
-child labour,
-drugs,
-weapons,
-gambling,
-and external contact details are prohibited.
-
-</div>
-
-<div class="notice">
-
-<h3>
-Personal Safety Notice
-</h3>
-
-Workers must be treated respectfully.
-
-Fraud, abuse, harassment,
-or false information may result in account suspension.
 
 </div>
 
 <button
-class="submit-btn"
-onclick="window.location.href='personal-dashboard.html'">
+type="submit"
+class="register-btn">
 
-Register Personal Employer →
+REGISTER PERSONAL EMPLOYER
 
 </button>
 
-</div>
+<div
+class="status-box"
+id="statusBox">
+
+Ready To Register
 
 </div>
 
-<script>
+</form>
 
-/* ======================
-   OTHER REQUIREMENT
-====================== */
+   <script>
 
-const workerType =
+/* =====================================
+   PERSONAL REGISTER V2
+===================================== */
+
+const personalForm =
 document.getElementById(
-"workerType"
+"personalForm"
 );
 
-const otherField =
+personalForm.addEventListener(
+"submit",
+async function(e){
+
+e.preventDefault();
+
+const fullName =
 document.getElementById(
-"otherField"
+"fullName"
+).value.trim();
+
+const mobile =
+document.getElementById(
+"mobile"
+).value.trim();
+
+const email =
+document.getElementById(
+"email"
+).value.trim();
+
+const occupation =
+document.getElementById(
+"occupation"
+).value.trim();
+
+const employerType =
+document.getElementById(
+"employerType"
+).value;
+
+const workersNeeded =
+document.getElementById(
+"workersNeeded"
+).value;
+
+const address =
+document.getElementById(
+"address"
+).value.trim();
+
+const city =
+document.getElementById(
+"city"
+).value.trim();
+
+const state =
+document.getElementById(
+"state"
+).value.trim();
+
+const pincode =
+document.getElementById(
+"pincode"
+).value.trim();
+
+const preferredWorker =
+document.getElementById(
+"preferredWorker"
+).value;
+
+const password =
+document.getElementById(
+"password"
+).value;
+
+const confirmPassword =
+document.getElementById(
+"confirmPassword"
+).value;
+
+const statusBox =
+document.getElementById(
+"statusBox"
 );
 
-workerType.addEventListener(
-"change",
-function(){
+/* =====================================
+   VALIDATION
+===================================== */
 
-if(this.value==="other"){
+if(password !== confirmPassword){
 
-otherField.style.display="block";
+statusBox.innerHTML =
+"Passwords Do Not Match";
 
-}else{
+statusBox.style.color =
+"#ff4d4d";
 
-otherField.style.display="none";
+return;
 
 }
 
+if(password.length < 6){
+
+statusBox.innerHTML =
+"Password Must Be At Least 6 Characters";
+
+statusBox.style.color =
+"#ff4d4d";
+
+return;
+
 }
+
+statusBox.innerHTML =
+"Creating Personal Employer Account...";
+
+statusBox.style.color =
+"#59c5ff";
+
+/* =====================================
+   AUTH REGISTER
+===================================== */
+
+try{
+
+const authResponse =
+await fetch(
+
+"https://omklj-global.vercel.app/api/auth/register",
+
+{
+
+method:"POST",
+
+headers:{
+"Content-Type":"application/json"
+},
+
+body:JSON.stringify({
+
+name:fullName,
+email,
+password,
+role:"personal"
+
+})
+
+}
+
 );
 
-/* ======================
-   CONTENT FILTER
-====================== */
+const authData =
+await authResponse.json();
 
-const blockedWords = [
+if(!authResponse.ok){
 
-"sex",
-"sexual",
-"rape",
-"porn",
-"adult",
-"escort",
-"prostitute",
-"nude",
-"hookup",
-"dating",
+statusBox.innerHTML =
+authData.message ||
+"Registration Failed";
 
-"fuck",
-"fucking",
+statusBox.style.color =
+"#ff4d4d";
 
-"drugs",
-"cocaine",
-"heroin",
-"marijuana",
-"ganja",
-"charas",
-
-"gambling",
-"betting",
-
-"weapon",
-"gun",
-"terror",
-"trafficking",
-
-"child labour",
-"child labor",
-"minor",
-"underage",
-
-"whatsapp",
-"telegram",
-"instagram",
-"snapchat",
-"discord",
-
-"http",
-"https",
-"www"
-
-];
-
-function containsBlockedContent(text){
-
-const value =
-text.toLowerCase();
-
-for(let word of blockedWords){
-
-if(value.includes(word)){
-return true;
-}
+return;
 
 }
 
-return false;
+/* =====================================
+   PERSONAL REGISTER
+===================================== */
+
+const personalResponse =
+await fetch(
+
+"https://omklj-global.vercel.app/api/personal/register",
+
+{
+
+method:"POST",
+
+headers:{
+"Content-Type":"application/json"
+},
+
+body:JSON.stringify({
+
+fullName,
+mobile,
+email,
+occupation,
+employerType,
+workersNeeded,
+address,
+city,
+state,
+pincode,
+preferredWorker
+
+})
 
 }
 
-const protectedFields =
-document.querySelectorAll(
-".protected-input"
 );
 
-protectedFields.forEach(field=>{
+const personalData =
+await personalResponse.json();
 
-field.addEventListener(
-"input",
-function(){
+if(!personalResponse.ok){
 
-if(
-containsBlockedContent(
-this.value
+statusBox.innerHTML =
+personalData.message ||
+"Personal Registration Failed";
+
+statusBox.style.color =
+"#ff4d4d";
+
+return;
+
+}
+
+/* =====================================
+   SAVE SESSION
+===================================== */
+
+localStorage.setItem(
+
+"omkljPersonal",
+
+JSON.stringify(
+personalData.personalEmployer
 )
-){
 
-alert(
-"Invalid content detected."
 );
 
-this.value="";
+if(authData.token){
+
+localStorage.setItem(
+"omkljToken",
+authData.token
+);
 
 }
 
+statusBox.innerHTML =
+"Personal Employer Registered Successfully";
+
+statusBox.style.color =
+"#00ff88";
+
+setTimeout(()=>{
+
+window.location.href =
+"personal-dashboard.html";
+
+},1500);
+
 }
-);
+catch(error){
+
+console.error(error);
+
+statusBox.innerHTML =
+"Server Connection Failed";
+
+statusBox.style.color =
+"#ff4d4d";
+
+}
 
 });
+
+      /* =====================================
+   AUTO LOGIN CHECK
+===================================== */
+
+window.addEventListener(
+"load",
+function(){
+
+const existingPersonal =
+localStorage.getItem(
+"omkljPersonal"
+);
+
+if(existingPersonal){
+
+console.log(
+"Personal Employer Session Found"
+);
+
+}
+
+}
+);
+
+/* =====================================
+   PAGE READY
+===================================== */
+
+document.body.classList.add(
+"page-ready"
+);
+
+console.log(
+"OMKLJ PERSONAL REGISTER V2 LOADED"
+);
+
+console.log(
+"MongoDB Personal Registration Active"
+);
+
+/* =====================================
+   FUTURE MODULES
+===================================== */
+
+/*
+
+NEXT PERSONAL MODULES
+
+1. Aadhaar Verification
+2. Home Verification
+3. Address Verification
+4. Profile Photo
+5. Trust Score
+6. Family Account
+7. Attendance QR
+8. Worker Ratings
+9. Subscription Plans
+10. Personal Analytics
+
+*/
+
+/* =====================================
+   END SCRIPT
+===================================== */
 
 </script>
 
 </body>
+
 </html>

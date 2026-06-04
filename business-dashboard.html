@@ -4,13 +4,23 @@
 <head>
 
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>OMKLJ India - Business Dashboard</title>
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<title>
+OMKLJ India - Business Dashboard
+</title>
+
+<link
+href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+rel="stylesheet">
 
 <style>
+
+/* =====================================
+   OMKLJ BUSINESS DASHBOARD V2
+===================================== */
 
 *{
 margin:0;
@@ -27,12 +37,14 @@ min-height:100vh;
 position:relative;
 }
 
-/* ======================
+/* =====================================
    GALAXY BACKGROUND
-====================== */
+===================================== */
 
 body::before{
+
 content:"";
+
 position:fixed;
 
 width:900px;
@@ -54,6 +66,7 @@ animation:
 orbOne 20s ease-in-out infinite alternate;
 
 z-index:-4;
+
 }
 
 body::after{
@@ -81,6 +94,7 @@ animation:
 orbTwo 22s ease-in-out infinite alternate;
 
 z-index:-4;
+
 }
 
 @keyframes orbOne{
@@ -107,35 +121,101 @@ transform:translate(-150px,-100px);
 
 }
 
-/* ======================
+/* =====================================
    STARS
-====================== */
+===================================== */
 
 .stars{
+
 position:fixed;
+
 top:0;
 left:0;
+
 width:100%;
 height:100%;
+
 pointer-events:none;
+
 z-index:-3;
+
 }
 
 .star{
+
 position:absolute;
+
 background:white;
+
 border-radius:50%;
+
 animation:twinkle infinite;
+
 }
 
-.star:nth-child(1){top:10%;left:12%;width:2px;height:2px;animation-duration:4s;}
-.star:nth-child(2){top:15%;left:80%;width:3px;height:3px;animation-duration:5s;}
-.star:nth-child(3){top:30%;left:55%;width:2px;height:2px;animation-duration:6s;}
-.star:nth-child(4){top:45%;left:20%;width:3px;height:3px;animation-duration:4s;}
-.star:nth-child(5){top:60%;left:85%;width:2px;height:2px;animation-duration:5s;}
-.star:nth-child(6){top:75%;left:40%;width:3px;height:3px;animation-duration:6s;}
-.star:nth-child(7){top:88%;left:70%;width:2px;height:2px;animation-duration:4s;}
-.star:nth-child(8){top:22%;left:35%;width:3px;height:3px;animation-duration:5s;}
+.star:nth-child(1){
+top:10%;
+left:12%;
+width:2px;
+height:2px;
+animation-duration:4s;
+}
+
+.star:nth-child(2){
+top:15%;
+left:80%;
+width:3px;
+height:3px;
+animation-duration:5s;
+}
+
+.star:nth-child(3){
+top:30%;
+left:55%;
+width:2px;
+height:2px;
+animation-duration:6s;
+}
+
+.star:nth-child(4){
+top:45%;
+left:20%;
+width:3px;
+height:3px;
+animation-duration:4s;
+}
+
+.star:nth-child(5){
+top:60%;
+left:85%;
+width:2px;
+height:2px;
+animation-duration:5s;
+}
+
+.star:nth-child(6){
+top:75%;
+left:40%;
+width:3px;
+height:3px;
+animation-duration:6s;
+}
+
+.star:nth-child(7){
+top:88%;
+left:70%;
+width:2px;
+height:2px;
+animation-duration:4s;
+}
+
+.star:nth-child(8){
+top:22%;
+left:35%;
+width:3px;
+height:3px;
+animation-duration:5s;
+}
 
 @keyframes twinkle{
 
@@ -156,48 +236,65 @@ transform:scale(1);
 
 }
 
-/* ======================
+/* =====================================
    CONTAINER
-====================== */
+===================================== */
 
 .container{
+
 max-width:1300px;
+
 margin:auto;
+
 padding:30px 20px;
+
 position:relative;
+
 z-index:2;
+
 }
 
-/* ======================
+/* =====================================
    HEADER
-====================== */
+===================================== */
 
 .dashboard-header{
 
 display:flex;
+
 justify-content:space-between;
+
 align-items:center;
 
-background:rgba(255,255,255,.05);
+background:
+rgba(255,255,255,.05);
 
-border:1px solid rgba(255,255,255,.08);
+border:
+1px solid rgba(255,255,255,.08);
 
-backdrop-filter:blur(18px);
+backdrop-filter:
+blur(18px);
 
 padding:20px;
 
 border-radius:22px;
 
 margin-bottom:20px;
+
 }
 
 .logo-area{
+
 display:flex;
+
 align-items:center;
+
 gap:15px;
+
 }
 
 .logo-area img{
+
 width:70px;
 
 filter:
@@ -205,6 +302,7 @@ drop-shadow(0 0 12px #00aaff);
 
 animation:
 floatLogo 4s ease-in-out infinite;
+
 }
 
 @keyframes floatLogo{
@@ -216,12 +314,17 @@ transform:translateY(-8px);
 }
 
 .business-info h2{
+
 font-size:1.5rem;
+
 }
 
 .business-info p{
+
 color:#b8c8ea;
+
 margin-top:5px;
+
 }
 
 .verify-badge{
@@ -238,9 +341,9 @@ color:#59c5ff;
 
 }
 
-  /* ======================
+   /* =====================================
    STATS GRID
-====================== */
+===================================== */
 
 .stats-grid{
 
@@ -252,15 +355,19 @@ repeat(4,1fr);
 gap:15px;
 
 margin-bottom:20px;
+
 }
 
 .stat-card{
 
-background:rgba(255,255,255,.05);
+background:
+rgba(255,255,255,.05);
 
-border:1px solid rgba(255,255,255,.08);
+border:
+1px solid rgba(255,255,255,.08);
 
-backdrop-filter:blur(15px);
+backdrop-filter:
+blur(15px);
 
 padding:20px;
 
@@ -269,11 +376,13 @@ border-radius:20px;
 text-align:center;
 
 transition:.3s;
+
 }
 
 .stat-card:hover{
 
-transform:translateY(-5px);
+transform:
+translateY(-5px);
 
 box-shadow:
 0 0 20px rgba(0,170,255,.2);
@@ -285,6 +394,7 @@ box-shadow:
 font-size:2rem;
 
 color:#59c5ff;
+
 }
 
 .stat-card p{
@@ -292,11 +402,12 @@ color:#59c5ff;
 margin-top:8px;
 
 color:#cfdcff;
+
 }
 
-/* ======================
+/* =====================================
    SECTION TITLE
-====================== */
+===================================== */
 
 .section-title{
 
@@ -310,9 +421,9 @@ color:#59c5ff;
 
 }
 
-/* ======================
+/* =====================================
    ACTION BUTTON
-====================== */
+===================================== */
 
 .post-job-btn{
 
@@ -342,17 +453,19 @@ linear-gradient(
 color:white;
 
 transition:.3s;
+
 }
 
 .post-job-btn:hover{
 
-transform:translateY(-3px);
+transform:
+translateY(-3px);
 
 }
 
-/* ======================
-   JOB CARDS
-====================== */
+/* =====================================
+   JOBS GRID
+===================================== */
 
 .jobs-grid{
 
@@ -364,26 +477,32 @@ repeat(2,1fr);
 gap:18px;
 
 margin-bottom:25px;
+
 }
 
 .job-card{
 
-background:rgba(255,255,255,.05);
+background:
+rgba(255,255,255,.05);
 
-border:1px solid rgba(255,255,255,.08);
+border:
+1px solid rgba(255,255,255,.08);
 
-backdrop-filter:blur(15px);
+backdrop-filter:
+blur(15px);
 
 border-radius:22px;
 
 padding:22px;
 
 transition:.3s;
+
 }
 
 .job-card:hover{
 
-transform:translateY(-5px);
+transform:
+translateY(-5px);
 
 box-shadow:
 0 0 20px rgba(0,170,255,.2);
@@ -397,6 +516,7 @@ font-size:1.2rem;
 font-weight:700;
 
 margin-bottom:10px;
+
 }
 
 .job-status{
@@ -404,6 +524,7 @@ margin-bottom:10px;
 color:#59c5ff;
 
 margin-bottom:10px;
+
 }
 
 .job-details{
@@ -414,6 +535,7 @@ grid-template-columns:
 1fr 1fr;
 
 gap:10px;
+
 }
 
 .job-detail{
@@ -425,25 +547,48 @@ padding:10px;
 border-radius:10px;
 
 text-align:center;
+
 }
 
-/* ======================
+.empty-state{
+
+background:
+rgba(255,255,255,.05);
+
+border:
+1px dashed rgba(255,255,255,.2);
+
+padding:40px;
+
+border-radius:20px;
+
+text-align:center;
+
+color:#b8c8ea;
+
+}
+
+/* =====================================
    APPLICANTS
-====================== */
+===================================== */
 
 .applicants{
 
-background:rgba(255,255,255,.05);
+background:
+rgba(255,255,255,.05);
 
-border:1px solid rgba(255,255,255,.08);
+border:
+1px solid rgba(255,255,255,.08);
 
-backdrop-filter:blur(15px);
+backdrop-filter:
+blur(15px);
 
 border-radius:22px;
 
 padding:22px;
 
 margin-bottom:20px;
+
 }
 
 .applicant{
@@ -455,6 +600,7 @@ padding:15px;
 border-radius:14px;
 
 margin-bottom:12px;
+
 }
 
 .action-buttons{
@@ -464,6 +610,7 @@ display:flex;
 gap:10px;
 
 margin-top:10px;
+
 }
 
 .accept-btn{
@@ -483,6 +630,7 @@ background:#16a34a;
 color:white;
 
 font-weight:700;
+
 }
 
 .reject-btn{
@@ -502,11 +650,12 @@ background:#dc2626;
 color:white;
 
 font-weight:700;
+
 }
 
-/* ======================
+/* =====================================
    MOBILE
-====================== */
+===================================== */
 
 @media(max-width:900px){
 
@@ -563,17 +712,20 @@ grid-template-columns:1fr;
 
 <img
 src="https://i.ibb.co/N24ghXDh/Picsart-26-06-01-01-49-36-525.png"
-alt="OMKLJ"
->
+alt="OMKLJ Logo">
 
 <div class="business-info">
 
-<h2>
-Welcome Business Owner
+<h2 id="businessName">
+
+Loading...
+
 </h2>
 
 <p>
+
 Verified Business Dashboard
+
 </p>
 
 </div>
@@ -591,28 +743,74 @@ Verified Business Dashboard
 <div class="stats-grid">
 
 <div class="stat-card">
-<h3>4</h3>
-<p>Active Jobs</p>
+
+<h3 id="activeJobsCount">
+
+0
+
+</h3>
+
+<p>
+
+Active Jobs
+
+</p>
+
 </div>
 
 <div class="stat-card">
-<h3>21</h3>
-<p>Applicants</p>
+
+<h3 id="totalApplicantsCount">
+
+0
+
+</h3>
+
+<p>
+
+Applicants
+
+</p>
+
 </div>
 
 <div class="stat-card">
-<h3>8</h3>
-<p>Workers Hired</p>
+
+<h3 id="workersHiredCount">
+
+0
+
+</h3>
+
+<p>
+
+Workers Hired
+
+</p>
+
 </div>
 
 <div class="stat-card">
-<h3>36</h3>
-<p>Completed Jobs</p>
-</div>
+
+<h3 id="completedJobsCount">
+
+0
+
+</h3>
+
+<p>
+
+Completed Jobs
+
+</p>
 
 </div>
 
-<button class="post-job-btn">
+</div>
+
+<button
+class="post-job-btn"
+id="postJobBtn">
 
 ➕ Post New Job
 
@@ -620,77 +818,17 @@ Verified Business Dashboard
 
 <h2 class="section-title">
 
-📅 Active Jobs
+📋 Active Jobs
 
 </h2>
 
-<div class="jobs-grid">
+<div
+class="jobs-grid"
+id="jobsContainer">
 
-  <!-- ACTIVE JOB 1 -->
+<div class="empty-state">
 
-<div class="job-card">
-
-<div class="job-title">
-Cleaner Required
-</div>
-
-<div class="job-status">
-🟢 Active
-</div>
-
-<div class="job-details">
-
-<div class="job-detail">
-8 Hours
-</div>
-
-<div class="job-detail">
-₹100/hr
-</div>
-
-<div class="job-detail">
-3 Applicants
-</div>
-
-<div class="job-detail">
-₹800 Total
-</div>
-
-</div>
-
-</div>
-
-<!-- ACTIVE JOB 2 -->
-
-<div class="job-card">
-
-<div class="job-title">
-Shop Helper
-</div>
-
-<div class="job-status">
-🟢 Active
-</div>
-
-<div class="job-details">
-
-<div class="job-detail">
-6 Hours
-</div>
-
-<div class="job-detail">
-₹120/hr
-</div>
-
-<div class="job-detail">
-5 Applicants
-</div>
-
-<div class="job-detail">
-₹720 Total
-</div>
-
-</div>
+Loading Jobs...
 
 </div>
 
@@ -702,61 +840,13 @@ Shop Helper
 
 </h2>
 
-<div class="applicants">
+<div
+class="applicants"
+id="applicantsContainer">
 
-<div class="applicant">
+<div class="empty-state">
 
-<strong>
-Kuldeep Kumar
-</strong>
-
-<br>
-
-Trust Score: 92
-
-<br>
-
-Distance: 2 KM
-
-<div class="action-buttons">
-
-<button class="accept-btn">
-Accept
-</button>
-
-<button class="reject-btn">
-Reject
-</button>
-
-</div>
-
-</div>
-
-<div class="applicant">
-
-<strong>
-Rahul Kumar
-</strong>
-
-<br>
-
-Trust Score: 88
-
-<br>
-
-Distance: 4 KM
-
-<div class="action-buttons">
-
-<button class="accept-btn">
-Accept
-</button>
-
-<button class="reject-btn">
-Reject
-</button>
-
-</div>
+No Applicants Yet
 
 </div>
 
@@ -768,23 +858,19 @@ Reject
 
 </h2>
 
-<div class="applicants">
+<div
+class="applicants"
+id="notificationsContainer">
 
 <div class="applicant">
-New worker applied for Cleaner job.
-</div>
 
-<div class="applicant">
-Worker verification completed.
-</div>
+Welcome to OMKLJ Business Dashboard
 
-<div class="applicant">
-Trust score report updated.
 </div>
 
 </div>
 
-<h2 class="section-title">
+   <h2 class="section-title">
 
 📷 QR Verification
 
@@ -798,7 +884,9 @@ Generate attendance QR after accepting a worker.
 
 <br><br>
 
-<button class="post-job-btn">
+<button
+class="post-job-btn"
+id="generateQrBtn">
 
 Generate QR
 
@@ -812,77 +900,338 @@ Generate QR
 
 <script>
 
-/* ======================
-   ACCEPT BUTTON
-====================== */
+/* =====================================
+   BUSINESS DATA
+===================================== */
 
-const acceptButtons =
-document.querySelectorAll(
-".accept-btn"
+const businessData =
+JSON.parse(
+localStorage.getItem(
+"omkljBusiness"
+)
 );
 
-acceptButtons.forEach(button=>{
+if(businessData){
 
-button.addEventListener(
+document
+.getElementById(
+"businessName"
+)
+.innerHTML =
+
+businessData.businessName ||
+
+businessData.ownerName ||
+
+"Business Dashboard";
+
+}
+
+/* =====================================
+   POST JOB REDIRECT
+===================================== */
+
+document
+.getElementById(
+"postJobBtn"
+)
+.addEventListener(
 "click",
 function(){
 
-alert(
-"Worker Accepted Successfully."
-);
+window.location.href =
+"post-job.html";
 
 }
+);
+
+/* =====================================
+   LOAD JOBS
+===================================== */
+
+async function loadJobs(){
+
+try{
+
+const response =
+await fetch(
+
+"https://omklj-global.vercel.app/api/jobs"
+
+);
+
+const jobs =
+await response.json();
+
+const jobsContainer =
+document.getElementById(
+"jobsContainer"
+);
+
+jobsContainer.innerHTML = "";
+
+if(
+!jobs ||
+jobs.length === 0
+){
+
+jobsContainer.innerHTML =
+
+`
+<div class="empty-state">
+
+No Active Jobs Found
+
+</div>
+`;
+
+return;
+
+}
+
+let activeJobs = 0;
+
+jobs.forEach(job=>{
+
+activeJobs++;
+
+const card =
+document.createElement(
+"div"
+);
+
+card.className =
+"job-card";
+
+card.innerHTML =
+
+`
+<div class="job-title">
+
+${job.title || "Untitled Job"}
+
+</div>
+
+<div class="job-status">
+
+🟢 Active
+
+</div>
+
+<div class="job-details">
+
+<div class="job-detail">
+
+${job.workingHours || 0}
+Hours
+
+</div>
+
+<div class="job-detail">
+
+₹${job.salary || 0}/hr
+
+</div>
+
+<div class="job-detail">
+
+${job.workersRequired || 1}
+Workers
+
+</div>
+
+<div class="job-detail">
+
+${job.location || "Unknown"}
+
+</div>
+
+</div>
+`;
+
+jobsContainer.appendChild(
+card
 );
 
 });
 
-/* ======================
-   REJECT BUTTON
-====================== */
+document
+.getElementById(
+"activeJobsCount"
+)
+.innerHTML =
+activeJobs;
 
-const rejectButtons =
-document.querySelectorAll(
-".reject-btn"
+}
+catch(error){
+
+console.error(error);
+
+document
+.getElementById(
+"jobsContainer"
+)
+.innerHTML =
+
+`
+<div class="empty-state">
+
+Failed To Load Jobs
+
+</div>
+`;
+
+}
+
+}
+
+/* =====================================
+   LOAD APPLICANTS
+===================================== */
+
+async function loadApplicants(){
+
+const container =
+document.getElementById(
+"applicantsContainer"
 );
 
-rejectButtons.forEach(button=>{
+container.innerHTML =
 
-button.addEventListener(
+`
+<div class="empty-state">
+
+Applications System V2
+Coming Next
+
+</div>
+`;
+
+}
+
+/* =====================================
+   LOAD DASHBOARD
+===================================== */
+
+loadJobs();
+
+loadApplicants();
+
+document
+.getElementById(
+"notificationsContainer"
+)
+.innerHTML =
+
+`
+<div class="applicant">
+
+Dashboard Connected To MongoDB
+
+</div>
+
+<div class="applicant">
+
+Jobs Are Loaded From Database
+
+</div>
+
+<div class="applicant">
+
+Application System Coming Next
+
+</div>
+`;
+
+   /* =====================================
+   QR BUTTON
+===================================== */
+
+const qrButton =
+document.getElementById(
+"generateQrBtn"
+);
+
+if(qrButton){
+
+qrButton.addEventListener(
 "click",
 function(){
 
 alert(
-"Worker Rejected."
+"QR Attendance System V2 Coming Soon"
 );
 
 }
 );
 
-});
+}
 
-/* ======================
-   POST JOB BUTTON
-====================== */
+/* =====================================
+   AUTO REFRESH JOBS
+===================================== */
 
-const postJobButton =
-document.querySelector(
-".post-job-btn"
-);
+setInterval(
 
-if(postJobButton){
-
-postJobButton.addEventListener(
-"click",
 function(){
 
-alert(
-"Post Job Page Coming Soon."
+loadJobs();
+
+},
+
+30000
+
 );
 
-}
+/* =====================================
+   LOG DASHBOARD STATUS
+===================================== */
+
+console.log(
+
+"OMKLJ BUSINESS DASHBOARD V2 LOADED"
+
 );
 
-}
+console.log(
+
+"MongoDB Job Integration Active"
+
+);
+
+console.log(
+
+"Business:",
+businessData
+
+);
+
+/* =====================================
+   FUTURE MODULES
+===================================== */
+
+/*
+
+NEXT OMKLJ MODULES
+
+1. Applications System
+2. Accept / Reject Worker
+3. Attendance QR
+4. Worker Tracking
+5. Location Filter
+6. Trust Score Engine
+7. Ratings System
+8. Notifications Engine
+
+*/
+
+/* =====================================
+   DASHBOARD READY
+===================================== */
+
+document.body.classList.add(
+"dashboard-ready"
+);
 
 </script>
 

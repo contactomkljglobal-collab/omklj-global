@@ -10,24 +10,25 @@ exports.createJob = async (req, res) => {
   try {
 
     const {
-      title,
-      description,
-      category,
-      location,
-      salary,
-      workingHours,
-      employerId,
-      employerType
-    } = req.body;
+title,
+description,
+category,
+location,
+hourlyRate,
+workingHours,
+workersRequired,
+postedBy,
+postedByType
+} = req.body;
 
-    if (
-      !title ||
-      !description ||
-      !category ||
-      !location ||
-      !salary ||
-      !employerId
-    ) {
+    if(
+!title ||
+!description ||
+!category ||
+!location ||
+!hourlyRate ||
+!postedBy
+) {
       return res.status(400).json({
         success: false,
         message: "Please fill all required fields"
@@ -36,22 +37,26 @@ exports.createJob = async (req, res) => {
 
     const job = await Job.create({
 
-      title,
-      description,
-      category,
-      location,
-      salary,
-      workingHours,
+title,
+description,
+category,
+location,
 
-      employerId,
+hourlyRate,
 
-      employerType,
+workingHours,
 
-      status: "active",
+workersRequired,
 
-      totalApplications: 0
+postedBy,
 
-    });
+postedByType,
+
+status:"active",
+
+totalApplications:0
+
+});
 
     return res.status(201).json({
 

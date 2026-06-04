@@ -907,9 +907,108 @@ NEXT BUSINESS MODULES
 
 */
 
-/* =====================================
-   END SCRIPT
-===================================== */
+      /* =========================================
+   OMKLJ LOCATION SYSTEM V1
+   PART 2 - BUSINESS GPS CAPTURE
+========================================= */
+
+let businessLocation = {
+
+    latitude: null,
+
+    longitude: null,
+
+    city: "",
+
+    state: ""
+
+};
+
+async function captureBusinessLocation() {
+
+    return new Promise(
+
+        (resolve) => {
+
+            if(!navigator.geolocation){
+
+                resolve();
+
+                return;
+
+            }
+
+            navigator.geolocation.getCurrentPosition(
+
+                async function(position){
+
+                    businessLocation.latitude =
+                    position.coords.latitude;
+
+                    businessLocation.longitude =
+                    position.coords.longitude;
+
+                    try{
+
+                        const response =
+                        await fetch(
+
+`https://nominatim.openstreetmap.org/reverse?format=jsonv2&lat=${businessLocation.latitude}&lon=${businessLocation.longitude}`
+
+                        );
+
+                        const data =
+                        await response.json();
+
+                        businessLocation.city =
+                        data.address.city ||
+
+                        data.address.town ||
+
+                        data.address.village ||
+
+                        "";
+
+                        businessLocation.state =
+                        data.address.state ||
+
+                        "";
+
+                    }
+
+                    catch(error){
+
+                        console.error(error);
+
+                    }
+
+                    resolve();
+
+                },
+
+                function(){
+
+                    resolve();
+
+                },
+
+                {
+
+                    enableHighAccuracy:true,
+
+                    timeout:10000,
+
+                    maximumAge:0
+
+                }
+
+            );
+
+        }
+
+    );
+
+}
 
 </script>
 

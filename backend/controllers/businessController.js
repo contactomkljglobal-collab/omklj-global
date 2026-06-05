@@ -13,18 +13,22 @@ exports.registerBusiness = async (req, res) => {
   try {
 
     const {
-      businessName,
-      ownerName,
-      email,
-      phone,
-      password,
-      gstNumber,
-      businessType,
-      address,
-      city,
-      state,
-      pincode
-    } = req.body;
+    businessName,
+    ownerName,
+    email,
+    phone,
+    password,
+    gstNumber,
+    businessType,
+    address,
+    city,
+    state,
+    pincode,
+    latitude,
+    longitude,
+    gpsCity,
+    gpsState
+} = req.body;
 
     if (
       !businessName ||
@@ -99,12 +103,20 @@ exports.registerBusiness = async (req, res) => {
 
         city,
 
-        state,
+state,
 
-        pincode,
+pincode,
 
-        verificationStatus:
-          "pending"
+latitude,
+
+longitude,
+
+gpsCity,
+
+gpsState,
+
+verificationStatus:
+"pending"
 
       });
 

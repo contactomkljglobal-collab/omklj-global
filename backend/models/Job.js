@@ -32,7 +32,22 @@ const jobSchema = new mongoose.Schema(
         type: String,
         required: true
     },
+    
+latitude: {
+    type: Number
+},
 
+longitude: {
+    type: Number
+},
+
+gpsCity: {
+    type: String
+},
+
+gpsState: {
+    type: String
+},
     state: {
         type: String
     },

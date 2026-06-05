@@ -17,6 +17,12 @@ location,
 hourlyRate,
 workingHours,
 workersRequired,
+
+latitude,
+longitude,
+gpsCity,
+gpsState,
+
 postedBy,
 postedByType
 } = req.body;

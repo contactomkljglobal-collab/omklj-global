@@ -1,8 +1,9 @@
 const express = require("express");
 
 const {
-  createJob,
-  getJobs
+    createJob,
+    getJobs,
+    getNearbyJobs
 } = require("../controllers/jobController");
 
 const router = express.Router();
@@ -13,8 +14,8 @@ POST /api/jobs/create
 */
 
 router.post(
-  "/create",
-  createJob
+    "/create",
+    createJob
 );
 
 /*
@@ -23,8 +24,18 @@ GET /api/jobs
 */
 
 router.get(
-  "/",
-  getJobs
+    "/",
+    getJobs
+);
+
+/*
+GET NEARBY JOBS
+GET /api/jobs/nearby
+*/
+
+router.get(
+    "/nearby",
+    getNearbyJobs
 );
 
 module.exports = router;

@@ -53,6 +53,22 @@ const businessSchema = new mongoose.Schema(
         type: String
     },
 
+    latitude: {
+        type: Number
+    },
+
+longitude: {
+    type: Number
+},
+
+gpsCity: {
+    type: String
+},
+
+gpsState: {
+    type: String
+},
+    
     activeJobs: {
         type: Number,
         default: 0

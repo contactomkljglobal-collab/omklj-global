@@ -40,22 +40,24 @@ postedByType
         message: "Please fill all required fields"
       });
     }
-
-    const job = await Job.create({
+    
+const job = await Job.create({
 
 title,
 description,
 category,
 location,
 
+latitude,
+longitude,
+gpsCity,
+gpsState,
+
 hourlyRate,
-
 workingHours,
-
 workersRequired,
 
 postedBy,
-
 postedByType,
 
 status:"active",
@@ -109,19 +111,21 @@ exports.getJobs = async (req, res) => {
     });
 
     return res.status(200).json({
-
       success: true,
-
       count: jobs.length,
-
       jobs
-
     });
 
-    /* ===================================
-   OMKLJ LOCATION SYSTEM V2
-   PART 1 - NEARBY JOBS API
-=================================== */
+  } catch (error) {
+
+    return res.status(500).json({
+      success: false,
+      message: error.message
+    });
+
+  }
+
+};
 
 exports.getNearbyJobs = async (req, res) => {
 
